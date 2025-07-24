@@ -1,0 +1,15 @@
+.DS_Store
+.env
+*.local
+*.log
+
+.idea
+node_modules
+
+/build
+/.wrangler
+/.cache
+/.react-router
+/functions
+/public/build
+.dev.vars
