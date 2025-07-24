@@ -2,6 +2,9 @@ name = "website"
 compatibility_date = "2025-04-04"
 main = "./workers/index.ts"
 
+[assets]
+not_found_handling = "single-page-application"
+
 [observability.logs]
 enabled = true
 invocation_logs = true

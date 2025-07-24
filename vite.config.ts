@@ -1,12 +1,9 @@
-import { cloudflare } from "@cloudflare/vite-plugin";
-import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
+import {cloudflare} from '@cloudflare/vite-plugin'
+import {defineConfig} from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig(config => {
+export default defineConfig(() => {
   return {
-    plugins: [
-      tailwindcss(),
-      cloudflare()
-    ]
-  };
-});
+    plugins: [tailwindcss(), cloudflare()],
+  }
+})

@@ -1,94 +1,76 @@
-import { JSX, useEffect, useRef, useState } from "react";
-import { QRCodeCanvas } from "qrcode.react";
-import { test } from "../common/p2p";
-
-interface FileData {
-  name: string
-  size: number
-  type: string
-  url: string
-}
-
+import {type JSX, useRef, useState} from 'react'
+import {QRCodeCanvas} from 'qrcode.react'
+import {sendFile} from '../common/p2p.ts'
+import { type FileInfo, getFileInfo } from "../common/file.ts";
 
 export default function Root(): JSX.Element {
-  const [selectedFile, setSelectedFile] = useState<FileData | null>(null);
-  const [shareUrl, setShareUrl] = useState<string>("");
-  const [isGenerating, setIsGenerating] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if( typeof window === "undefined") return;
-
-    test()
-  }, [typeof window]);
+  const [selectedFile, setSelectedFile] = useState<FileInfo | null>(null);
+  const [shareUrl, setShareUrl] = useState<string>('')
+  const [isGenerating, setIsGenerating] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const handleFileSelect = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+    const file = event.target.files?.[0]
+    if (!file) return
 
-    setIsGenerating(true);
+    setIsGenerating(true)
 
-    // Create a mock file URL (in a real app, you'd upload to a server)
-    const fileUrl = URL.createObjectURL(file);
+    console.log('Selected file:', file)
+    const multiAddr = await sendFile(file)
+    console.log('Multiaddr:', multiAddr)
 
-    // Generate a shareable link (mock URL)
-    const shareableUrl = `https://filetransfer.app/download/${Math.random().toString(36).substring(2, 15)}`;
-
-    const fileData: FileData = {
-      name: file.name,
-      size: file.size,
-      type: file.type,
-      url: fileUrl
-    };
+    const url = new URL(window.location.href)
+    url.pathname = '/download'
+    url.searchParams.set('addr', multiAddr)
+    const shareableUrl = url.toString()
 
     try {
-      setSelectedFile(fileData);
-      setShareUrl(shareableUrl);
+      setShareUrl(shareableUrl)
+      setSelectedFile(getFileInfo(file))
     } catch (error) {
-      console.error("Error generating QR code:", error);
+      console.error('Error generating QR code:', error)
     } finally {
-      setIsGenerating(false);
+      setIsGenerating(false)
     }
-  };
+  }
 
   const formatFileSize = (bytes: number): string => {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const sizes = ["Bytes", "KB", "MB", "GB"];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-  };
+    if (bytes === 0) return '0 Bytes'
+    const k = 1024
+    const sizes = ['Bytes', 'KB', 'MB', 'GB']
+    const i = Math.floor(Math.log(bytes) / Math.log(k))
+    return `${Number.parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`
+  }
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(shareUrl);
+      await navigator.clipboard.writeText(shareUrl)
       // You could add a toast notification here
-      alert("Link copied to clipboard!");
+      alert('Link copied to clipboard!')
     } catch (error) {
-      console.error("Failed to copy:", error);
+      console.error('Failed to copy:', error)
     }
-  };
+  }
 
   const resetTransfer = () => {
-    setSelectedFile(null);
-    setShareUrl("");
+    setSelectedFile(null)
+    setShareUrl('')
     if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+      fileInputRef.current.value = ''
     }
-  };
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">File Transfer</h1>
+    <div className="min-h-screen bg-gray-50 px-4 py-8">
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-8 text-center">
+          <h1 className="mb-2 font-bold text-3xl text-gray-900">File Transfer</h1>
           <p className="text-gray-600">Share files instantly with QR codes</p>
         </div>
 
         {!selectedFile ? (
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <div
-              className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-gray-400 transition-colors">
+          <div className="rounded-lg bg-white p-8 shadow-md">
+            <div className="rounded-lg border-2 border-gray-300 border-dashed p-12 text-center transition-colors hover:border-gray-400">
               <div className="mb-4">
                 <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                   <path
@@ -99,12 +81,12 @@ export default function Root(): JSX.Element {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Select a file to share</h3>
-              <p className="text-gray-500 mb-4">Choose any file from your device</p>
+              <h3 className="mb-2 font-medium text-gray-900 text-lg">Select a file to share</h3>
+              <p className="mb-4 text-gray-500">Choose any file from your device</p>
               <input ref={fileInputRef} type="file" onChange={handleFileSelect} className="hidden" id="file-input" />
               <label
                 htmlFor="file-input"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 cursor-pointer transition-colors"
+                className="inline-flex cursor-pointer items-center rounded-md border border-transparent bg-blue-600 px-6 py-3 font-medium text-base text-white transition-colors hover:bg-blue-700"
               >
                 Choose File
               </label>
@@ -113,11 +95,11 @@ export default function Root(): JSX.Element {
         ) : (
           <div className="space-y-6">
             {/* File Info */}
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="rounded-lg bg-white p-6 shadow-md">
               <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -135,19 +117,19 @@ export default function Root(): JSX.Element {
             </div>
 
             {/* QR Code and Link */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4 text-center">Share this file</h2>
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <h2 className="mb-4 text-center font-semibold text-gray-900 text-xl">Share this file</h2>
 
               {isGenerating ? (
-                <div className="text-center py-8">
-                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                <div className="py-8 text-center">
+                  <div className="inline-block h-8 w-8 animate-spin rounded-full border-blue-600 border-b-2"></div>
                   <p className="mt-2 text-gray-600">Generating QR code...</p>
                 </div>
               ) : (
                 <div className="space-y-6">
                   {/* QR Code */}
                   <div className="text-center">
-                    <div className="inline-block p-4 bg-white border-2 border-gray-200 rounded-lg">
+                    <div className="inline-block rounded-lg border-2 border-gray-200 bg-white p-4">
                       <QRCodeCanvas
                         marginSize={4}
                         level="Q"
@@ -156,25 +138,25 @@ export default function Root(): JSX.Element {
                           width: '100%',
                           height: '100%',
                         }}
-                        value={shareUrl || "https://filetransfer.app"}
+                        value={shareUrl || 'https://filetransfer.app'}
                       />
                     </div>
-                    <p className="mt-2 text-sm text-gray-600">Scan with your device's camera</p>
+                    <p className="mt-2 text-gray-600 text-sm">Scan with your device's camera</p>
                   </div>
 
                   {/* Share Link */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Or share this link:</label>
+                    <label className="mb-2 block font-medium text-gray-700 text-sm">Or share this link:</label>
                     <div className="flex space-x-2">
                       <input
                         type="text"
                         value={shareUrl}
                         readOnly
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-sm"
+                        className="flex-1 rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
                       />
                       <button
                         onClick={copyToClipboard}
-                        className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors text-sm font-medium"
+                        className="rounded-md bg-gray-600 px-4 py-2 font-medium text-sm text-white transition-colors hover:bg-gray-700"
                       >
                         Copy
                       </button>
@@ -188,7 +170,7 @@ export default function Root(): JSX.Element {
             <div className="flex justify-center space-x-4">
               <button
                 onClick={resetTransfer}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors font-medium"
+                className="rounded-md border border-gray-300 px-6 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-50"
               >
                 Share Another File
               </button>
@@ -197,5 +179,5 @@ export default function Root(): JSX.Element {
         )}
       </div>
     </div>
-  );
+  )
 }
