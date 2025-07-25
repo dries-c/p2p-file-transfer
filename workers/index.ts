@@ -1,5 +1,5 @@
 export default {
-  fetch(_request) {
+  fetch() {
     return new Response(null, {status: 404})
   },
 } satisfies ExportedHandler<Env>

@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@chainsafe/libp2p-noise':
-        specifier: ^16.1.4
+        specifier: 16.1.4
         version: 16.1.4
       '@chainsafe/libp2p-yamux':
-        specifier: ^7.0.4
+        specifier: 7.0.4
         version: 7.0.4
       '@cloudflare/vite-plugin':
         specifier: 1.10.1
@@ -24,25 +24,28 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react@19.1.0)
       '@libp2p/autonat-v2':
-        specifier: ^1.0.0
+        specifier: 1.0.0
         version: 1.0.0
       '@libp2p/circuit-relay-v2':
-        specifier: ^3.2.23
+        specifier: 3.2.23
         version: 3.2.23
       '@libp2p/identify':
-        specifier: ^3.0.38
+        specifier: 3.0.38
         version: 3.0.38
+      '@libp2p/interface':
+        specifier: ^2.10.5
+        version: 2.10.5
       '@libp2p/webrtc':
-        specifier: ^5.2.23
+        specifier: 5.2.23
         version: 5.2.23(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.8)(react@19.1.0))
       '@libp2p/websockets':
-        specifier: ^9.2.18
+        specifier: 9.2.18
         version: 9.2.18
       '@multiformats/multiaddr':
-        specifier: ^12.5.1
+        specifier: 12.5.1
         version: 12.5.1
       '@multiformats/multiaddr-matcher':
-        specifier: ^2.0.2
+        specifier: 2.0.2
         version: 2.0.2
       '@sentry/react-router':
         specifier: 9.41.0
@@ -54,7 +57,7 @@ importers:
         specifier: 5.1.28
         version: 5.1.28
       it-length-prefixed-stream:
-        specifier: ^2.0.3
+        specifier: 2.0.3
         version: 2.0.3
       libp2p:
         specifier: 2.9.0
@@ -102,6 +105,9 @@ importers:
       '@types/react-dom':
         specifier: 19.1.6
         version: 19.1.6(@types/react@19.1.8)
+      it-stream-types:
+        specifier: 2.0.2
+        version: 2.0.2
       tailwindcss:
         specifier: 4.1.11
         version: 4.1.11
