@@ -2,21 +2,21 @@ import {type JSX, useMemo} from 'react'
 import {QRCodeCanvas} from 'qrcode.react'
 
 export interface P2PLinkProps {
-  connectionAddress?: string
+  peerId?: string
 }
 
 export default function P2PLink(props: P2PLinkProps): JSX.Element {
   const transferLink = useMemo(() => {
-    if (props.connectionAddress) {
+    if (props.peerId) {
       const url = new URL(window.location.href)
       url.pathname = '/download'
-      url.searchParams.set('addr', props.connectionAddress)
+      url.searchParams.set('addr', props.peerId)
 
       return url.toString()
     }
 
     return null
-  }, [props.connectionAddress])
+  }, [props.peerId])
 
   const copyToClipboard = async () => {
     try {

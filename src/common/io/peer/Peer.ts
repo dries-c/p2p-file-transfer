@@ -1,4 +1,3 @@
-import type {Libp2p} from 'libp2p'
 import type {Libp2pOptions} from 'libp2p'
 import {webSockets} from '@libp2p/websockets'
 import {webRTC} from '@libp2p/webrtc'
@@ -7,11 +6,30 @@ import {noise} from '@chainsafe/libp2p-noise'
 import {yamux} from '@chainsafe/libp2p-yamux'
 import {identify} from '@libp2p/identify'
 import {type FileStream, FileStreamState} from '../file/FileStream.ts'
-export const PROTOCOL = 'p2p-file-transfer/1.0.0'
+import {type Multiaddr, multiaddr} from '@multiformats/multiaddr'
+
+export const FILE_TRANSFER_PROTOCOL = '/p2p-file-transfer/file-transfer/1.0.0'
+export const LOCAL_DISCOVERY_PROTOCOL = '/p2p-file-transfer/local-discovery/1.0.0'
+export const DEVICE_INFORMATION_PROTOCOL = '/p2p-file-transfer/device-information/1.0.0'
+export const RELAY_ADDRESS = multiaddr(
+  '/ip4/10.246.33.236/tcp/56492/ws/p2p/12D3KooWJYRUBsDHgxEBsY41DrXjzW5v1wARwouNHP5JaqRtzqLW',
+)
+
+export function getRelayPeerAddress(peerId: string): Multiaddr {
+  return RELAY_ADDRESS.encapsulate(`/p2p-circuit/webrtc/p2p/${peerId}`)
+}
 
 export function getBaseOptions(): Libp2pOptions {
   return {
-    transports: [webSockets(), webRTC(), circuitRelayTransport()],
+    transports: [
+      webSockets(),
+      webRTC({
+        rtcConfiguration: {
+          iceServers: [{urls: 'stun:stun.l.google.com:19302'}, {urls: 'stun:stun1.l.google.com:19302'}],
+        },
+      }),
+      circuitRelayTransport(),
+    ],
     connectionEncrypters: [noise()],
     streamMuxers: [yamux()],
     connectionGater: {
@@ -23,28 +41,34 @@ export function getBaseOptions(): Libp2pOptions {
   }
 }
 
+export enum ErrorState {
+  UNKNOWN,
+  RELAY_UNREACHABLE,
+  PEER_UNREACHABLE,
+  NO_WEBRTC_MULTIADDR,
+}
+
 export enum PeerState {
-  AWAITING_CONNECTION,
+  ERROR,
+  CONNECTING_TO_RELAY,
   CONNECTED,
   AWAITING_APPROVAL,
   EXCHANGING,
+  REJECTED,
   DONE,
 }
 
 export abstract class Peer<T extends FileStream> {
-  protected node: Libp2p
-
   private streams: T[] = []
-  private state: PeerState = PeerState.AWAITING_CONNECTION
+
+  private state: PeerState = PeerState.CONNECTING_TO_RELAY
+  private errorState: ErrorState | null = null
+
   private stateChangeListeners: ((state: PeerState) => void)[] = []
 
-  protected constructor(node: Libp2p) {
-    this.node = node
-  }
-
   protected addStream(stream: T): void {
-    stream.addStateChangeListener(() => this.recalculateState())
     this.streams.push(stream)
+    stream.addStateChangeListener(() => this.recalculateState())
   }
 
   protected recalculateState(): void {
@@ -54,6 +78,8 @@ export abstract class Peer<T extends FileStream> {
       this.setState(PeerState.AWAITING_APPROVAL)
     } else if (this.streams.some(s => s.getState() === FileStreamState.EXCHANGING)) {
       this.setState(PeerState.EXCHANGING)
+    } else if (this.streams.every(s => s.getState() === FileStreamState.REJECTED)) {
+      this.setState(PeerState.REJECTED)
     } else if (this.streams.every(s => s.getState() === FileStreamState.DONE)) {
       this.setState(PeerState.DONE)
     }
@@ -69,8 +95,28 @@ export abstract class Peer<T extends FileStream> {
     }
   }
 
+  protected setErrorState(errorState: ErrorState): void {
+    this.errorState = errorState
+    this.setState(PeerState.ERROR)
+  }
+
+  async reset(): Promise<void> {
+    await Promise.all(this.streams.map(stream => stream.close()))
+
+    this.streams = []
+    this.setState(PeerState.CONNECTED)
+  }
+
   addStateChangeListener(listener: (state: PeerState) => void): void {
     this.stateChangeListeners.push(listener)
+  }
+
+  removeStateChangeListener(listener: (state: PeerState) => void): void {
+    const index = this.stateChangeListeners.indexOf(listener)
+
+    if (index !== -1) {
+      this.stateChangeListeners.splice(index, 1)
+    }
   }
 
   getStreams(): T[] {
@@ -81,7 +127,7 @@ export abstract class Peer<T extends FileStream> {
     return this.state
   }
 
-  async stop(): Promise<void> {
-    await this.node.stop()
+  getErrorState(): ErrorState | null {
+    return this.errorState
   }
 }

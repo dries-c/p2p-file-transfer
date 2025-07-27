@@ -1,10 +1,9 @@
 import type {JSX} from 'react'
+import type {DeviceType} from '../common/io/peer/RemotePeer.ts'
 
 export interface DeviceIconProps {
-  type: DeviceType
+  type?: DeviceType
 }
-
-export type DeviceType = 'computer' | 'mobile' | 'p2p'
 
 export default function DeviceIcon(props: DeviceIconProps): JSX.Element {
   switch (props.type) {
@@ -30,7 +29,7 @@ export default function DeviceIcon(props: DeviceIconProps): JSX.Element {
           />
         </svg>
       )
-    case 'p2p':
+    default:
       return (
         <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

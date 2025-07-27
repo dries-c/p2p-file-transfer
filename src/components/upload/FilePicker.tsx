@@ -2,10 +2,10 @@ import type React from 'react'
 import {type JSX, useState} from 'react'
 import {formatFileSize} from '../../common/file.ts'
 import DeviceIcon from '../DeviceIcon.tsx'
-import type {Device} from './DeviceSelector.tsx'
+import type {DeviceInformation} from '../../common/io/peer/RemotePeer.ts'
 
 export interface FilePickerProps {
-  selectedDevice: Device
+  selectedDevice: DeviceInformation
   goBack: () => void
   onFilesSelected: (files: File[]) => void
 }
@@ -33,9 +33,7 @@ export default function FilePicker(props: FilePickerProps): JSX.Element {
             </div>
             <div>
               <p className="font-medium text-gray-900">Sending to: {selectedDevice.name}</p>
-              <p className="text-gray-500 text-sm">
-                {selectedDevice.id === 'p2p' ? 'Share via link' : 'Direct transfer'}
-              </p>
+              <p className="text-gray-500 text-sm">Direct transfer</p>
             </div>
           </div>
           <button onClick={() => goBack()} className="font-medium text-blue-600 hover:text-blue-800">
@@ -97,7 +95,7 @@ export default function FilePicker(props: FilePickerProps): JSX.Element {
               onClick={() => props.onFilesSelected(selectedFiles)}
               className="rounded-lg bg-blue-500 px-8 py-3 font-medium text-white transition-colors hover:bg-blue-600"
             >
-              {selectedDevice.id === 'p2p' ? 'Start P2P Transfer' : `Send to ${selectedDevice.name}`}
+              {`Send to ${selectedDevice.name}`}
             </button>
           </div>
         </>

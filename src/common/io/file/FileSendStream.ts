@@ -1,11 +1,10 @@
 import {FileStream, FileStreamState} from './FileStream.ts'
-import type {Duplex} from 'it-stream-types'
-import {lpStream} from 'it-length-prefixed-stream'
 import {getFileInfo} from '../../file.ts'
+import type {Stream} from '@libp2p/interface'
 
 export class FileSendStream extends FileStream {
-  constructor(stream: Duplex<any, any, any>, file: File) {
-    super(lpStream(stream))
+  constructor(stream: Stream, file: File) {
+    super(stream)
 
     getFileInfo(file).then(fileInfo => {
       this.setFileInfo(fileInfo)
@@ -22,7 +21,7 @@ export class FileSendStream extends FileStream {
   }
 
   private async awaitApproval(): Promise<boolean> {
-    const response = await this.lp.read()
+    const response = await this.read()
 
     try {
       return response.get(0) === 1
@@ -47,5 +46,7 @@ export class FileSendStream extends FileStream {
 
       this.stats!.update(value.length)
     }
+
+    await this.close()
   }
 }

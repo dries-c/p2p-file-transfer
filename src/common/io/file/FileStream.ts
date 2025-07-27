@@ -1,6 +1,7 @@
 import type {FileInfo} from '../../file.ts'
-import type {LengthPrefixedStream} from 'it-length-prefixed-stream'
+import {type LengthPrefixedStream, lpStream} from 'it-length-prefixed-stream'
 import {FileStreamStats} from './FileStreamStats.ts'
+import type {Stream} from '@libp2p/interface'
 
 export enum FileStreamState {
   PENDING,
@@ -19,14 +20,23 @@ export abstract class FileStream {
 
   private stateChangeListeners: ((state: FileStreamState) => void)[] = []
 
-  protected constructor(lp: LengthPrefixedStream) {
-    this.lp = lp
+  protected constructor(private readonly stream: Stream) {
+    this.lp = lpStream(stream)
   }
 
   protected setState(state: FileStreamState): void {
     this.state = state
     for (const listener of this.stateChangeListeners) {
       listener(state)
+    }
+  }
+
+  protected async read(): Promise<ReturnType<LengthPrefixedStream['read']>> {
+    try {
+      return await this.lp.read()
+    } catch (error) {
+      this.setState(FileStreamState.REJECTED)
+      throw error
     }
   }
 
@@ -49,5 +59,9 @@ export abstract class FileStream {
 
   getState(): FileStreamState {
     return this.state
+  }
+
+  async close(): Promise<void> {
+    await this.stream.close()
   }
 }

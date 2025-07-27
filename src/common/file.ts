@@ -1,3 +1,5 @@
+import type {FileReceiveStream} from './io/file/FileReceiveStream.ts'
+
 export interface FileInfo {
   name: string
   size: number
@@ -18,6 +20,16 @@ export function formatFileSize(bytes: number): string {
   const sizes = ['Bytes', 'KB', 'MB', 'GB']
   const i = Math.floor(Math.log(bytes) / Math.log(k))
   return `${Number.parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`
+}
+
+export function startDownload(streams: FileReceiveStream[], selectedStreams: FileReceiveStream[]): void {
+  for (const stream of streams) {
+    if (selectedStreams.includes(stream)) {
+      stream.approveFile()
+    } else {
+      stream.rejectFile()
+    }
+  }
 }
 
 export async function saveFile(file: File): Promise<void> {

@@ -1,13 +1,12 @@
 import {FileStream, FileStreamState} from './FileStream.ts'
-import {lpStream} from 'it-length-prefixed-stream'
 import type {FileInfo} from '../../file.ts'
-import type {Duplex} from 'it-stream-types'
+import type {Stream} from '@libp2p/interface'
 
 export class FileReceiveStream extends FileStream {
   private fileReceiveListeners: ((file: File) => void)[] = []
 
-  constructor(stream: Duplex<any, any, any>) {
-    super(lpStream(stream))
+  constructor(stream: Stream) {
+    super(stream)
 
     this.readFileInfo().then((fileInfo: FileInfo) => {
       this.setFileInfo(fileInfo)
@@ -27,10 +26,14 @@ export class FileReceiveStream extends FileStream {
   private async writeApprovalResponse(approved: boolean): Promise<void> {
     this.setState(approved ? FileStreamState.EXCHANGING : FileStreamState.REJECTED)
     await this.lp.write(Uint8Array.of(approved ? 1 : 0))
+
+    if (!approved) {
+      await this.close()
+    }
   }
 
   private async readFileInfo(): Promise<FileInfo> {
-    const req = await this.lp.read()
+    const req = await this.read()
     return JSON.parse(new TextDecoder().decode(req.subarray()))
   }
 
@@ -39,13 +42,15 @@ export class FileReceiveStream extends FileStream {
     let received = 0
 
     while (received < fileInfo.size) {
-      const chunk = await this.lp.read()
+      const chunk = await this.read()
       if (!chunk) break
       chunks.push(chunk.subarray())
       received += chunk.length
 
       this.stats!.update(chunk.length)
     }
+
+    await this.close()
 
     const fileData = new Blob(chunks, {type: fileInfo.type})
     return new File([fileData], fileInfo.name, {type: fileInfo.type})

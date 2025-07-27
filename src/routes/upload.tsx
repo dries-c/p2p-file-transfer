@@ -1,107 +1,146 @@
-import {type JSX, useEffect, useState} from 'react'
-import {SenderPeer} from '../common/io/peer/SenderPeer.ts'
-import {multiaddr} from '@multiformats/multiaddr'
+import {type JSX, useEffect, useMemo, useState} from 'react'
+import {TransceiverPeer} from '../common/io/peer/TransceiverPeer.ts'
 import {PeerState} from '../common/io/peer/Peer.ts'
 import FilePicker from '../components/upload/FilePicker.tsx'
-import DeviceSelector, {type Device} from '../components/upload/DeviceSelector.tsx'
+import PeerSelector from '../components/upload/DeviceSelector.tsx'
 import FileStreamProgress from '../components/download/FileStreamProgress.tsx'
 import type {FileSendStream} from '../common/io/file/FileSendStream.ts'
 import P2PLink from '../components/upload/P2PLink.tsx'
+import type {PeerId} from '@libp2p/interface'
+import type {DeviceInformation, RemotePeer} from '../common/io/peer/RemotePeer.ts'
+import WaitingScreen from '../components/WaitingScreen.tsx'
+import SuccessScreen from '../components/SuccessScreen.tsx'
+import DownloadHandler from '../components/DownloadHandler.tsx'
+import ErrorScreen from '../components/ErrorScreen.tsx'
 
 export default function UploadPage(): JSX.Element {
-  const [peer, setPeer] = useState<SenderPeer | null>(null)
-  const [peerState, setPeerState] = useState<PeerState>(PeerState.AWAITING_CONNECTION)
-  const [selectedStreams, setSelectedStreams] = useState<FileSendStream[]>([])
-  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
-  const [selectedDevice, setSelectedDevice] = useState<Device | null>(null)
+  const [transceiver, setTransceiver] = useState<TransceiverPeer | null>(null)
+  const [sendState, setSendState] = useState<PeerState>(PeerState.CONNECTING_TO_RELAY)
 
-  function resetUpload(): void {
-    peer?.stop()
+  const [selectedSendStreams, setSelectedSendStreams] = useState<FileSendStream[]>([])
 
-    setSelectedStreams([])
-    setSelectedFiles([])
-    setSelectedDevice(null)
-    setPeer(null)
-    setPeerState(PeerState.AWAITING_CONNECTION)
-  }
+  const [peers, setPeers] = useState<DeviceInformation[]>([])
+  const [selectedPeer, setSelectedPeer] = useState<RemotePeer | null>(null)
+
+  const peerId = useMemo(() => transceiver?.getPeerId(), [transceiver])
 
   useEffect(() => {
-    if (peerState === PeerState.CONNECTED && selectedFiles.length > 0) {
-      for (const file of selectedFiles) {
-        peer?.sendFile(file).then(stream => {
-          setSelectedStreams(prev => [...prev, stream])
-        })
+    TransceiverPeer.setupTransceiver().then(setTransceiver)
+  }, [])
+
+  useEffect(() => {
+    if (transceiver) {
+      transceiver.getDeviceManager().addPeerConnectListener(onPeerConnect)
+    }
+  }, [transceiver, onPeerConnect])
+
+  function onPeerConnect(peer: RemotePeer): void {
+    setPeers(peers => [...peers, peer.getDeviceInformation()])
+
+    peer.addChangeListener(() =>
+      setPeers(peers => peers.map(p => (p.peerId.equals(peer.getPeerId()) ? peer.getDeviceInformation() : p))),
+    )
+    peer.addStateChangeListener((state: PeerState) => onStateUpdate(peer.getPeerId(), state))
+    peer.addCloseListener(() => setPeers(peers => peers.filter(p => !p.peerId.equals(peer.getPeerId()))))
+  }
+
+  function onStateUpdate(peerId: PeerId, newState: PeerState): void {
+    setSelectedPeer(peer => {
+      if (peerId.equals(peer?.getPeerId())) {
+        setSendState(newState)
       }
 
-      setSelectedFiles([])
-    }
-  }, [selectedFiles, peerState, peer?.sendFile])
+      return peer
+    })
+  }
+
+  async function resetUpload(): Promise<void> {
+    selectedPeer?.reset()
+
+    setSelectedPeer(null)
+    setSelectedSendStreams([])
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
       <div className="mx-auto max-w-4xl">
         <div className="rounded-xl border bg-white p-6 shadow-sm">
-          {selectedDevice ? (
-            peerState === PeerState.EXCHANGING ? (
-              <div>
-                <h3 className="mb-6 font-medium text-gray-900 text-xl">Uploading Files</h3>
-                <div className="space-y-4">
-                  {selectedStreams.map((stream, index) => (
-                    <FileStreamProgress key={index} stream={stream} />
-                  ))}
-                </div>
-              </div>
-            ) : peerState === PeerState.DONE ? (
-              <div className="py-12 text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                  <svg className="h-8 w-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="mb-2 font-medium text-gray-900 text-xl">Transfer Complete!</h3>
-                <p className="mb-6 text-gray-600">All files have been successfully uploaded.</p>
+          {selectedPeer ? (
+            sendState === PeerState.ERROR ? (
+              <ErrorScreen errorState={selectedPeer.getErrorState()!}>
                 <button
                   onClick={resetUpload}
                   className="rounded-lg bg-blue-500 px-6 py-2 text-white transition-colors hover:bg-blue-600"
                 >
-                  Send More Files
+                  Try Again
                 </button>
-              </div>
-            ) : peerState === PeerState.AWAITING_CONNECTION && selectedFiles.length > 0 ? (
-              <P2PLink connectionAddress={peer?.getConnectionAddress().toString()} />
-            ) : peerState === PeerState.AWAITING_APPROVAL ? (
-              <div className="py-12 text-center">
-                <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
-                <h3 className="mb-2 font-medium text-gray-900 text-xl">
-                  Waiting for the device to accept the transfer
-                </h3>
-                <p className="text-gray-600">Please check the receiving device to approve the file transfer.</p>
-              </div>
+              </ErrorScreen>
+            ) : selectedSendStreams.length > 0 ? (
+              sendState === PeerState.AWAITING_APPROVAL ? (
+                <WaitingScreen
+                  title="Waiting for the device to accept the transfer"
+                  description="Please check the receiving device to approve the file transfer."
+                />
+              ) : sendState === PeerState.REJECTED ? (
+                <ErrorScreen
+                  title="Transfer Rejected"
+                  description="The receiving device rejected the file transfer. You can try sending again."
+                >
+                  <button
+                    onClick={resetUpload}
+                    className="rounded-lg bg-blue-500 px-6 py-2 text-white transition-colors hover:bg-blue-600"
+                  >
+                    Try Again
+                  </button>
+                </ErrorScreen>
+              ) : sendState === PeerState.EXCHANGING ? (
+                <div>
+                  <h3 className="mb-6 font-medium text-gray-900 text-xl">Uploading Files</h3>
+                  <div className="space-y-4">
+                    {selectedSendStreams.map((stream, index) => (
+                      <FileStreamProgress key={index} stream={stream} />
+                    ))}
+                  </div>
+                </div>
+              ) : sendState === PeerState.DONE ? (
+                <SuccessScreen title="Transfer Complete!" description="All files have been successfully uploaded.">
+                  <button
+                    onClick={resetUpload}
+                    className="rounded-lg bg-blue-500 px-6 py-2 text-white transition-colors hover:bg-blue-600"
+                  >
+                    Send More Files
+                  </button>
+                </SuccessScreen>
+              ) : null
             ) : (
               <FilePicker
-                selectedDevice={selectedDevice}
-                goBack={() => setSelectedDevice(null)}
-                onFilesSelected={setSelectedFiles}
+                selectedDevice={selectedPeer.getDeviceInformation()}
+                goBack={() => setSelectedPeer(null)}
+                onFilesSelected={(files: File[]) =>
+                  Promise.all(files.map(file => selectedPeer!.sendFile(file))).then(setSelectedSendStreams)
+                }
               />
             )
           ) : (
-            <DeviceSelector
-              localDevices={[]}
-              onSelect={device => {
-                setSelectedDevice(device)
+            <DownloadHandler
+              receiverPeer={transceiver}
+              connectedState={
+                <>
+                  <PeerSelector
+                    peers={peers}
+                    onSelect={(peer: DeviceInformation) => {
+                      const remotePeer = transceiver?.getDeviceManager().getPeer(peer.peerId)
+                      if (remotePeer) {
+                        setSelectedPeer(remotePeer)
+                      }
+                    }}
+                  />
 
-                if (device.id === 'p2p') {
-                  SenderPeer.setupSender(
-                    multiaddr('/ip4/127.0.0.1/tcp/55967/ws/p2p/12D3KooWJWMgXf5ZewEAjNUzWoJjxKzL66NrzTzyGop8gYnuSGKY'),
-                  ).then(sender => {
-                    if (sender) {
-                      //todo: error handling
-                      setPeer(sender)
-                      sender.addStateChangeListener(setPeerState)
-                    }
-                  })
-                }
-              }}
+                  <div className="mt-4">
+                    <P2PLink peerId={peerId?.toString()} />
+                  </div>
+                </>
+              }
             />
           )}
         </div>
