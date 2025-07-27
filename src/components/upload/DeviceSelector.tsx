@@ -3,14 +3,19 @@ import DeviceIcon from '../DeviceIcon.tsx'
 import type {DeviceInformation} from '../../common/io/peer/RemotePeer.ts'
 
 export interface DeviceSelectorProps {
+  title: string
   peers: DeviceInformation[]
   onSelect: (peer: DeviceInformation) => void
 }
 
 export default function DeviceSelector(props: DeviceSelectorProps): JSX.Element {
+  if (props.peers.length === 0) {
+    return <></>
+  }
+
   return (
-    <div>
-      <h3 className="mb-4 font-medium text-gray-900 text-lg">Select Destination</h3>
+    <div className="mb-8">
+      <h3 className="mb-4 font-medium text-gray-900 text-lg">{props.title}</h3>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {props.peers.map(peer => {
           return (

@@ -1,5 +1,6 @@
 import type {JSX} from 'react'
 import {ErrorState} from '../common/io/peer/Peer.ts'
+import {ExclamationCircleIcon} from '@heroicons/react/24/outline'
 
 export interface ErrorScreenProps {
   title?: string
@@ -40,14 +41,7 @@ export default function ErrorScreen(props: ErrorScreenProps): JSX.Element {
   return (
     <div className="py-12 text-center">
       <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
-        <svg className="h-8 w-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 9v2m0 4h.01M12 17a5 5 0 100-10 5 5 0 000 10z"
-          />
-        </svg>
+        <ExclamationCircleIcon className="h-8 w-8 text-red-500" aria-hidden="true" />
       </div>
       <h3 className="mb-2 font-medium text-gray-900 text-xl">{title}</h3>
       <p className="mb-6 text-gray-600">{description}</p>

@@ -32,7 +32,7 @@ export default function UploadPage(): JSX.Element {
     if (transceiver) {
       transceiver.getDeviceManager().addPeerConnectListener(onPeerConnect)
     }
-  }, [transceiver, onPeerConnect])
+  }, [transceiver])
 
   function onPeerConnect(peer: RemotePeer): void {
     setPeers(peers => [...peers, peer.getDeviceInformation()])
@@ -126,8 +126,18 @@ export default function UploadPage(): JSX.Element {
               receiverPeer={transceiver}
               connectedState={
                 <>
+                  <h1 className="mb-6 font-bold text-2xl text-gray-900">Send Files</h1>
+
+                  {peers.length === 0 && (
+                    <WaitingScreen
+                      title="No Devices Found"
+                      description="Please ensure that other devices are connected to the same network and on the same page or scan the QR code below to connect."
+                    />
+                  )}
+
                   <PeerSelector
-                    peers={peers}
+                    title="Local Devices"
+                    peers={peers.filter(p => p.origin === 'local')}
                     onSelect={(peer: DeviceInformation) => {
                       const remotePeer = transceiver?.getDeviceManager().getPeer(peer.peerId)
                       if (remotePeer) {
@@ -136,7 +146,18 @@ export default function UploadPage(): JSX.Element {
                     }}
                   />
 
-                  <div className="mt-4">
+                  <PeerSelector
+                    title="Remote Devices"
+                    peers={peers.filter(p => p.origin === 'remote')}
+                    onSelect={(peer: DeviceInformation) => {
+                      const remotePeer = transceiver?.getDeviceManager().getPeer(peer.peerId)
+                      if (remotePeer) {
+                        setSelectedPeer(remotePeer)
+                      }
+                    }}
+                  />
+
+                  <div className="border-gray-200 border-t pt-6">
                     <P2PLink peerId={peerId?.toString()} />
                   </div>
                 </>
@@ -145,6 +166,19 @@ export default function UploadPage(): JSX.Element {
           )}
         </div>
       </div>
+
+      <footer className="mt-5 text-center">
+        <div className="flex items-center justify-center space-x-2 text-gray-500 text-sm">
+          <a
+            href="https://github.com/dries-c/p2p-file-transfer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 hover:text-gray-700 transition-colors"
+          >
+            <img src="/github.svg" alt="GitHub" className="h-5 w-5" />
+          </a>
+        </div>
+      </footer>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import {lpStream} from 'it-length-prefixed-stream'
 
 export class DeviceManager {
   private peers: Map<string, RemotePeer> = new Map()
+  private localPeerIds: string[] = []
   private peerConnectListeners: ((peer: RemotePeer) => void)[] = []
 
   constructor(transceiver: TransceiverPeer, node: Libp2p) {
@@ -21,8 +22,12 @@ export class DeviceManager {
 
         const peerId = new TextDecoder().decode(req.subarray())
 
-        const connection = await node.dial(getRelayPeerAddress(peerId))
-        await transceiver.sendDeviceInformation(connection)
+        if (!this.localPeerIds.includes(peerId)) {
+          this.localPeerIds.push(peerId)
+
+          const connection = await node.dial(getRelayPeerAddress(peerId))
+          await transceiver.sendDeviceInformation(connection)
+        }
       }
     })
 
@@ -34,7 +39,10 @@ export class DeviceManager {
         if (remotePeer) {
           remotePeer.setConnection(event.detail)
         } else {
-          const remotePeer = new RemotePeer(event.detail)
+          const remotePeer = new RemotePeer(
+            event.detail,
+            this.localPeerIds.includes(event.detail.remotePeer.toString()),
+          )
           this.peers.set(peerId, remotePeer)
 
           this.onPeerConnect(remotePeer)
@@ -51,6 +59,8 @@ export class DeviceManager {
 
         if (connections.length === 0) {
           peer.onConnectionClose(event)
+
+          this.localPeerIds.splice(this.localPeerIds.indexOf(peerId.toString()), 1)
           this.peers.delete(peerId.toString())
         }
       }

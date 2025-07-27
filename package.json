@@ -16,20 +16,14 @@
     "@chainsafe/libp2p-noise": "16.1.4",
     "@chainsafe/libp2p-yamux": "7.0.4",
     "@cloudflare/vite-plugin": "1.10.1",
-    "@headlessui/react": "2.2.6",
     "@heroicons/react": "2.2.0",
-    "@libp2p/autonat-v2": "1.0.0",
     "@libp2p/circuit-relay-v2": "3.2.23",
-    "@libp2p/crypto": "^5.1.7",
     "@libp2p/identify": "3.0.38",
-    "@libp2p/peer-id": "^5.1.8",
+    "@libp2p/peer-id": "5.1.8",
     "@libp2p/webrtc": "5.2.23",
     "@libp2p/websockets": "9.2.18",
     "@multiformats/multiaddr": "12.5.1",
     "@multiformats/multiaddr-matcher": "2.0.2",
-    "@sentry/react-router": "9.42.0",
-    "accept-language-parser": "1.5.0",
-    "isbot": "5.1.28",
     "it-length-prefixed-stream": "2.0.3",
     "libp2p": "2.9.0",
     "qrcode.react": "4.2.0",
@@ -38,7 +32,7 @@
     "react-localization": "2.0.6",
     "react-router": "7.7.1",
     "react-toastify": "11.0.5",
-    "ua-parser-js": "^2.0.4",
+    "ua-parser-js": "2.0.4",
     "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
@@ -53,7 +47,6 @@
     "tailwindcss": "4.1.11",
     "typescript": "5.8.3",
     "vite": "7.0.6",
-    "vite-tsconfig-paths": "5.1.4",
     "wrangler": "4.26.0"
   },
   "engines": {

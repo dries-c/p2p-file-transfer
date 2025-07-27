@@ -7,6 +7,7 @@ export type DeviceType = 'computer' | 'mobile'
 
 export interface DeviceInformation {
   peerId: PeerId
+  origin: 'local' | 'remote'
   name?: string
   type?: DeviceType
 }
@@ -18,10 +19,10 @@ export class RemotePeer extends Peer<FileSendStream> {
   private connection: Connection
   private deviceInformation: DeviceInformation
 
-  constructor(connection: Connection) {
+  constructor(connection: Connection, isLocal = false) {
     super()
     this.connection = connection
-    this.deviceInformation = {peerId: connection.remotePeer}
+    this.deviceInformation = {peerId: connection.remotePeer, origin: isLocal ? 'local' : 'remote'}
   }
 
   addCloseListener(listener: () => void): void {
@@ -36,8 +37,10 @@ export class RemotePeer extends Peer<FileSendStream> {
     const lp = lpStream(data.stream)
     const req = await lp.read()
 
+    const origin = this.deviceInformation.origin
     this.deviceInformation = JSON.parse(new TextDecoder().decode(req.subarray())) as DeviceInformation
     this.deviceInformation.peerId = this.connection.remotePeer
+    this.deviceInformation.origin = origin
 
     this.onChange()
   }

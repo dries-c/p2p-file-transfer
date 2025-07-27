@@ -1,9 +1,12 @@
-name = "website"
+name = "p2p-file-transfer"
 compatibility_date = "2025-04-04"
 main = "./workers/index.ts"
 
-[assets]
-not_found_handling = "single-page-application"
+routes = [
+  { pattern = "p2p.driesc.be", custom_domain = true },
+]
+
+assets = { not_found_handling = "single-page-application" }
 
 [observability.logs]
 enabled = true

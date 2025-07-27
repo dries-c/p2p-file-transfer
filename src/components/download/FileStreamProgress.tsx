@@ -60,7 +60,7 @@ export default function FileStreamProgress({stream}: FileStreamProgressProps): J
   return (
     <div className="rounded-lg border border-gray-200 p-4">
       <div className="mb-2 flex items-center justify-between">
-        <span className="font-medium text-gray-900">{stream.getFileInfo()?.name}</span>
+        <span className="font-medium text-gray-900 overflow-ellipsis">{stream.getFileInfo()?.name}</span>
         <span className="text-gray-500 text-sm">{stats?.percentComplete}%</span>
       </div>
 

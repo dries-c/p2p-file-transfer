@@ -13,3 +13,5 @@ node_modules
 /functions
 /public/build
 .dev.vars
+/relay/dist/
+/dist/

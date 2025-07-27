@@ -4,7 +4,7 @@ import {getRelayPeerAddress} from '../common/io/peer/Peer.ts'
 import DownloadHandler from '../components/DownloadHandler.tsx'
 
 export default function DownloadPage() {
-  const peerId = useMemo(() => new URLSearchParams(window.location.search).get('addr'), [])
+  const peerId = useMemo(() => new URLSearchParams(window.location.search).get('peerId'), [])
   const [receiverPeer, setReceiverPeer] = useState<ReceiverPeer | null>(null)
 
   useEffect(() => {

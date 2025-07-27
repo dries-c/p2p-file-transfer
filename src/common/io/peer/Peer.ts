@@ -11,8 +11,9 @@ import {type Multiaddr, multiaddr} from '@multiformats/multiaddr'
 export const FILE_TRANSFER_PROTOCOL = '/p2p-file-transfer/file-transfer/1.0.0'
 export const LOCAL_DISCOVERY_PROTOCOL = '/p2p-file-transfer/local-discovery/1.0.0'
 export const DEVICE_INFORMATION_PROTOCOL = '/p2p-file-transfer/device-information/1.0.0'
+//export const RELAY_ADDRESS = multiaddr('/dnsaddr/relay.driesc.be') for some reason doesn't work
 export const RELAY_ADDRESS = multiaddr(
-  '/ip4/10.246.33.236/tcp/56492/ws/p2p/12D3KooWJYRUBsDHgxEBsY41DrXjzW5v1wARwouNHP5JaqRtzqLW',
+  '/dns/relay.driesc.be/tcp/5000/wss/p2p/12D3KooWSibDjAgSue7PTiDbXSiTLMHzQWdUGWZK4vCtdZDggyNN',
 )
 
 export function getRelayPeerAddress(peerId: string): Multiaddr {

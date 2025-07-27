@@ -3,6 +3,7 @@ import {type JSX, useState} from 'react'
 import {formatFileSize} from '../../common/file.ts'
 import DeviceIcon from '../DeviceIcon.tsx'
 import type {DeviceInformation} from '../../common/io/peer/RemotePeer.ts'
+import {CloudArrowUpIcon, DocumentTextIcon} from '@heroicons/react/24/outline'
 
 export interface FilePickerProps {
   selectedDevice: DeviceInformation
@@ -48,14 +49,7 @@ export default function FilePicker(props: FilePickerProps): JSX.Element {
         <div className="rounded-lg border-2 border-gray-300 border-dashed p-8 text-center transition-colors hover:border-gray-400">
           <input type="file" multiple onChange={handleFileSelect} className="hidden" id="file-input" />
           <label htmlFor="file-input" className="cursor-pointer">
-            <svg className="mx-auto mb-4 h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-              />
-            </svg>
+            <CloudArrowUpIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" aria-hidden="true" />
             <p className="mb-2 font-medium text-gray-900 text-lg">Click to select files</p>
             <p className="text-gray-500">or drag and drop files here</p>
           </label>
@@ -71,16 +65,9 @@ export default function FilePicker(props: FilePickerProps): JSX.Element {
               {selectedFiles.map((file, index) => (
                 <div key={index} className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
                   <div className="flex items-center space-x-3">
-                    <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
+                    <DocumentTextIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                     <div>
-                      <p className="font-medium text-gray-900">{file.name}</p>
+                      <p className="font-medium text-gray-900 overflow-ellipsis">{file.name}</p>
                       <p className="text-gray-500 text-sm">{formatFileSize(file.size)}</p>
                     </div>
                   </div>
