@@ -25,7 +25,7 @@ export class FileReceiveStream extends FileStream {
 
   private async writeApprovalResponse(approved: boolean): Promise<void> {
     this.setState(approved ? FileStreamState.EXCHANGING : FileStreamState.REJECTED)
-    await this.lp.write(Uint8Array.of(approved ? 1 : 0))
+    await this.write(Uint8Array.of(approved ? 1 : 0))
 
     if (!approved) {
       await this.close()

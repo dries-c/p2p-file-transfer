@@ -28,6 +28,10 @@ export default function ErrorScreen(props: ErrorScreenProps): JSX.Element {
       description =
         'Unable to connect to the peer. This may be due to network issues or the peer being offline. Please check your connection and try again.'
       break
+    case ErrorState.CONNECTION_CLOSED:
+      title = 'Connection Closed'
+      description = 'The connection was closed unexpectedly. Please try reconnecting.'
+      break
     case ErrorState.UNKNOWN:
       title = 'Unknown error'
       description = 'An unexpected error occurred. Please try again later.'

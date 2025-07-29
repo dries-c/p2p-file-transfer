@@ -31,7 +31,7 @@ export class FileSendStream extends FileStream {
   }
 
   private async sendFileInfo(): Promise<void> {
-    await this.lp.write(new TextEncoder().encode(JSON.stringify(this.getFileInfo()!)))
+    await this.write(new TextEncoder().encode(JSON.stringify(this.getFileInfo()!)))
   }
 
   private async sendFileData(file: File): Promise<void> {
@@ -42,7 +42,7 @@ export class FileSendStream extends FileStream {
       const {done, value} = await reader.read()
       if (done) break
 
-      await this.lp.write(value)
+      await this.write(value)
 
       this.stats!.update(value.length)
     }

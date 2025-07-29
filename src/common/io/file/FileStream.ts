@@ -9,6 +9,7 @@ export enum FileStreamState {
   EXCHANGING,
   REJECTED,
   DONE,
+  CLOSED,
 }
 
 export abstract class FileStream {
@@ -35,7 +36,16 @@ export abstract class FileStream {
     try {
       return await this.lp.read()
     } catch (error) {
-      this.setState(FileStreamState.REJECTED)
+      this.setState(FileStreamState.CLOSED)
+      throw error
+    }
+  }
+
+  protected async write(data: Uint8Array): Promise<void> {
+    try {
+      await this.lp.write(data)
+    } catch (error) {
+      this.setState(FileStreamState.CLOSED)
       throw error
     }
   }

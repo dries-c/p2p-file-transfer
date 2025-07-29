@@ -47,6 +47,7 @@ export enum ErrorState {
   RELAY_UNREACHABLE,
   PEER_UNREACHABLE,
   NO_WEBRTC_MULTIADDR,
+  CONNECTION_CLOSED,
 }
 
 export enum PeerState {
@@ -79,6 +80,8 @@ export abstract class Peer<T extends FileStream> {
       this.setState(PeerState.AWAITING_APPROVAL)
     } else if (this.streams.some(s => s.getState() === FileStreamState.EXCHANGING)) {
       this.setState(PeerState.EXCHANGING)
+    } else if (this.streams.every(s => s.getState() === FileStreamState.CLOSED)) {
+      this.setErrorState(ErrorState.CONNECTION_CLOSED)
     } else if (this.streams.every(s => s.getState() === FileStreamState.REJECTED)) {
       this.setState(PeerState.REJECTED)
     } else if (this.streams.every(s => s.getState() === FileStreamState.DONE)) {
