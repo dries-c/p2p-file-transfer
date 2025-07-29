@@ -6,7 +6,7 @@ import {createLibp2p} from 'libp2p'
 import {yamux} from '@chainsafe/libp2p-yamux'
 import {LocalDiscovery} from './localDiscovery.js'
 import {getPrivateKey} from './crypto.js'
-import * as fs from "node:fs";
+import * as fs from 'node:fs'
 
 async function startRelay() {
   const node = await createLibp2p({

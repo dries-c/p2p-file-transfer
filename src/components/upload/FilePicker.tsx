@@ -1,9 +1,9 @@
-import type React from 'react'
 import {type JSX, useState} from 'react'
 import {formatFileSize} from '../../common/file.ts'
 import DeviceIcon from '../DeviceIcon.tsx'
 import type {DeviceInformation} from '../../common/io/peer/RemotePeer.ts'
 import {CloudArrowUpIcon, DocumentTextIcon} from '@heroicons/react/24/outline'
+import {useDropzone} from 'react-dropzone'
 
 export interface FilePickerProps {
   selectedDevice: DeviceInformation
@@ -15,13 +15,10 @@ export default function FilePicker(props: FilePickerProps): JSX.Element {
   const {selectedDevice, goBack} = props
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
 
-  function handleFileSelect(event: React.ChangeEvent<HTMLInputElement>): void {
-    const files = event.target.files
-
-    if (files) {
-      setSelectedFiles(Array.from(files))
-    }
+  const onDrop = (acceptedFiles: File[]) => {
+    setSelectedFiles(acceptedFiles)
   }
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
     <>
@@ -46,13 +43,16 @@ export default function FilePicker(props: FilePickerProps): JSX.Element {
       {/* File Selection */}
       <div className="mb-8">
         <label className="mb-2 block font-medium text-gray-700 text-sm">Select Files to Send</label>
-        <div className="rounded-lg border-2 border-gray-300 border-dashed p-8 text-center transition-colors hover:border-gray-400">
-          <input type="file" multiple onChange={handleFileSelect} className="hidden" id="file-input" />
-          <label htmlFor="file-input" className="cursor-pointer">
-            <CloudArrowUpIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" aria-hidden="true" />
-            <p className="mb-2 font-medium text-gray-900 text-lg">Click to select files</p>
-            <p className="text-gray-500">or drag and drop files here</p>
-          </label>
+        <div
+          {...getRootProps()}
+          className={`rounded-lg border-2 border-gray-300 border-dashed p-8 text-center transition-colors hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            isDragActive ? 'border-blue-400 bg-blue-50' : ''
+          }`}
+        >
+          <input {...getInputProps()} />
+          <CloudArrowUpIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" aria-hidden="true" />
+          <p className="mb-2 font-medium text-gray-900 text-lg">Click to select files</p>
+          <p className="text-gray-500">or drag and drop files here</p>
         </div>
       </div>
 
