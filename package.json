@@ -48,7 +48,7 @@
     "tailwindcss": "4.1.11",
     "typescript": "5.9.2",
     "vite": "7.0.6",
-    "wrangler": "4.26.1"
+    "wrangler": "4.27.0"
   },
   "engines": {
     "node": ">=18"
