@@ -38,13 +38,13 @@ export class FileReceiveStream extends FileStream {
   }
 
   private async readFileData(fileInfo: FileInfo): Promise<File> {
-    const chunks: Uint8Array[] = []
+    const chunks: BlobPart[] = []
     let received = 0
 
     while (received < fileInfo.size) {
       const chunk = await this.read()
       if (!chunk) break
-      chunks.push(chunk.subarray())
+      chunks.push(chunk.subarray() as BlobPart)
       received += chunk.length
 
       this.stats!.update(chunk.length)

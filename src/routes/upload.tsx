@@ -12,17 +12,20 @@ import WaitingScreen from '../components/WaitingScreen.tsx'
 import SuccessScreen from '../components/SuccessScreen.tsx'
 import DownloadHandler from '../components/DownloadHandler.tsx'
 import ErrorScreen from '../components/ErrorScreen.tsx'
+import {useWakeLock} from 'react-screen-wake-lock'
 
 export default function UploadPage(): JSX.Element {
   const [transceiver, setTransceiver] = useState<TransceiverPeer | null>(null)
   const [sendState, setSendState] = useState<PeerState>(PeerState.CONNECTING_TO_RELAY)
 
   const [selectedSendStreams, setSelectedSendStreams] = useState<FileSendStream[]>([])
+  const [isNoSleepEnabled, setIsNoSleepEnabled] = useState(false)
 
   const [peers, setPeers] = useState<DeviceInformation[]>([])
   const [selectedPeer, setSelectedPeer] = useState<RemotePeer | null>(null)
 
   const peerId = useMemo(() => transceiver?.getPeerId(), [transceiver])
+  const {isSupported, request, release} = useWakeLock()
 
   useEffect(() => {
     TransceiverPeer.setupTransceiver().then(setTransceiver)
@@ -33,6 +36,20 @@ export default function UploadPage(): JSX.Element {
       transceiver.getDeviceManager().addPeerConnectListener(onPeerConnect)
     }
   }, [transceiver])
+
+  useEffect(() => {
+    if (isSupported) {
+      if (sendState === PeerState.EXCHANGING) {
+        if (!isNoSleepEnabled) {
+          setIsNoSleepEnabled(true)
+          request()
+        }
+      } else if (isNoSleepEnabled) {
+        setIsNoSleepEnabled(false)
+        release()
+      }
+    }
+  }, [sendState])
 
   function onPeerConnect(peer: RemotePeer): void {
     setPeers(peers => [...peers, peer.getDeviceInformation()])

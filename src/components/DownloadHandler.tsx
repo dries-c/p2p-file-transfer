@@ -8,6 +8,7 @@ import type {ReceiverPeer} from '../common/io/peer/ReceiverPeer.ts'
 import type {FileReceiveStream} from '../common/io/file/FileReceiveStream.ts'
 import SuccessScreen from './SuccessScreen.tsx'
 import ErrorScreen from './ErrorScreen.tsx'
+import {useWakeLock} from 'react-screen-wake-lock'
 
 export interface DownloadHandlerProps {
   receiverPeer: ReceiverPeer | null
@@ -15,9 +16,12 @@ export interface DownloadHandlerProps {
 }
 
 export default function DownloadHandler(props: DownloadHandlerProps): JSX.Element {
+  const {isSupported, request, release} = useWakeLock()
+
   const [streams, setStreams] = useState<FileReceiveStream[]>([])
   const [selectedStreams, setSelectedStreams] = useState<FileReceiveStream[]>([])
   const [peerState, setPeerState] = useState<PeerState>(props.receiverPeer?.getState() ?? PeerState.CONNECTING_TO_RELAY)
+  const [isNoSleepEnabled, setIsNoSleepEnabled] = useState(false)
 
   useEffect(() => {
     if (props.receiverPeer) {
@@ -40,6 +44,20 @@ export default function DownloadHandler(props: DownloadHandlerProps): JSX.Elemen
       stream.addFileReceiveListener(saveFile)
     }
   }, [selectedStreams])
+
+  useEffect(() => {
+    if (isSupported) {
+      if (peerState === PeerState.EXCHANGING) {
+        if (!isNoSleepEnabled) {
+          setIsNoSleepEnabled(true)
+          request()
+        }
+      } else if (isNoSleepEnabled) {
+        setIsNoSleepEnabled(false)
+        release()
+      }
+    }
+  }, [peerState])
 
   async function resetDownload(): Promise<void> {
     setStreams([])
