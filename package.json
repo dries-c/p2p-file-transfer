@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
-    "@cloudflare/workers-types": "4.20250816.0",
+    "@cloudflare/workers-types": "4.20250819.0",
     "@libp2p/interface": "2.10.5",
     "@tailwindcss/vite": "4.1.12",
     "@types/node": "24.3.0",
