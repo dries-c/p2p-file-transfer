@@ -21,7 +21,7 @@
     "@libp2p/identify": "3.0.39",
     "@libp2p/peer-id": "5.1.9",
     "@libp2p/webrtc": "5.2.24",
-    "@libp2p/websockets": "9.2.18",
+    "@libp2p/websockets": "9.2.19",
     "@multiformats/multiaddr": "12.5.1",
     "@multiformats/multiaddr-matcher": "2.0.2",
     "it-length-prefixed-stream": "2.0.3",
