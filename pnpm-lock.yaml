@@ -33,8 +33,8 @@ importers:
         specifier: 5.2.24
         version: 5.2.24(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.10)(react@19.1.1))
       '@libp2p/websockets':
-        specifier: 9.2.18
-        version: 9.2.18
+        specifier: 9.2.19
+        version: 9.2.19
       '@multiformats/multiaddr':
         specifier: 12.5.1
         version: 12.5.1
@@ -953,8 +953,8 @@ packages:
   '@libp2p/webrtc@5.2.24':
     resolution: {integrity: sha512-0Ne/GDR0FBnKQ/KpJDdQ0Ohii1jyhSCJvbKRxLISm8XItCuJtE1WA2awiWZddZwp2lPDPh9iQmFaYUvv8Zel2w==}
 
-  '@libp2p/websockets@9.2.18':
-    resolution: {integrity: sha512-P27ZMv5TuKZDr8nfvVOExaDxBMCwvGLaPxbK3qMC8WiaFBuR5Z38X/HpnTFI5wog8LcKCRD+gFzRZWd/9nEVZw==}
+  '@libp2p/websockets@9.2.19':
+    resolution: {integrity: sha512-+g2qI9Lgvyofoc6GFztPoPVZV+z/lg9pIUfneHht6j88Y7tH3NrAQ7Ki+9lqS5XBX2h1O1bHULWbCaVYCj9TZg==}
 
   '@mjackson/node-fetch-server@0.6.1':
     resolution: {integrity: sha512-9ZJnk/DJjt805uv5PPv11haJIW+HHf3YEEyVXv+8iLQxLD/iXA68FH220XoiTPBC4gCg5q+IMadDw8qPqlA5wg==}
@@ -4115,10 +4115,10 @@ snapshots:
       - react-native
       - supports-color
 
-  '@libp2p/websockets@9.2.18':
+  '@libp2p/websockets@9.2.19':
     dependencies:
-      '@libp2p/interface': 2.10.5
-      '@libp2p/utils': 6.7.1
+      '@libp2p/interface': 2.11.0
+      '@libp2p/utils': 6.7.2
       '@multiformats/multiaddr': 12.5.1
       '@multiformats/multiaddr-matcher': 2.0.2
       '@multiformats/multiaddr-to-uri': 11.0.2
