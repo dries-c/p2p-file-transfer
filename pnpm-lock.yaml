@@ -30,8 +30,8 @@ importers:
         specifier: 5.1.9
         version: 5.1.9
       '@libp2p/webrtc':
-        specifier: 5.2.23
-        version: 5.2.23(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.10)(react@19.1.1))
+        specifier: 5.2.24
+        version: 5.2.24(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.10)(react@19.1.1))
       '@libp2p/websockets':
         specifier: 9.2.18
         version: 9.2.18
@@ -914,8 +914,8 @@ packages:
   '@libp2p/interface@2.11.0':
     resolution: {integrity: sha512-0MUFKoXWHTQW3oWIgSHApmYMUKWO/Y02+7Hpyp+n3z+geD4Xo2Rku2gYWmxcq+Pyjkz6Q9YjDWz3Yb2SoV2E8Q==}
 
-  '@libp2p/keychain@5.2.8':
-    resolution: {integrity: sha512-NIM4mNVO8dlgKEIMKn/p3Yens+qdIr4dRWFRunGD3Y1FouTyyQtkRKzYjS+ek4uAyvZovO7eDYa+2BVW7xSgrQ==}
+  '@libp2p/keychain@5.2.9':
+    resolution: {integrity: sha512-BgZKMqQCu3Xzd7YFIdwWqG2xXtvsO6RVHJKS8VOw6Dg5tuPAWcQhs0T84TZ5PCg5r6NNBwwI8fWdZGVtu/pPfQ==}
 
   '@libp2p/logger@5.1.21':
     resolution: {integrity: sha512-V1TWlZM5BuKkiGQ7En4qOnseVP82JwDIpIfNjceUZz1ArL32A5HXJjLQnJchkZ3VW8PVciJzUos/vP6slhPY6Q==}
@@ -950,8 +950,8 @@ packages:
   '@libp2p/utils@6.7.2':
     resolution: {integrity: sha512-yglVPcYErb4al3MMTdedVLLsdUvr5KaqrrxohxTl/FXMFBvBs0o3w8lo29nfnTUpnNSHFhWZ9at0ZGNnpT/C/w==}
 
-  '@libp2p/webrtc@5.2.23':
-    resolution: {integrity: sha512-2iNEkiqNBlRXbdpIyP96tp+dvpXEnVJJk91WUPryS9ULrsyceTraKjEnlQUmSyKcxZRChfdLXax7LtpPJqjZAA==}
+  '@libp2p/webrtc@5.2.24':
+    resolution: {integrity: sha512-0Ne/GDR0FBnKQ/KpJDdQ0Ohii1jyhSCJvbKRxLISm8XItCuJtE1WA2awiWZddZwp2lPDPh9iQmFaYUvv8Zel2w==}
 
   '@libp2p/websockets@9.2.18':
     resolution: {integrity: sha512-P27ZMv5TuKZDr8nfvVOExaDxBMCwvGLaPxbK3qMC8WiaFBuR5Z38X/HpnTFI5wog8LcKCRD+gFzRZWd/9nEVZw==}
@@ -3919,10 +3919,10 @@ snapshots:
       progress-events: 1.0.1
       uint8arraylist: 2.4.8
 
-  '@libp2p/keychain@5.2.8':
+  '@libp2p/keychain@5.2.9':
     dependencies:
       '@libp2p/crypto': 5.1.8
-      '@libp2p/interface': 2.10.5
+      '@libp2p/interface': 2.11.0
       '@libp2p/utils': 6.7.2
       '@noble/hashes': 1.8.0
       asn1js: 3.0.6
@@ -3963,7 +3963,7 @@ snapshots:
     dependencies:
       '@libp2p/interface': 2.10.5
       '@libp2p/peer-id': 5.1.9
-      '@libp2p/utils': 6.7.1
+      '@libp2p/utils': 6.7.2
       multiformats: 13.4.0
 
   '@libp2p/peer-collections@6.0.35':
@@ -4075,17 +4075,17 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/webrtc@5.2.23(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.10)(react@19.1.1))':
+  '@libp2p/webrtc@5.2.24(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.10)(react@19.1.1))':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/libp2p-noise': 16.1.4
       '@ipshipyard/node-datachannel': 0.26.6
-      '@libp2p/crypto': 5.1.7
-      '@libp2p/interface': 2.10.5
-      '@libp2p/interface-internal': 2.3.18
-      '@libp2p/keychain': 5.2.8
+      '@libp2p/crypto': 5.1.8
+      '@libp2p/interface': 2.11.0
+      '@libp2p/interface-internal': 2.3.19
+      '@libp2p/keychain': 5.2.9
       '@libp2p/peer-id': 5.1.9
-      '@libp2p/utils': 6.7.1
+      '@libp2p/utils': 6.7.2
       '@multiformats/multiaddr': 12.5.1
       '@multiformats/multiaddr-matcher': 2.0.2
       '@peculiar/webcrypto': 1.5.0
