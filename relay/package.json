@@ -20,7 +20,7 @@
     "libp2p": "2.10.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.0",
+    "@biomejs/biome": "2.2.2",
     "@libp2p/interface": "2.11.0",
     "@types/node": "24.3.0",
     "it-stream-types": "2.0.2",
