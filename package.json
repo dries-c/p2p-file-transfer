@@ -23,7 +23,7 @@
     "@libp2p/webrtc": "5.2.24",
     "@libp2p/websockets": "9.2.19",
     "@multiformats/multiaddr": "13.0.1",
-    "@multiformats/multiaddr-matcher": "2.0.2",
+    "@multiformats/multiaddr-matcher": "3.0.1",
     "it-length-prefixed-stream": "2.0.3",
     "libp2p": "2.10.0",
     "qrcode.react": "4.2.0",
