@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@chainsafe/libp2p-noise':
-        specifier: 16.1.4
-        version: 16.1.4
+        specifier: 16.1.5
+        version: 16.1.5
       '@chainsafe/libp2p-yamux':
         specifier: 7.0.4
         version: 7.0.4
@@ -119,8 +119,8 @@ packages:
   '@chainsafe/is-ip@2.1.0':
     resolution: {integrity: sha512-KIjt+6IfysQ4GCv66xihEitBjvhU/bixbbbFxdJ1sqCp4uJ0wuZiYBPhksZoy4lfaF0k9cwNzY5upEW/VWdw3w==}
 
-  '@chainsafe/libp2p-noise@16.1.4':
-    resolution: {integrity: sha512-f4FlyRVndcs4PoioOIZWrFc6wfO/mrAj7H63o0+eA0O2xhcoRkxHh6zna4W+WtScaF/Ua/UULgiNGuKNpLvLlQ==}
+  '@chainsafe/libp2p-noise@16.1.5':
+    resolution: {integrity: sha512-yac0bknwfuYdXXOAFGVL4fYR0de0p1Uk7W0gIkuxlj8JSqhkHr+kEt3958PfnfmX880QJAIogsh/ZupFjg0uJA==}
 
   '@chainsafe/libp2p-yamux@7.0.4':
     resolution: {integrity: sha512-Qw+EB9ew/9hRCq9V702gkm5xXThFHQ3Bdvh01M+enI1RScriSDWFGod02dwNHUxsYRc743i49sLlHp0edC7hSQ==}
@@ -157,9 +157,6 @@ packages:
 
   '@libp2p/peer-collections@6.0.35':
     resolution: {integrity: sha512-QiloK3T7DXW7R2cpL38dBnALCHf5pMzs/TyFzlEK33WezA2YFVoj7CtOJKqbn29bmV9uspWOxMgfmLUXf8ALvA==}
-
-  '@libp2p/peer-id@5.1.8':
-    resolution: {integrity: sha512-pGaM4BwjnXdGtAtd84L4/wuABpsnFYE+AQ+h3GxNFme0IsTaTVKWd1jBBE5YFeKHBHGUOhF3TlHsdjFfjQA7TA==}
 
   '@libp2p/peer-id@5.1.9':
     resolution: {integrity: sha512-cVDp7lX187Epmi/zr0Qq2RsEMmueswP9eIxYSFoMcHL/qcvRFhsxOfUGB8361E26s2WJvC9sXZ0oJS9XVueJhQ==}
@@ -648,13 +645,13 @@ snapshots:
 
   '@chainsafe/is-ip@2.1.0': {}
 
-  '@chainsafe/libp2p-noise@16.1.4':
+  '@chainsafe/libp2p-noise@16.1.5':
     dependencies:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 1.2.0
       '@libp2p/crypto': 5.1.8
       '@libp2p/interface': 2.11.0
-      '@libp2p/peer-id': 5.1.8
+      '@libp2p/peer-id': 5.1.9
       '@noble/ciphers': 1.3.0
       '@noble/curves': 1.9.4
       '@noble/hashes': 1.8.0
@@ -788,13 +785,6 @@ snapshots:
       '@libp2p/peer-id': 5.1.9
       '@libp2p/utils': 6.7.2
       multiformats: 13.3.7
-
-  '@libp2p/peer-id@5.1.8':
-    dependencies:
-      '@libp2p/crypto': 5.1.8
-      '@libp2p/interface': 2.11.0
-      multiformats: 13.3.7
-      uint8arrays: 5.1.0
 
   '@libp2p/peer-id@5.1.9':
     dependencies:
