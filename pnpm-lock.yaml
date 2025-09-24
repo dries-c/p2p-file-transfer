@@ -30,8 +30,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       '@libp2p/webrtc':
-        specifier: 5.2.24
-        version: 5.2.24(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))
+        specifier: 6.0.0
+        version: 6.0.0(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))
       '@libp2p/websockets':
         specifier: 9.2.19
         version: 9.2.19
@@ -821,10 +821,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@ipshipyard/node-datachannel@0.26.6':
-    resolution: {integrity: sha512-70HdhYMyAGXEMuCUq9ATO1Rx/JmiENM5LrGN94KT/q/Et2VsMjJpOWbyFzgodtkQJjDG5saNXTOiQpYZ1AnvEg==}
-    engines: {node: '>=18.20.0'}
-
   '@isaacs/fs-minipass@4.0.1':
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
     engines: {node: '>=18.0.0'}
@@ -917,8 +913,8 @@ packages:
   '@libp2p/interface@3.0.0':
     resolution: {integrity: sha512-fiHoXGUDiaZeksSm+Chf4/tuUynQuDWtadrbqDFxq0nJ5Q7aHPgsmJba7xSfELcqfQCTp00a31FQvXWSk7Oigg==}
 
-  '@libp2p/keychain@5.2.9':
-    resolution: {integrity: sha512-BgZKMqQCu3Xzd7YFIdwWqG2xXtvsO6RVHJKS8VOw6Dg5tuPAWcQhs0T84TZ5PCg5r6NNBwwI8fWdZGVtu/pPfQ==}
+  '@libp2p/keychain@6.0.0':
+    resolution: {integrity: sha512-QZct59HGeARKZF//TMhHCSKHDOLrfNrgfubzlZ/VA+7NxlSmp/NQMWOnewJFRWRCiKxVJzQVos8dlF881Y5Wfw==}
 
   '@libp2p/logger@5.1.21':
     resolution: {integrity: sha512-V1TWlZM5BuKkiGQ7En4qOnseVP82JwDIpIfNjceUZz1ArL32A5HXJjLQnJchkZ3VW8PVciJzUos/vP6slhPY6Q==}
@@ -931,6 +927,9 @@ packages:
 
   '@libp2p/multistream-select@6.0.29':
     resolution: {integrity: sha512-SWQbPcABOIpznEY7+vAp0Y3HNrE2PlaVY4EywN0lUZ7zvTv9VnAb7av3/gMvfaLI+YrOvhCr1mZ9qbSB93k4kA==}
+
+  '@libp2p/noise@1.0.0':
+    resolution: {integrity: sha512-HXoLJZU0lUzaLJ6/ys9LROhUT9Yq7h6QXbxrI/PT/cZ0zI4wKV9S2Pohc5oRUjcfKCc8I4q/H9Ob9dwyEQdo4Q==}
 
   '@libp2p/peer-collections@6.0.35':
     resolution: {integrity: sha512-QiloK3T7DXW7R2cpL38dBnALCHf5pMzs/TyFzlEK33WezA2YFVoj7CtOJKqbn29bmV9uspWOxMgfmLUXf8ALvA==}
@@ -962,8 +961,8 @@ packages:
   '@libp2p/utils@7.0.0':
     resolution: {integrity: sha512-gXLvEzfS53m+WYGNqeIKka1DSLeII1zfhd3e2uPmBoO6Mi2kZ5k+BtSgnwwc6VmjlEZXyU65F17CRJKS8I0KoA==}
 
-  '@libp2p/webrtc@5.2.24':
-    resolution: {integrity: sha512-0Ne/GDR0FBnKQ/KpJDdQ0Ohii1jyhSCJvbKRxLISm8XItCuJtE1WA2awiWZddZwp2lPDPh9iQmFaYUvv8Zel2w==}
+  '@libp2p/webrtc@6.0.0':
+    resolution: {integrity: sha512-YosqgqFtm1jXoGaX8urintx2gdg9ygrXVq1DEygu+c5pz3UDCzAParUSP0CRUMeEfjq+cohpVKY2Ye7R1Mn+tg==}
 
   '@libp2p/websockets@9.2.19':
     resolution: {integrity: sha512-+g2qI9Lgvyofoc6GFztPoPVZV+z/lg9pIUfneHht6j88Y7tH3NrAQ7Ki+9lqS5XBX2h1O1bHULWbCaVYCj9TZg==}
@@ -2372,6 +2371,10 @@ packages:
     resolution: {integrity: sha512-OhYaY5sDsIka7H7AtijtI9jwGYLyl29eQn/W623DiN/MIv5sUqc4g7BIDThX+gb7di9f6xK02nkp8sdfFWZLTg==}
     engines: {node: '>=10'}
 
+  node-datachannel@0.29.0:
+    resolution: {integrity: sha512-aCRJA5uZRqxMvQAl2QtOnCkodF1qJa1dCUVaXW9D7rku2p6F7PWe5OuRLcIgOYe+e2ZyJu0LefIQ95TtCn6xxA==}
+    engines: {node: '>=18.20.0'}
+
   node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
 
@@ -3640,10 +3643,6 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@ipshipyard/node-datachannel@0.26.6':
-    dependencies:
-      prebuild-install: 7.1.3
-
   '@isaacs/fs-minipass@4.0.1':
     dependencies:
       minipass: 7.1.2
@@ -3838,11 +3837,10 @@ snapshots:
       progress-events: 1.0.1
       uint8arraylist: 2.4.8
 
-  '@libp2p/keychain@5.2.9':
+  '@libp2p/keychain@6.0.0':
     dependencies:
       '@libp2p/crypto': 5.1.9
-      '@libp2p/interface': 2.11.0
-      '@libp2p/utils': 6.7.2
+      '@libp2p/interface': 3.0.0
       '@noble/hashes': 1.8.0
       asn1js: 3.0.6
       interface-datastore: 8.3.2
@@ -3885,6 +3883,22 @@ snapshots:
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
+
+  '@libp2p/noise@1.0.0':
+    dependencies:
+      '@chainsafe/as-chacha20poly1305': 0.1.0
+      '@chainsafe/as-sha256': 1.2.0
+      '@libp2p/crypto': 5.1.9
+      '@libp2p/interface': 3.0.0
+      '@libp2p/peer-id': 6.0.0
+      '@libp2p/utils': 7.0.0
+      '@noble/ciphers': 1.3.0
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      protons-runtime: 5.6.0
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
+      wherearewe: 2.0.1
 
   '@libp2p/peer-collections@6.0.35':
     dependencies:
@@ -4034,22 +4048,20 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/webrtc@5.2.24(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))':
+  '@libp2p/webrtc@6.0.0(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
-      '@chainsafe/libp2p-noise': 16.1.5
-      '@ipshipyard/node-datachannel': 0.26.6
-      '@libp2p/crypto': 5.1.8
-      '@libp2p/interface': 2.11.0
-      '@libp2p/interface-internal': 2.3.19
-      '@libp2p/keychain': 5.2.9
-      '@libp2p/peer-id': 5.1.9
-      '@libp2p/utils': 6.7.2
-      '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.2
+      '@libp2p/crypto': 5.1.9
+      '@libp2p/interface': 3.0.0
+      '@libp2p/interface-internal': 3.0.0
+      '@libp2p/keychain': 6.0.0
+      '@libp2p/noise': 1.0.0
+      '@libp2p/peer-id': 6.0.0
+      '@libp2p/utils': 7.0.0
+      '@multiformats/multiaddr': 13.0.1
+      '@multiformats/multiaddr-matcher': 3.0.1
       '@peculiar/webcrypto': 1.5.0
       '@peculiar/x509': 1.13.0
-      any-signal: 4.1.1
       detect-browser: 5.3.0
       get-port: 7.1.0
       interface-datastore: 8.3.2
@@ -4059,13 +4071,14 @@ snapshots:
       it-stream-types: 2.0.2
       main-event: 1.0.1
       multiformats: 13.4.0
+      node-datachannel: 0.29.0
       p-defer: 4.0.1
+      p-event: 6.0.1
       p-timeout: 6.1.4
       p-wait-for: 5.0.2
       progress-events: 1.0.1
       protons-runtime: 5.6.0
-      race-event: 1.6.1
-      race-signal: 1.1.3
+      race-signal: 2.0.0
       react-native-webrtc: 124.0.6(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
@@ -5706,6 +5719,10 @@ snapshots:
   node-abi@3.75.0:
     dependencies:
       semver: 7.7.2
+
+  node-datachannel@0.29.0:
+    dependencies:
+      prebuild-install: 7.1.3
 
   node-int64@0.4.0: {}
 
