@@ -19,7 +19,7 @@
     "@heroicons/react": "2.2.0",
     "@libp2p/circuit-relay-v2": "4.0.0",
     "@libp2p/identify": "4.0.0",
-    "@libp2p/peer-id": "5.1.9",
+    "@libp2p/peer-id": "6.0.0",
     "@libp2p/webrtc": "5.2.24",
     "@libp2p/websockets": "9.2.19",
     "@multiformats/multiaddr": "13.0.1",
