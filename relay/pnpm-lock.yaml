@@ -21,8 +21,8 @@ importers:
         specifier: 5.1.9
         version: 5.1.9
       '@libp2p/identify':
-        specifier: 3.0.39
-        version: 3.0.39
+        specifier: 4.0.0
+        version: 4.0.0
       '@libp2p/websockets':
         specifier: 9.2.19
         version: 9.2.19
@@ -137,8 +137,8 @@ packages:
   '@libp2p/crypto@5.1.9':
     resolution: {integrity: sha512-ienBA9jSrIJOvhsQDl8BHBm9kPhFyKqoxlzBOlD+67tjndSnMmc5TsvUh8olnuOb4q0sSfAc5UxXOu71aShTtw==}
 
-  '@libp2p/identify@3.0.39':
-    resolution: {integrity: sha512-302y1LAGuPy8im+LUiB5+2sUOa/VZuAphOAKLsAQ/74EglWlSrw0Q7f09WUQvfNXmn7XpQnDh7GEI3NZBl54Jw==}
+  '@libp2p/identify@4.0.0':
+    resolution: {integrity: sha512-hckAH0E4vXzDjob9cwzEF8dKxQnufQQJP9T/IQ7M0OP4DmQ6k0+qvBkwHWoWcRkTdWPelShK9/69NnmAaQsfrQ==}
 
   '@libp2p/interface-internal@2.3.19':
     resolution: {integrity: sha512-v335EB0i5CaNF+0SqT01CTBp0VyjJizpy46KprcshFFjX16UQ8+/QzoTZqmot9WiAmAzwR0b87oKmlAE9cpxzQ==}
@@ -438,9 +438,6 @@ packages:
   it-pipe@3.0.1:
     resolution: {integrity: sha512-sIoNrQl1qSRg2seYSBH/3QxWhJFn9PKYvOf/bHdtCBF0bnghey44VyASsWzn5dAx0DCDDABq1hZIuzKmtBZmKA==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
-
-  it-protobuf-stream@2.0.3:
-    resolution: {integrity: sha512-Dus9qyylOSnC7l75/3qs6j3Fe9MCM2K5luXi9o175DYijFRne5FPucdOGIYdwaDBDQ4Oy34dNCuFobOpcusvEQ==}
 
   it-pushable@3.2.3:
     resolution: {integrity: sha512-gzYnXYK8Y5t5b/BnJUr7glfQLO4U5vyb05gPx/TyTw+4Bv1zM9gFk4YsOrnulWefMewlphCjKkakFvj1y99Tcg==}
@@ -758,19 +755,18 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/identify@3.0.39':
+  '@libp2p/identify@4.0.0':
     dependencies:
       '@libp2p/crypto': 5.1.9
-      '@libp2p/interface': 2.11.0
-      '@libp2p/interface-internal': 2.3.19
-      '@libp2p/peer-id': 5.1.9
-      '@libp2p/peer-record': 8.0.35
-      '@libp2p/utils': 6.7.2
-      '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.2
+      '@libp2p/interface': 3.0.0
+      '@libp2p/interface-internal': 3.0.0
+      '@libp2p/peer-id': 6.0.0
+      '@libp2p/peer-record': 9.0.0
+      '@libp2p/utils': 7.0.0
+      '@multiformats/multiaddr': 13.0.1
+      '@multiformats/multiaddr-matcher': 3.0.1
       it-drain: 3.0.10
       it-parallel: 3.0.13
-      it-protobuf-stream: 2.0.3
       main-event: 1.0.1
       protons-runtime: 5.6.0
       uint8arraylist: 2.4.8
@@ -1290,13 +1286,6 @@ snapshots:
       it-merge: 3.0.12
       it-pushable: 3.2.3
       it-stream-types: 2.0.2
-
-  it-protobuf-stream@2.0.3:
-    dependencies:
-      abort-error: 1.0.1
-      it-length-prefixed-stream: 2.0.3
-      it-stream-types: 2.0.2
-      uint8arraylist: 2.4.8
 
   it-pushable@3.2.3:
     dependencies:
