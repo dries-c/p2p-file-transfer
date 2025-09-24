@@ -40,8 +40,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       '@libp2p/interface':
-        specifier: 2.11.0
-        version: 2.11.0
+        specifier: 3.0.0
+        version: 3.0.0
       '@types/node':
         specifier: 24.5.2
         version: 24.5.2
@@ -797,7 +797,7 @@ snapshots:
       it-pushable: 3.2.3
       it-stream-types: 2.0.2
       main-event: 1.0.1
-      multiformats: 13.3.7
+      multiformats: 13.4.1
       progress-events: 1.0.1
       uint8arraylist: 2.4.8
 
@@ -864,7 +864,7 @@ snapshots:
     dependencies:
       '@libp2p/crypto': 5.1.9
       '@libp2p/interface': 2.11.0
-      multiformats: 13.3.7
+      multiformats: 13.4.1
       uint8arrays: 5.1.0
 
   '@libp2p/peer-id@6.0.0':
@@ -1041,7 +1041,7 @@ snapshots:
       '@chainsafe/netmask': 2.0.0
       '@multiformats/dns': 1.0.6
       abort-error: 1.0.1
-      multiformats: 13.3.7
+      multiformats: 13.4.1
       uint8-varint: 2.0.4
       uint8arrays: 5.1.0
 
@@ -1496,7 +1496,7 @@ snapshots:
 
   uint8arrays@5.1.0:
     dependencies:
-      multiformats: 13.3.7
+      multiformats: 13.4.1
 
   undici-types@7.12.0: {}
 
