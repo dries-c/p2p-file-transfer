@@ -18,7 +18,7 @@
     "@cloudflare/vite-plugin": "1.13.4",
     "@heroicons/react": "2.2.0",
     "@libp2p/circuit-relay-v2": "4.0.0",
-    "@libp2p/identify": "3.0.39",
+    "@libp2p/identify": "4.0.0",
     "@libp2p/peer-id": "5.1.9",
     "@libp2p/webrtc": "5.2.24",
     "@libp2p/websockets": "9.2.19",
