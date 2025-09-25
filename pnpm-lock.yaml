@@ -30,8 +30,8 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
       '@libp2p/webrtc':
-        specifier: 6.0.1
-        version: 6.0.1(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))
+        specifier: 6.0.2
+        version: 6.0.2(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))
       '@libp2p/websockets':
         specifier: 10.0.1
         version: 10.0.1
@@ -339,6 +339,9 @@ packages:
 
   '@chainsafe/libp2p-noise@16.1.5':
     resolution: {integrity: sha512-yac0bknwfuYdXXOAFGVL4fYR0de0p1Uk7W0gIkuxlj8JSqhkHr+kEt3958PfnfmX880QJAIogsh/ZupFjg0uJA==}
+
+  '@chainsafe/libp2p-noise@17.0.0':
+    resolution: {integrity: sha512-vwrmY2Y+L1xYhIDiEpl61KHxwrLCZoXzTpwhyk34u+3+6zCAZPL3GxH3i2cs+u5IYNoyLptORdH17RKFXy7upA==}
 
   '@chainsafe/libp2p-yamux@8.0.0':
     resolution: {integrity: sha512-Vm0MYMikUmULCbtJTL6ddb+cqaC5gnNNO0eQF3gp2DKoJeDSh3M29qphdj3x8UXsjBGkivT6DQgZ6MXPuI7FnQ==}
@@ -925,9 +928,6 @@ packages:
   '@libp2p/multistream-select@6.0.29':
     resolution: {integrity: sha512-SWQbPcABOIpznEY7+vAp0Y3HNrE2PlaVY4EywN0lUZ7zvTv9VnAb7av3/gMvfaLI+YrOvhCr1mZ9qbSB93k4kA==}
 
-  '@libp2p/noise@1.0.1':
-    resolution: {integrity: sha512-RIYKsahjjvtbgd9ZmW/Kx5wIwxzqrNIcYKy9jfAg/epvPizteMTwKyOhZVZD3N6kK1TTBbmlmcQbur0pa4cAUw==}
-
   '@libp2p/peer-collections@6.0.35':
     resolution: {integrity: sha512-QiloK3T7DXW7R2cpL38dBnALCHf5pMzs/TyFzlEK33WezA2YFVoj7CtOJKqbn29bmV9uspWOxMgfmLUXf8ALvA==}
 
@@ -955,8 +955,8 @@ packages:
   '@libp2p/utils@7.0.1':
     resolution: {integrity: sha512-6100H6V5oUF9a1o22yt4RfwAZW/Ns37/JwgZEyZfo0hjRhXVC773ao4Jf1I7YWNVJk6ktqG6TMCDe5OnROPAOA==}
 
-  '@libp2p/webrtc@6.0.1':
-    resolution: {integrity: sha512-JOBFZsU5fpZUl/T2poFB1jEpITIWtZdagmWJi5BykBT6j6zs6VqPIsmx2JC8ioHtmg8OYIkaZ35J/BcNQ43BuA==}
+  '@libp2p/webrtc@6.0.2':
+    resolution: {integrity: sha512-ykC6gBJ6bI65d0FppyUqdZ5HT4HtHo4k3T7/SzqT4UR9msY3ZODNU6udsyE/Gj79c4z5hhY5Jw3rsDrF5sbbMA==}
 
   '@libp2p/websockets@10.0.1':
     resolution: {integrity: sha512-rq3MwAAr1kVF0dFbMmUnJKKSADcYA1a5S4Bn4RqIntTnV56KTUgZgOAv0hGAOu9qpaoGqfur0Q3+SrB7UepJ5w==}
@@ -3349,6 +3349,22 @@ snapshots:
       uint8arrays: 5.1.0
       wherearewe: 2.0.1
 
+  '@chainsafe/libp2p-noise@17.0.0':
+    dependencies:
+      '@chainsafe/as-chacha20poly1305': 0.1.0
+      '@chainsafe/as-sha256': 1.2.0
+      '@libp2p/crypto': 5.1.10
+      '@libp2p/interface': 3.0.0
+      '@libp2p/peer-id': 6.0.1
+      '@libp2p/utils': 7.0.1
+      '@noble/ciphers': 2.0.1
+      '@noble/curves': 2.0.1
+      '@noble/hashes': 2.0.1
+      protons-runtime: 5.6.0
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
+      wherearewe: 2.0.1
+
   '@chainsafe/libp2p-yamux@8.0.0':
     dependencies:
       '@libp2p/interface': 3.0.0
@@ -3878,22 +3894,6 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/noise@1.0.1':
-    dependencies:
-      '@chainsafe/as-chacha20poly1305': 0.1.0
-      '@chainsafe/as-sha256': 1.2.0
-      '@libp2p/crypto': 5.1.10
-      '@libp2p/interface': 3.0.0
-      '@libp2p/peer-id': 6.0.1
-      '@libp2p/utils': 7.0.1
-      '@noble/ciphers': 2.0.1
-      '@noble/curves': 2.0.1
-      '@noble/hashes': 2.0.1
-      protons-runtime: 5.6.0
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-      wherearewe: 2.0.1
-
   '@libp2p/peer-collections@6.0.35':
     dependencies:
       '@libp2p/interface': 2.11.0
@@ -4016,14 +4016,14 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/webrtc@6.0.1(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))':
+  '@libp2p/webrtc@6.0.2(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
+      '@chainsafe/libp2p-noise': 17.0.0
       '@libp2p/crypto': 5.1.10
       '@libp2p/interface': 3.0.0
       '@libp2p/interface-internal': 3.0.1
       '@libp2p/keychain': 6.0.1
-      '@libp2p/noise': 1.0.1
       '@libp2p/peer-id': 6.0.1
       '@libp2p/utils': 7.0.1
       '@multiformats/multiaddr': 13.0.1
