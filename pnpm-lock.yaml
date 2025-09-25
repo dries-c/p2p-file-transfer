@@ -33,8 +33,8 @@ importers:
         specifier: 6.0.1
         version: 6.0.1(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.13)(react@19.1.1))
       '@libp2p/websockets':
-        specifier: 9.2.19
-        version: 9.2.19
+        specifier: 10.0.1
+        version: 10.0.1
       '@multiformats/multiaddr':
         specifier: 13.0.1
         version: 13.0.1
@@ -958,8 +958,8 @@ packages:
   '@libp2p/webrtc@6.0.1':
     resolution: {integrity: sha512-JOBFZsU5fpZUl/T2poFB1jEpITIWtZdagmWJi5BykBT6j6zs6VqPIsmx2JC8ioHtmg8OYIkaZ35J/BcNQ43BuA==}
 
-  '@libp2p/websockets@9.2.19':
-    resolution: {integrity: sha512-+g2qI9Lgvyofoc6GFztPoPVZV+z/lg9pIUfneHht6j88Y7tH3NrAQ7Ki+9lqS5XBX2h1O1bHULWbCaVYCj9TZg==}
+  '@libp2p/websockets@10.0.1':
+    resolution: {integrity: sha512-rq3MwAAr1kVF0dFbMmUnJKKSADcYA1a5S4Bn4RqIntTnV56KTUgZgOAv0hGAOu9qpaoGqfur0Q3+SrB7UepJ5w==}
 
   '@multiformats/dns@1.0.6':
     resolution: {integrity: sha512-nt/5UqjMPtyvkG9BQYdJ4GfLK3nMqGpFZOzf4hAmIa0sJh2LlS9YKXZ4FgwBDsaHvzZqR/rUFIywIc7pkHNNuw==}
@@ -970,8 +970,8 @@ packages:
   '@multiformats/multiaddr-matcher@3.0.1':
     resolution: {integrity: sha512-jvjwzCPysVTQ53F4KqwmcqZw73BqHMk0UUZrMP9P4OtJ/YHrfs122ikTqhVA2upe0P/Qz9l8HVlhEifVYB2q9A==}
 
-  '@multiformats/multiaddr-to-uri@11.0.2':
-    resolution: {integrity: sha512-SiLFD54zeOJ0qMgo9xv1Tl9O5YktDKAVDP4q4hL16mSq4O4sfFNagNADz8eAofxd6TfQUzGQ3TkRRG9IY2uHRg==}
+  '@multiformats/multiaddr-to-uri@12.0.0':
+    resolution: {integrity: sha512-3uIEBCiy8tfzxYYBl81x1tISiNBQ7mHU4pGjippbJRoQYHzy/ZdZM/7JvTldr8pc/dzpkaNJxnsuxxlhsPOJsA==}
 
   '@multiformats/multiaddr@12.5.1':
     resolution: {integrity: sha512-+DDlr9LIRUS8KncI1TX/FfUn8F2dl6BIxJgshS/yFQCNB5IAF0OGzcwB39g5NLE22s4qqDePv0Qof6HdpJ/4aQ==}
@@ -2419,10 +2419,6 @@ packages:
   p-defer@4.0.1:
     resolution: {integrity: sha512-Mr5KC5efvAK5VUptYEIopP1bakB85k2IWXaRC0rsh1uwn1L6M0LVml8OIQ4Gudg4oyZakf7FmeRLkMMtZW1i5A==}
     engines: {node: '>=12'}
-
-  p-event@6.0.1:
-    resolution: {integrity: sha512-Q6Bekk5wpzW5qIyUP4gdMEujObYstZl6DMMOSenwBvV0BlE5LkDwkjs5yHbZmdCEq2o4RJx4tE1vwxFVf2FG1w==}
-    engines: {node: '>=16.17'}
 
   p-event@7.0.0:
     resolution: {integrity: sha512-z4Xv/ieHhi6Dx3A5xbZI8WWTn+eSRo6buGTvA8Yv2iLyX+61SUIMKcBszZRHA6e2Apld6QEDSclAuha2iUntyA==}
@@ -4059,20 +4055,20 @@ snapshots:
       - react-native
       - supports-color
 
-  '@libp2p/websockets@9.2.19':
+  '@libp2p/websockets@10.0.1':
     dependencies:
-      '@libp2p/interface': 2.11.0
-      '@libp2p/utils': 6.7.2
-      '@multiformats/multiaddr': 12.5.1
-      '@multiformats/multiaddr-matcher': 2.0.2
-      '@multiformats/multiaddr-to-uri': 11.0.2
+      '@libp2p/interface': 3.0.0
+      '@libp2p/utils': 7.0.1
+      '@multiformats/multiaddr': 13.0.1
+      '@multiformats/multiaddr-matcher': 3.0.1
+      '@multiformats/multiaddr-to-uri': 12.0.0
       '@types/ws': 8.18.1
       it-ws: 6.1.5
       main-event: 1.0.1
-      p-defer: 4.0.1
-      p-event: 6.0.1
+      p-event: 7.0.0
       progress-events: 1.0.1
-      race-signal: 1.1.3
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
       ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
@@ -4096,9 +4092,9 @@ snapshots:
     dependencies:
       '@multiformats/multiaddr': 13.0.1
 
-  '@multiformats/multiaddr-to-uri@11.0.2':
+  '@multiformats/multiaddr-to-uri@12.0.0':
     dependencies:
-      '@multiformats/multiaddr': 12.5.1
+      '@multiformats/multiaddr': 13.0.1
 
   '@multiformats/multiaddr@12.5.1':
     dependencies:
@@ -5734,10 +5730,6 @@ snapshots:
       is-wsl: 2.2.0
 
   p-defer@4.0.1: {}
-
-  p-event@6.0.1:
-    dependencies:
-      p-timeout: 6.1.4
 
   p-event@7.0.0:
     dependencies:
