@@ -24,8 +24,8 @@ importers:
         specifier: 4.0.1
         version: 4.0.1
       '@libp2p/websockets':
-        specifier: 10.0.1
-        version: 10.0.1
+        specifier: 10.0.2
+        version: 10.0.2
       '@multiformats/multiaddr':
         specifier: 13.0.1
         version: 13.0.1
@@ -173,8 +173,8 @@ packages:
   '@libp2p/utils@7.0.1':
     resolution: {integrity: sha512-6100H6V5oUF9a1o22yt4RfwAZW/Ns37/JwgZEyZfo0hjRhXVC773ao4Jf1I7YWNVJk6ktqG6TMCDe5OnROPAOA==}
 
-  '@libp2p/websockets@10.0.1':
-    resolution: {integrity: sha512-rq3MwAAr1kVF0dFbMmUnJKKSADcYA1a5S4Bn4RqIntTnV56KTUgZgOAv0hGAOu9qpaoGqfur0Q3+SrB7UepJ5w==}
+  '@libp2p/websockets@10.0.2':
+    resolution: {integrity: sha512-Z7CYooCD96X58utiRPNtEoBX+YQRZIAToSO9IZIdCc1DSnudZV/1TMOZSj0vNCAwoQ7QjC+IS2fPkhINIqsWMg==}
 
   '@multiformats/dns@1.0.6':
     resolution: {integrity: sha512-nt/5UqjMPtyvkG9BQYdJ4GfLK3nMqGpFZOzf4hAmIa0sJh2LlS9YKXZ4FgwBDsaHvzZqR/rUFIywIc7pkHNNuw==}
@@ -224,9 +224,6 @@ packages:
 
   '@types/node@24.5.2':
     resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
-
-  '@types/ws@8.18.1':
-    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
   abort-error@1.0.1:
     resolution: {integrity: sha512-fxqCblJiIPdSXIUrxI0PL+eJG49QdP9SQ70qtB65MVAoMr2rASlOyAbJFOylfB467F/f+5BCLJJq58RYi7mGfg==}
@@ -283,9 +280,6 @@ packages:
   dns-packet@5.6.1:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
-
-  event-iterator@2.0.0:
-    resolution: {integrity: sha512-KGft0ldl31BZVV//jj+IAIGCxkvvUkkON+ScH6zfoX+l+omX6001ggyRSpI0Io2Hlro0ThXotswCtfzS8UkIiQ==}
 
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
@@ -415,10 +409,6 @@ packages:
 
   it-take@3.0.9:
     resolution: {integrity: sha512-XMeUbnjOcgrhFXPUqa7H0VIjYSV/BvyxxjCp76QHVAFDJw2LmR1SHxUFiqyGeobgzJr7P2ZwSRRJQGn4D2BVlA==}
-
-  it-ws@6.1.5:
-    resolution: {integrity: sha512-uWjMtpy5HqhSd/LlrlP3fhYrr7rUfJFFMABv0F5d6n13Q+0glhZthwUKpEAVhDrXY95Tb1RB5lLqqef+QbVNaw==}
-    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
   libp2p@3.0.2:
     resolution: {integrity: sha512-yqJjxA/Ih0TVrub9aCsvuzzb2ycyZcjAL0dTZuMP0ZpA7lrYnp9QP90caka783MQOOUm6+tI2f7BEDoJmhXBLQ==}
@@ -828,15 +818,13 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/websockets@10.0.1':
+  '@libp2p/websockets@10.0.2':
     dependencies:
       '@libp2p/interface': 3.0.0
       '@libp2p/utils': 7.0.1
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       '@multiformats/multiaddr-to-uri': 12.0.0
-      '@types/ws': 8.18.1
-      it-ws: 6.1.5
       main-event: 1.0.1
       p-event: 7.0.0
       progress-events: 1.0.1
@@ -912,10 +900,6 @@ snapshots:
     dependencies:
       undici-types: 7.12.0
 
-  '@types/ws@8.18.1':
-    dependencies:
-      '@types/node': 24.5.2
-
   abort-error@1.0.1: {}
 
   any-signal@4.1.1: {}
@@ -978,8 +962,6 @@ snapshots:
   dns-packet@5.6.1:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.5
-
-  event-iterator@2.0.0: {}
 
   eventemitter3@5.0.1: {}
 
@@ -1132,17 +1114,6 @@ snapshots:
   it-stream-types@2.0.2: {}
 
   it-take@3.0.9: {}
-
-  it-ws@6.1.5:
-    dependencies:
-      '@types/ws': 8.18.1
-      event-iterator: 2.0.0
-      it-stream-types: 2.0.2
-      uint8arrays: 5.1.0
-      ws: 8.18.3
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
 
   libp2p@3.0.2:
     dependencies:
