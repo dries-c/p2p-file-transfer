@@ -43,8 +43,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       '@types/node':
-        specifier: 24.5.2
-        version: 24.5.2
+        specifier: 24.6.0
+        version: 24.6.0
       it-stream-types:
         specifier: 2.0.2
         version: 2.0.2
@@ -228,8 +228,8 @@ packages:
   '@types/dns-packet@5.6.5':
     resolution: {integrity: sha512-qXOC7XLOEe43ehtWJCMnQXvgcIpv6rPmQ1jXT98Ad8A3TB1Ue50jsCbSSSyuazScEuZ/Q026vHbrOTVkmwA+7Q==}
 
-  '@types/node@24.5.2':
-    resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
+  '@types/node@24.6.0':
+    resolution: {integrity: sha512-F1CBxgqwOMc4GKJ7eY22hWhBVQuMYTtqI8L0FcszYcpYX0fzfDGpez22Xau8Mgm7O9fI+zA/TYIdq3tGWfweBA==}
 
   abort-error@1.0.1:
     resolution: {integrity: sha512-fxqCblJiIPdSXIUrxI0PL+eJG49QdP9SQ70qtB65MVAoMr2rASlOyAbJFOylfB467F/f+5BCLJJq58RYi7mGfg==}
@@ -562,8 +562,8 @@ packages:
   uint8arrays@5.1.0:
     resolution: {integrity: sha512-vA6nFepEmlSKkMBnLBaUMVvAC4G3CTmO58C12y4sq6WPDOR7mOFYOi7GlrQ4djeSbP6JG9Pv9tJDM97PedRSww==}
 
-  undici-types@7.12.0:
-    resolution: {integrity: sha512-goOacqME2GYyOZZfb5Lgtu+1IDmAlAEu5xnD3+xTzS10hT0vzpf0SPjkXwAw9Jm+4n/mQGDP3LO8CPbYROeBfQ==}
+  undici-types@7.13.0:
+    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
 
   weald@1.0.6:
     resolution: {integrity: sha512-sX1PzkcMJZUJ848JbFzB6aKHHglTxqACEnq2KgI75b7vWYvfXFBNbOuDKqFKwCT44CrP6c5r+L4+5GmPnb5/SQ==}
@@ -934,11 +934,11 @@ snapshots:
 
   '@types/dns-packet@5.6.5':
     dependencies:
-      '@types/node': 24.5.2
+      '@types/node': 24.6.0
 
-  '@types/node@24.5.2':
+  '@types/node@24.6.0':
     dependencies:
-      undici-types: 7.12.0
+      undici-types: 7.13.0
 
   abort-error@1.0.1: {}
 
@@ -1306,7 +1306,7 @@ snapshots:
     dependencies:
       multiformats: 13.4.1
 
-  undici-types@7.12.0: {}
+  undici-types@7.13.0: {}
 
   weald@1.0.6:
     dependencies:
