@@ -17,7 +17,7 @@
     "@chainsafe/libp2p-yamux": "8.0.0",
     "@cloudflare/vite-plugin": "1.13.8",
     "@heroicons/react": "2.2.0",
-    "@libp2p/circuit-relay-v2": "4.0.2",
+    "@libp2p/circuit-relay-v2": "4.0.3",
     "@libp2p/identify": "4.0.2",
     "@libp2p/peer-id": "6.0.1",
     "@libp2p/webrtc": "6.0.3",
