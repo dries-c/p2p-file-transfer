@@ -40,8 +40,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       '@libp2p/interface':
-        specifier: 3.0.0
-        version: 3.0.0
+        specifier: 3.0.1
+        version: 3.0.1
       '@types/node':
         specifier: 24.6.1
         version: 24.6.1
@@ -148,9 +148,6 @@ packages:
 
   '@libp2p/interface@2.11.0':
     resolution: {integrity: sha512-0MUFKoXWHTQW3oWIgSHApmYMUKWO/Y02+7Hpyp+n3z+geD4Xo2Rku2gYWmxcq+Pyjkz6Q9YjDWz3Yb2SoV2E8Q==}
-
-  '@libp2p/interface@3.0.0':
-    resolution: {integrity: sha512-fiHoXGUDiaZeksSm+Chf4/tuUynQuDWtadrbqDFxq0nJ5Q7aHPgsmJba7xSfELcqfQCTp00a31FQvXWSk7Oigg==}
 
   '@libp2p/interface@3.0.1':
     resolution: {integrity: sha512-Fc502I77E+vLiADk7PyydM3NwW6F1HCQGhhtbzi9jLb+X8KgVBL3wlPqWXVM8fyQ++4CpOcAyMel8UYhIXr26w==}
@@ -650,7 +647,7 @@ snapshots:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 1.2.0
       '@libp2p/crypto': 5.1.11
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/peer-id': 6.0.1
       '@libp2p/utils': 7.0.1
       '@noble/ciphers': 2.0.1
@@ -663,7 +660,7 @@ snapshots:
 
   '@chainsafe/libp2p-yamux@8.0.0':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/utils': 7.0.1
       race-signal: 2.0.0
       uint8arraylist: 2.4.8
@@ -724,7 +721,7 @@ snapshots:
 
   '@libp2p/interface-internal@3.0.2':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/peer-collections': 7.0.2
       '@multiformats/multiaddr': 13.0.1
       progress-events: 1.0.1
@@ -742,15 +739,6 @@ snapshots:
       '@multiformats/multiaddr': 12.5.1
       it-pushable: 3.2.3
       it-stream-types: 2.0.2
-      main-event: 1.0.1
-      multiformats: 13.4.1
-      progress-events: 1.0.1
-      uint8arraylist: 2.4.8
-
-  '@libp2p/interface@3.0.0':
-    dependencies:
-      '@multiformats/dns': 1.0.6
-      '@multiformats/multiaddr': 13.0.1
       main-event: 1.0.1
       multiformats: 13.4.1
       progress-events: 1.0.1
@@ -775,7 +763,7 @@ snapshots:
 
   '@libp2p/logger@6.0.1':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@multiformats/multiaddr': 13.0.1
       interface-datastore: 8.3.2
       multiformats: 13.4.1
@@ -783,7 +771,7 @@ snapshots:
 
   '@libp2p/logger@6.0.2':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@multiformats/multiaddr': 13.0.1
       interface-datastore: 8.3.2
       multiformats: 13.4.1
@@ -799,7 +787,7 @@ snapshots:
 
   '@libp2p/multistream-select@7.0.2':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/utils': 7.0.3
       it-length-prefixed: 10.0.1
       uint8arraylist: 2.4.8
@@ -807,7 +795,7 @@ snapshots:
 
   '@libp2p/peer-collections@7.0.2':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/peer-id': 6.0.2
       '@libp2p/utils': 7.0.3
       multiformats: 13.4.1
@@ -822,7 +810,7 @@ snapshots:
   '@libp2p/peer-id@6.0.1':
     dependencies:
       '@libp2p/crypto': 5.1.11
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       multiformats: 13.4.1
       uint8arrays: 5.1.0
 
@@ -848,7 +836,7 @@ snapshots:
   '@libp2p/peer-store@12.0.2':
     dependencies:
       '@libp2p/crypto': 5.1.11
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/peer-collections': 7.0.2
       '@libp2p/peer-id': 6.0.2
       '@libp2p/peer-record': 9.0.2
@@ -867,7 +855,7 @@ snapshots:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/netmask': 2.0.0
       '@libp2p/crypto': 5.1.11
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/logger': 6.0.1
       '@multiformats/multiaddr': 13.0.1
       '@sindresorhus/fnv1a': 3.1.0
@@ -893,7 +881,7 @@ snapshots:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/netmask': 2.0.0
       '@libp2p/crypto': 5.1.11
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/logger': 6.0.2
       '@multiformats/multiaddr': 13.0.1
       '@sindresorhus/fnv1a': 3.1.0
@@ -942,7 +930,7 @@ snapshots:
 
   '@libp2p/websockets@10.0.3':
     dependencies:
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/utils': 7.0.2
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
@@ -1242,7 +1230,7 @@ snapshots:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/netmask': 2.0.0
       '@libp2p/crypto': 5.1.11
-      '@libp2p/interface': 3.0.0
+      '@libp2p/interface': 3.0.1
       '@libp2p/interface-internal': 3.0.2
       '@libp2p/logger': 6.0.2
       '@libp2p/multistream-select': 7.0.2

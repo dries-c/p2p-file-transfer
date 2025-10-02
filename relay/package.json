@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
-    "@libp2p/interface": "3.0.0",
+    "@libp2p/interface": "3.0.1",
     "@types/node": "24.6.1",
     "it-stream-types": "2.0.2",
     "typescript": "5.9.3",
