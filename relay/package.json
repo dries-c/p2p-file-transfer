@@ -13,7 +13,7 @@
     "@chainsafe/libp2p-yamux": "8.0.0",
     "@libp2p/circuit-relay-v2": "4.0.3",
     "@libp2p/crypto": "5.1.11",
-    "@libp2p/identify": "4.0.2",
+    "@libp2p/identify": "4.0.3",
     "@libp2p/websockets": "10.0.3",
     "@multiformats/multiaddr": "13.0.1",
     "it-length-prefixed-stream": "2.0.3",

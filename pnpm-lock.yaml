@@ -24,8 +24,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       '@libp2p/identify':
-        specifier: 4.0.2
-        version: 4.0.2
+        specifier: 4.0.3
+        version: 4.0.3
       '@libp2p/peer-id':
         specifier: 6.0.1
         version: 6.0.1
@@ -891,8 +891,8 @@ packages:
   '@libp2p/crypto@5.1.11':
     resolution: {integrity: sha512-J+C4bntXEhf43fJZbgyoa4XI8/kzwB5wE/2FoNQcwhIwgDd4YyRB1SHswgI0KWqF0pgKtFLE+sLnUBn/ZYUTjw==}
 
-  '@libp2p/identify@4.0.2':
-    resolution: {integrity: sha512-J3KnA511TfOYETUhppVBH4NoudH5QU+e7s2/QOcEw6J7eZ3BlkY0YpKFvHRh6CTNnimtnBAjkPF5oQBgDdx0Ug==}
+  '@libp2p/identify@4.0.3':
+    resolution: {integrity: sha512-X6QDGx0z0nNl9NfgxuVCwtH7b2ujzr8W4aHQ4wTxtpxDK/LLOMK466RMZVxI9z6wveACb6lnf+bN9JS+xEwZTg==}
 
   '@libp2p/interface-internal@3.0.2':
     resolution: {integrity: sha512-Rq9/YeqfFT7HuO/WdDLFXRQ211I0LN2gzWITtbAl0n4IfZG7fSyY9JAQeVJAmARPwr0irZMEHxg2eUcPRwpgIA==}
@@ -3694,14 +3694,14 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/identify@4.0.2':
+  '@libp2p/identify@4.0.3':
     dependencies:
-      '@libp2p/crypto': 5.1.10
-      '@libp2p/interface': 3.0.0
-      '@libp2p/interface-internal': 3.0.2
-      '@libp2p/peer-id': 6.0.1
-      '@libp2p/peer-record': 9.0.1
-      '@libp2p/utils': 7.0.2
+      '@libp2p/crypto': 5.1.11
+      '@libp2p/interface': 3.0.1
+      '@libp2p/interface-internal': 3.0.3
+      '@libp2p/peer-id': 6.0.2
+      '@libp2p/peer-record': 9.0.2
+      '@libp2p/utils': 7.0.3
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       it-drain: 3.0.10
@@ -3756,7 +3756,7 @@ snapshots:
 
   '@libp2p/keychain@6.0.2':
     dependencies:
-      '@libp2p/crypto': 5.1.10
+      '@libp2p/crypto': 5.1.11
       '@libp2p/interface': 3.0.0
       '@noble/hashes': 2.0.1
       asn1js: 3.0.6
@@ -3835,7 +3835,7 @@ snapshots:
 
   '@libp2p/peer-record@9.0.1':
     dependencies:
-      '@libp2p/crypto': 5.1.10
+      '@libp2p/crypto': 5.1.11
       '@libp2p/interface': 3.0.0
       '@libp2p/peer-id': 6.0.1
       '@multiformats/multiaddr': 13.0.1
@@ -3904,7 +3904,7 @@ snapshots:
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.10
+      '@libp2p/crypto': 5.1.11
       '@libp2p/interface': 3.0.0
       '@libp2p/logger': 6.0.2
       '@multiformats/multiaddr': 13.0.1
