@@ -21,8 +21,8 @@ importers:
         specifier: 5.1.12
         version: 5.1.12
       '@libp2p/identify':
-        specifier: 4.0.3
-        version: 4.0.3
+        specifier: 4.0.4
+        version: 4.0.4
       '@libp2p/websockets':
         specifier: 10.0.3
         version: 10.0.3
@@ -137,14 +137,11 @@ packages:
   '@libp2p/crypto@5.1.12':
     resolution: {integrity: sha512-1yJS0BZj+HF4M3Uv/92y3oIbMcCar218accFBcX+nKVhBlwDbx6fkUURhs5GilIhMgDtir+qQ8Un1hwF4CgGzw==}
 
-  '@libp2p/identify@4.0.3':
-    resolution: {integrity: sha512-X6QDGx0z0nNl9NfgxuVCwtH7b2ujzr8W4aHQ4wTxtpxDK/LLOMK466RMZVxI9z6wveACb6lnf+bN9JS+xEwZTg==}
+  '@libp2p/identify@4.0.4':
+    resolution: {integrity: sha512-yCSZFCIWo5Om+J4jGMswctQ8OFawqu7pz1O/gMDCSlZD/lQGRMXhewI6Kdsy9otxAXAT63LJy72JoqsEnuZvtQ==}
 
   '@libp2p/interface-internal@3.0.2':
     resolution: {integrity: sha512-Rq9/YeqfFT7HuO/WdDLFXRQ211I0LN2gzWITtbAl0n4IfZG7fSyY9JAQeVJAmARPwr0irZMEHxg2eUcPRwpgIA==}
-
-  '@libp2p/interface-internal@3.0.3':
-    resolution: {integrity: sha512-rLkng5bVYijVHiLM9VnDfMChjatbc8sDwZjKO3ZVixiTh5pjTRzZWkc5hXe9hMQaIi87AzCj73IHSgRJZdg4sA==}
 
   '@libp2p/interface-internal@3.0.4':
     resolution: {integrity: sha512-ssYkHS8mnxQfgyGbpORV5KwHzZ5RV8XwrB/SPDAR5bmKu0Fthl9o6nNslJ1oXMZv/hdcT9RPe9x3PMs56OIYoA==}
@@ -723,14 +720,14 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/identify@4.0.3':
+  '@libp2p/identify@4.0.4':
     dependencies:
       '@libp2p/crypto': 5.1.12
-      '@libp2p/interface': 3.0.1
-      '@libp2p/interface-internal': 3.0.3
-      '@libp2p/peer-id': 6.0.2
-      '@libp2p/peer-record': 9.0.2
-      '@libp2p/utils': 7.0.3
+      '@libp2p/interface': 3.0.2
+      '@libp2p/interface-internal': 3.0.4
+      '@libp2p/peer-id': 6.0.3
+      '@libp2p/peer-record': 9.0.3
+      '@libp2p/utils': 7.0.4
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       it-drain: 3.0.10
@@ -741,13 +738,6 @@ snapshots:
       uint8arrays: 5.1.0
 
   '@libp2p/interface-internal@3.0.2':
-    dependencies:
-      '@libp2p/interface': 3.0.1
-      '@libp2p/peer-collections': 7.0.3
-      '@multiformats/multiaddr': 13.0.1
-      progress-events: 1.0.1
-
-  '@libp2p/interface-internal@3.0.3':
     dependencies:
       '@libp2p/interface': 3.0.1
       '@libp2p/peer-collections': 7.0.3
