@@ -24,8 +24,8 @@ importers:
         specifier: 4.0.4
         version: 4.0.4
       '@libp2p/websockets':
-        specifier: 10.0.3
-        version: 10.0.3
+        specifier: 10.0.5
+        version: 10.0.5
       '@multiformats/multiaddr':
         specifier: 13.0.1
         version: 13.0.1
@@ -161,9 +161,6 @@ packages:
   '@libp2p/logger@6.0.2':
     resolution: {integrity: sha512-2pMZ20+HKPd+ktmJ9AUdtn1Hy8ltp5MF8/5Uo/zoYRR5lF4lioRtkWxRBKxO8uBZp2A7KnMNbQpdJwZn2QGQGw==}
 
-  '@libp2p/logger@6.0.3':
-    resolution: {integrity: sha512-R2sNMfqbpaTRN3jXsxkqSrmt5ZUufIgVPrOONS48fbNnahI2KPMlrBiyaWRFE+NRtvx2DUnpoyjAIN8c7zmJ3g==}
-
   '@libp2p/logger@6.0.4':
     resolution: {integrity: sha512-S5oaJYRm2PpCTeLttLfU9tLKv4Ay+FwlJBTL9R9yORRVPqe9r3oCW4JkokyLdUHuPlStdJJoAUO5KhYHvTpOAw==}
 
@@ -203,14 +200,11 @@ packages:
   '@libp2p/utils@7.0.2':
     resolution: {integrity: sha512-oc0N0tm8A5jP4Str4IBFTcgKp5kEoZ5/ap2uLRJ5CkevKOoSN4djBXFfzYGiC6H3UScUaEsxOIULHy70mP26wQ==}
 
-  '@libp2p/utils@7.0.3':
-    resolution: {integrity: sha512-59lEGpIryJRYsVcdw2tjEaevDiEao8Xd4v3ri+csT0MI0XIPOIcZQnygnWaqL0q2waNAzOGRMgLYJGQd0hVRuQ==}
-
   '@libp2p/utils@7.0.4':
     resolution: {integrity: sha512-ZtudYpZBHp0SRkSGgX04Ajpkhj6HVdBdhtvRYNO4bXvK0vKzb6J9dj1ARnqon7zjZC0cGWrDPpSiK4pCXeqJ+Q==}
 
-  '@libp2p/websockets@10.0.3':
-    resolution: {integrity: sha512-dIs4PY0J6ITEF/7K4OTFuSYBq8QIi1UM6FQDHyd+hy2wbBWPjvz3LYVURrSYPKGqli+cb+V2p6f4eR6zZ0C/lA==}
+  '@libp2p/websockets@10.0.5':
+    resolution: {integrity: sha512-zcLXXSX34Eyd7pdWIQ6kdWsda6BQDiZsSJXjKy7/Xeo+XtuZNxH/k9CL5uuAFjSfnMdZLUzZnY9OxOd54h0c0g==}
 
   '@multiformats/dns@1.0.6':
     resolution: {integrity: sha512-nt/5UqjMPtyvkG9BQYdJ4GfLK3nMqGpFZOzf4hAmIa0sJh2LlS9YKXZ4FgwBDsaHvzZqR/rUFIywIc7pkHNNuw==}
@@ -792,14 +786,6 @@ snapshots:
       multiformats: 13.4.1
       weald: 1.0.6
 
-  '@libp2p/logger@6.0.3':
-    dependencies:
-      '@libp2p/interface': 3.0.2
-      '@multiformats/multiaddr': 13.0.1
-      interface-datastore: 8.3.2
-      multiformats: 13.4.1
-      weald: 1.0.6
-
   '@libp2p/logger@6.0.4':
     dependencies:
       '@libp2p/interface': 3.0.2
@@ -811,7 +797,7 @@ snapshots:
   '@libp2p/multistream-select@7.0.2':
     dependencies:
       '@libp2p/interface': 3.0.2
-      '@libp2p/utils': 7.0.3
+      '@libp2p/utils': 7.0.4
       it-length-prefixed: 10.0.1
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -820,14 +806,14 @@ snapshots:
     dependencies:
       '@libp2p/interface': 3.0.2
       '@libp2p/peer-id': 6.0.2
-      '@libp2p/utils': 7.0.3
+      '@libp2p/utils': 7.0.4
       multiformats: 13.4.1
 
   '@libp2p/peer-collections@7.0.3':
     dependencies:
       '@libp2p/interface': 3.0.2
       '@libp2p/peer-id': 6.0.2
-      '@libp2p/utils': 7.0.3
+      '@libp2p/utils': 7.0.4
       multiformats: 13.4.1
 
   '@libp2p/peer-collections@7.0.4':
@@ -951,32 +937,6 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/utils@7.0.3':
-    dependencies:
-      '@chainsafe/is-ip': 2.1.0
-      '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.12
-      '@libp2p/interface': 3.0.2
-      '@libp2p/logger': 6.0.3
-      '@multiformats/multiaddr': 13.0.1
-      '@sindresorhus/fnv1a': 3.1.0
-      any-signal: 4.1.1
-      cborg: 4.2.15
-      delay: 6.0.0
-      is-loopback-addr: 2.0.2
-      it-length-prefixed: 10.0.1
-      it-pipe: 3.0.1
-      it-pushable: 3.2.3
-      it-stream-types: 2.0.2
-      main-event: 1.0.1
-      netmask: 2.0.2
-      p-defer: 4.0.1
-      p-event: 7.0.0
-      race-signal: 2.0.0
-      uint8-varint: 2.0.4
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-
   '@libp2p/utils@7.0.4':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
@@ -1003,10 +963,10 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/websockets@10.0.3':
+  '@libp2p/websockets@10.0.5':
     dependencies:
       '@libp2p/interface': 3.0.2
-      '@libp2p/utils': 7.0.2
+      '@libp2p/utils': 7.0.4
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       '@multiformats/multiaddr-to-uri': 12.0.0
