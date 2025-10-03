@@ -20,7 +20,7 @@
     "@libp2p/circuit-relay-v2": "4.0.5",
     "@libp2p/identify": "4.0.5",
     "@libp2p/peer-id": "6.0.3",
-    "@libp2p/webrtc": "6.0.5",
+    "@libp2p/webrtc": "6.0.6",
     "@libp2p/websockets": "10.0.5",
     "@multiformats/multiaddr": "13.0.1",
     "@multiformats/multiaddr-matcher": "3.0.1",
