@@ -48,7 +48,7 @@
     "it-stream-types": "2.0.2",
     "tailwindcss": "4.1.13",
     "typescript": "5.9.3",
-    "vite": "7.1.7",
+    "vite": "7.1.9",
     "wrangler": "4.40.3"
   },
   "engines": {
