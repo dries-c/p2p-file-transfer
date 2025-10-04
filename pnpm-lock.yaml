@@ -19,7 +19,7 @@ importers:
         version: 1.13.10(vite@7.1.9(@types/node@24.6.2)(jiti@2.6.0)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))(workerd@1.20250927.0)(wrangler@4.40.3(@cloudflare/workers-types@4.20251003.0))
       '@heroicons/react':
         specifier: 2.2.0
-        version: 2.2.0(react@19.1.1)
+        version: 2.2.0(react@19.2.0)
       '@libp2p/circuit-relay-v2':
         specifier: 4.0.5
         version: 4.0.5
@@ -31,7 +31,7 @@ importers:
         version: 6.0.3
       '@libp2p/webrtc':
         specifier: 6.0.6
-        version: 6.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1))
+        version: 6.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0))
       '@libp2p/websockets':
         specifier: 10.0.6
         version: 10.0.6
@@ -49,34 +49,34 @@ importers:
         version: 3.0.6
       qrcode.react:
         specifier: 4.2.0
-        version: 4.2.0(react@19.1.1)
+        version: 4.2.0(react@19.2.0)
       react:
-        specifier: 19.1.1
-        version: 19.1.1
+        specifier: 19.2.0
+        version: 19.2.0
       react-dom:
-        specifier: 19.1.1
-        version: 19.1.1(react@19.1.1)
+        specifier: 19.2.0
+        version: 19.2.0(react@19.2.0)
       react-dropzone:
         specifier: ^14.3.8
-        version: 14.3.8(react@19.1.1)
+        version: 14.3.8(react@19.2.0)
       react-localization:
         specifier: 2.0.6
-        version: 2.0.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 2.0.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react-router:
         specifier: 7.9.3
-        version: 7.9.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 7.9.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react-screen-wake-lock:
         specifier: ^3.1.1
-        version: 3.1.1(react@19.1.1)
+        version: 3.1.1(react@19.2.0)
       react-toastify:
         specifier: 11.0.5
-        version: 11.0.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 11.0.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       ua-parser-js:
         specifier: 2.0.5
         version: 2.0.5
       usehooks-ts:
         specifier: 3.1.1
-        version: 3.1.1(react@19.1.1)
+        version: 3.1.1(react@19.2.0)
     devDependencies:
       '@biomejs/biome':
         specifier: 2.2.5
@@ -94,11 +94,11 @@ importers:
         specifier: 24.6.2
         version: 24.6.2
       '@types/react':
-        specifier: 19.1.16
-        version: 19.1.16
+        specifier: 19.2.0
+        version: 19.2.0
       '@types/react-dom':
-        specifier: 19.1.9
-        version: 19.1.9(@types/react@19.1.16)
+        specifier: 19.2.0
+        version: 19.2.0(@types/react@19.2.0)
       it-stream-types:
         specifier: 2.0.2
         version: 2.0.2
@@ -945,9 +945,6 @@ packages:
   '@libp2p/logger@6.0.1':
     resolution: {integrity: sha512-lUlxCuEUa70TYkY+qgdoi0pPcKSkA8R/q0iYboRa8vrD/Dm/ABjV03zp8kxNzBKKz7E/fzI7/QTL8KFT/xU9Bw==}
 
-  '@libp2p/logger@6.0.4':
-    resolution: {integrity: sha512-S5oaJYRm2PpCTeLttLfU9tLKv4Ay+FwlJBTL9R9yORRVPqe9r3oCW4JkokyLdUHuPlStdJJoAUO5KhYHvTpOAw==}
-
   '@libp2p/logger@6.0.5':
     resolution: {integrity: sha512-4HdUwusPh57KKSY0v0YMYw6T2wl93svOLFNJuosy2xLto9zty1KWkrjaEFyF6jF0a7zBd1k5trjJsDXo8OKDxw==}
 
@@ -968,9 +965,6 @@ packages:
 
   '@libp2p/utils@7.0.1':
     resolution: {integrity: sha512-6100H6V5oUF9a1o22yt4RfwAZW/Ns37/JwgZEyZfo0hjRhXVC773ao4Jf1I7YWNVJk6ktqG6TMCDe5OnROPAOA==}
-
-  '@libp2p/utils@7.0.4':
-    resolution: {integrity: sha512-ZtudYpZBHp0SRkSGgX04Ajpkhj6HVdBdhtvRYNO4bXvK0vKzb6J9dj1ARnqon7zjZC0cGWrDPpSiK4pCXeqJ+Q==}
 
   '@libp2p/utils@7.0.5':
     resolution: {integrity: sha512-SmefnIdRXjLh9SdJ8nIL0LFvBqVuti3kujzk0/4Xj8mvAEzYl7h/Ge5VU6PHpzat9CZMplGQGGfr/vxX1WuckQ==}
@@ -1360,13 +1354,13 @@ packages:
   '@types/node@24.6.2':
     resolution: {integrity: sha512-d2L25Y4j+W3ZlNAeMKcy7yDsK425ibcAOO2t7aPTz6gNMH0z2GThtwENCDc0d/Pw9wgyRqE5Px1wkV7naz8ang==}
 
-  '@types/react-dom@19.1.9':
-    resolution: {integrity: sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==}
+  '@types/react-dom@19.2.0':
+    resolution: {integrity: sha512-brtBs0MnE9SMx7px208g39lRmC5uHZs96caOJfTjFcYSLHNamvaSMfJNagChVNkup2SdtOxKX1FDBkRSJe1ZAg==}
     peerDependencies:
-      '@types/react': ^19.0.0
+      '@types/react': ^19.2.0
 
-  '@types/react@19.1.16':
-    resolution: {integrity: sha512-WBM/nDbEZmDUORKnh5i1bTnAz6vTohUf9b8esSMu+b24+srbaxa04UbJgWx78CVfNXA20sNu0odEIluZDFdCog==}
+  '@types/react@19.2.0':
+    resolution: {integrity: sha512-1LOH8xovvsKsCBq1wnT4ntDUdCJKmnEakhsuoUSy6ExlHCkGP2hqnatagYTgFk6oeL0VU31u7SNjunPN+GchtA==}
 
   '@types/stack-utils@2.0.3':
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
@@ -2514,10 +2508,10 @@ packages:
   react-devtools-core@6.1.5:
     resolution: {integrity: sha512-ePrwPfxAnB+7hgnEr8vpKxL9cmnp7F322t8oqcPshbIQQhDKgFDW4tjhF2wjVbdXF9O/nyuy3sQWd9JGpiLPvA==}
 
-  react-dom@19.1.1:
-    resolution: {integrity: sha512-Dlq/5LAZgF0Gaz6yiqZCf6VCcZs1ghAJyrsu84Q/GT0gV+mCxbfmKNoGRKBYMJ8IEdGPqu49YWXD02GCknEDkw==}
+  react-dom@19.2.0:
+    resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
     peerDependencies:
-      react: ^19.1.1
+      react: ^19.2.0
 
   react-dropzone@14.3.8:
     resolution: {integrity: sha512-sBgODnq+lcA4P296DY4wacOZz3JFpD99fp+hb//iBO2HHnyeZU3FwWyXJ6salNpqQdsZrgMrotuko/BdJMV8Ug==}
@@ -2584,8 +2578,8 @@ packages:
       react: ^18 || ^19
       react-dom: ^18 || ^19
 
-  react@19.1.1:
-    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
+  react@19.2.0:
+    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@3.6.2:
@@ -2627,6 +2621,9 @@ packages:
 
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
+
+  scheduler@0.27.0:
+    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -3526,9 +3523,9 @@ snapshots:
   '@esbuild/win32-x64@0.25.4':
     optional: true
 
-  '@heroicons/react@2.2.0(react@19.1.1)':
+  '@heroicons/react@2.2.0(react@19.2.0)':
     dependencies:
-      react: 19.1.1
+      react: 19.2.0
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -3798,14 +3795,6 @@ snapshots:
       multiformats: 13.4.1
       weald: 1.0.6
 
-  '@libp2p/logger@6.0.4':
-    dependencies:
-      '@libp2p/interface': 3.0.2
-      '@multiformats/multiaddr': 13.0.1
-      interface-datastore: 8.3.2
-      multiformats: 13.4.1
-      weald: 1.0.6
-
   '@libp2p/logger@6.0.5':
     dependencies:
       '@libp2p/interface': 3.0.2
@@ -3891,32 +3880,6 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/utils@7.0.4':
-    dependencies:
-      '@chainsafe/is-ip': 2.1.0
-      '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.12
-      '@libp2p/interface': 3.0.2
-      '@libp2p/logger': 6.0.4
-      '@multiformats/multiaddr': 13.0.1
-      '@sindresorhus/fnv1a': 3.1.0
-      any-signal: 4.1.1
-      cborg: 4.2.15
-      delay: 6.0.0
-      is-loopback-addr: 2.0.2
-      it-length-prefixed: 10.0.1
-      it-pipe: 3.0.1
-      it-pushable: 3.2.3
-      it-stream-types: 2.0.2
-      main-event: 1.0.1
-      netmask: 2.0.2
-      p-defer: 4.0.1
-      p-event: 7.0.0
-      race-signal: 2.0.0
-      uint8-varint: 2.0.4
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-
   '@libp2p/utils@7.0.5':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
@@ -3943,7 +3906,7 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/webrtc@6.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1))':
+  '@libp2p/webrtc@6.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0))':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/libp2p-noise': 17.0.0
@@ -3974,7 +3937,7 @@ snapshots:
       progress-events: 1.0.1
       protons-runtime: 5.6.0
       race-signal: 2.0.0
-      react-native-webrtc: 124.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1))
+      react-native-webrtc: 124.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0))
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -4197,14 +4160,14 @@ snapshots:
 
   '@react-native/normalize-colors@0.81.4': {}
 
-  '@react-native/virtualized-lists@0.81.4(@types/react@19.1.16)(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1))(react@19.1.1)':
+  '@react-native/virtualized-lists@0.81.4(@types/react@19.2.0)(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0))(react@19.2.0)':
     dependencies:
       invariant: 2.2.4
       nullthrows: 1.1.1
-      react: 19.1.1
-      react-native: 0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1)
+      react: 19.2.0
+      react-native: 0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0)
     optionalDependencies:
-      '@types/react': 19.1.16
+      '@types/react': 19.2.0
 
   '@remix-run/node-fetch-server@0.8.1': {}
 
@@ -4402,11 +4365,11 @@ snapshots:
     dependencies:
       undici-types: 7.13.0
 
-  '@types/react-dom@19.1.9(@types/react@19.1.16)':
+  '@types/react-dom@19.2.0(@types/react@19.2.0)':
     dependencies:
-      '@types/react': 19.1.16
+      '@types/react': 19.2.0
 
-  '@types/react@19.1.16':
+  '@types/react@19.2.0':
     dependencies:
       csstype: 3.1.3
 
@@ -5699,9 +5662,9 @@ snapshots:
 
   pvutils@1.1.3: {}
 
-  qrcode.react@4.2.0(react@19.1.1):
+  qrcode.react@4.2.0(react@19.2.0):
     dependencies:
-      react: 19.1.1
+      react: 19.2.0
 
   queue@6.0.2:
     dependencies:
@@ -5732,39 +5695,39 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  react-dom@19.1.1(react@19.1.1):
+  react-dom@19.2.0(react@19.2.0):
     dependencies:
-      react: 19.1.1
-      scheduler: 0.26.0
+      react: 19.2.0
+      scheduler: 0.27.0
 
-  react-dropzone@14.3.8(react@19.1.1):
+  react-dropzone@14.3.8(react@19.2.0):
     dependencies:
       attr-accept: 2.2.5
       file-selector: 2.1.2
       prop-types: 15.8.1
-      react: 19.1.1
+      react: 19.2.0
 
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
 
-  react-localization@2.0.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-localization@2.0.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       localized-strings: 2.0.3
     optionalDependencies:
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
-  react-native-webrtc@124.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1)):
+  react-native-webrtc@124.0.6(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0)):
     dependencies:
       base64-js: 1.5.1
       debug: 4.3.4
       event-target-shim: 6.0.2
-      react-native: 0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1)
+      react-native: 0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1):
+  react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0):
     dependencies:
       '@jest/create-cache-key-function': 29.7.0
       '@react-native/assets-registry': 0.81.4
@@ -5773,7 +5736,7 @@ snapshots:
       '@react-native/gradle-plugin': 0.81.4
       '@react-native/js-polyfills': 0.81.4
       '@react-native/normalize-colors': 0.81.4
-      '@react-native/virtualized-lists': 0.81.4(@types/react@19.1.16)(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.16)(react@19.1.1))(react@19.1.1)
+      '@react-native/virtualized-lists': 0.81.4(@types/react@19.2.0)(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.2.0)(react@19.2.0))(react@19.2.0)
       abort-controller: 3.0.0
       anser: 1.4.10
       ansi-regex: 5.0.1
@@ -5791,7 +5754,7 @@ snapshots:
       nullthrows: 1.1.1
       pretty-format: 29.7.0
       promise: 8.3.0
-      react: 19.1.1
+      react: 19.2.0
       react-devtools-core: 6.1.5
       react-refresh: 0.14.2
       regenerator-runtime: 0.13.11
@@ -5802,7 +5765,7 @@ snapshots:
       ws: 6.2.3
       yargs: 17.7.2
     optionalDependencies:
-      '@types/react': 19.1.16
+      '@types/react': 19.2.0
     transitivePeerDependencies:
       - '@babel/core'
       - '@react-native-community/cli'
@@ -5813,25 +5776,25 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react-router@7.9.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-router@7.9.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       cookie: 1.0.2
-      react: 19.1.1
+      react: 19.2.0
       set-cookie-parser: 2.7.1
     optionalDependencies:
-      react-dom: 19.1.1(react@19.1.1)
+      react-dom: 19.2.0(react@19.2.0)
 
-  react-screen-wake-lock@3.1.1(react@19.1.1):
+  react-screen-wake-lock@3.1.1(react@19.2.0):
     dependencies:
-      react: 19.1.1
+      react: 19.2.0
 
-  react-toastify@11.0.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-toastify@11.0.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       clsx: 2.1.1
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
-  react@19.1.1: {}
+  react@19.2.0: {}
 
   readable-stream@3.6.2:
     dependencies:
@@ -5888,6 +5851,8 @@ snapshots:
       truncate-utf8-bytes: 1.0.2
 
   scheduler@0.26.0: {}
+
+  scheduler@0.27.0: {}
 
   semver@6.3.1: {}
 
@@ -6148,10 +6113,10 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  usehooks-ts@3.1.1(react@19.1.1):
+  usehooks-ts@3.1.1(react@19.2.0):
     dependencies:
       lodash.debounce: 4.0.8
-      react: 19.1.1
+      react: 19.2.0
 
   utf8-byte-length@1.0.5: {}
 
