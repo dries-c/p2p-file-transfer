@@ -43,8 +43,8 @@ importers:
         specifier: 3.0.2
         version: 3.0.2
       '@types/node':
-        specifier: 24.6.2
-        version: 24.6.2
+        specifier: 24.7.0
+        version: 24.7.0
       it-stream-types:
         specifier: 2.0.2
         version: 2.0.2
@@ -149,9 +149,6 @@ packages:
   '@libp2p/logger@6.0.1':
     resolution: {integrity: sha512-lUlxCuEUa70TYkY+qgdoi0pPcKSkA8R/q0iYboRa8vrD/Dm/ABjV03zp8kxNzBKKz7E/fzI7/QTL8KFT/xU9Bw==}
 
-  '@libp2p/logger@6.0.4':
-    resolution: {integrity: sha512-S5oaJYRm2PpCTeLttLfU9tLKv4Ay+FwlJBTL9R9yORRVPqe9r3oCW4JkokyLdUHuPlStdJJoAUO5KhYHvTpOAw==}
-
   '@libp2p/logger@6.0.5':
     resolution: {integrity: sha512-4HdUwusPh57KKSY0v0YMYw6T2wl93svOLFNJuosy2xLto9zty1KWkrjaEFyF6jF0a7zBd1k5trjJsDXo8OKDxw==}
 
@@ -175,9 +172,6 @@ packages:
 
   '@libp2p/utils@7.0.1':
     resolution: {integrity: sha512-6100H6V5oUF9a1o22yt4RfwAZW/Ns37/JwgZEyZfo0hjRhXVC773ao4Jf1I7YWNVJk6ktqG6TMCDe5OnROPAOA==}
-
-  '@libp2p/utils@7.0.4':
-    resolution: {integrity: sha512-ZtudYpZBHp0SRkSGgX04Ajpkhj6HVdBdhtvRYNO4bXvK0vKzb6J9dj1ARnqon7zjZC0cGWrDPpSiK4pCXeqJ+Q==}
 
   '@libp2p/utils@7.0.5':
     resolution: {integrity: sha512-SmefnIdRXjLh9SdJ8nIL0LFvBqVuti3kujzk0/4Xj8mvAEzYl7h/Ge5VU6PHpzat9CZMplGQGGfr/vxX1WuckQ==}
@@ -228,8 +222,8 @@ packages:
   '@types/dns-packet@5.6.5':
     resolution: {integrity: sha512-qXOC7XLOEe43ehtWJCMnQXvgcIpv6rPmQ1jXT98Ad8A3TB1Ue50jsCbSSSyuazScEuZ/Q026vHbrOTVkmwA+7Q==}
 
-  '@types/node@24.6.2':
-    resolution: {integrity: sha512-d2L25Y4j+W3ZlNAeMKcy7yDsK425ibcAOO2t7aPTz6gNMH0z2GThtwENCDc0d/Pw9wgyRqE5Px1wkV7naz8ang==}
+  '@types/node@24.7.0':
+    resolution: {integrity: sha512-IbKooQVqUBrlzWTi79E8Fw78l8k1RNtlDDNWsFZs7XonuQSJ8oNYfEeclhprUldXISRMLzBpILuKgPlIxm+/Yw==}
 
   abort-error@1.0.1:
     resolution: {integrity: sha512-fxqCblJiIPdSXIUrxI0PL+eJG49QdP9SQ70qtB65MVAoMr2rASlOyAbJFOylfB467F/f+5BCLJJq58RYi7mGfg==}
@@ -568,8 +562,8 @@ packages:
   uint8arrays@5.1.0:
     resolution: {integrity: sha512-vA6nFepEmlSKkMBnLBaUMVvAC4G3CTmO58C12y4sq6WPDOR7mOFYOi7GlrQ4djeSbP6JG9Pv9tJDM97PedRSww==}
 
-  undici-types@7.13.0:
-    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
+  undici-types@7.14.0:
+    resolution: {integrity: sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA==}
 
   weald@1.0.6:
     resolution: {integrity: sha512-sX1PzkcMJZUJ848JbFzB6aKHHglTxqACEnq2KgI75b7vWYvfXFBNbOuDKqFKwCT44CrP6c5r+L4+5GmPnb5/SQ==}
@@ -734,14 +728,6 @@ snapshots:
       multiformats: 13.4.1
       weald: 1.0.6
 
-  '@libp2p/logger@6.0.4':
-    dependencies:
-      '@libp2p/interface': 3.0.2
-      '@multiformats/multiaddr': 13.0.1
-      interface-datastore: 8.3.2
-      multiformats: 13.4.1
-      weald: 1.0.6
-
   '@libp2p/logger@6.0.5':
     dependencies:
       '@libp2p/interface': 3.0.2
@@ -815,32 +801,6 @@ snapshots:
       '@libp2p/crypto': 5.1.12
       '@libp2p/interface': 3.0.2
       '@libp2p/logger': 6.0.1
-      '@multiformats/multiaddr': 13.0.1
-      '@sindresorhus/fnv1a': 3.1.0
-      any-signal: 4.1.1
-      cborg: 4.2.15
-      delay: 6.0.0
-      is-loopback-addr: 2.0.2
-      it-length-prefixed: 10.0.1
-      it-pipe: 3.0.1
-      it-pushable: 3.2.3
-      it-stream-types: 2.0.2
-      main-event: 1.0.1
-      netmask: 2.0.2
-      p-defer: 4.0.1
-      p-event: 7.0.0
-      race-signal: 2.0.0
-      uint8-varint: 2.0.4
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-
-  '@libp2p/utils@7.0.4':
-    dependencies:
-      '@chainsafe/is-ip': 2.1.0
-      '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.12
-      '@libp2p/interface': 3.0.2
-      '@libp2p/logger': 6.0.4
       '@multiformats/multiaddr': 13.0.1
       '@sindresorhus/fnv1a': 3.1.0
       any-signal: 4.1.1
@@ -952,11 +912,11 @@ snapshots:
 
   '@types/dns-packet@5.6.5':
     dependencies:
-      '@types/node': 24.6.2
+      '@types/node': 24.7.0
 
-  '@types/node@24.6.2':
+  '@types/node@24.7.0':
     dependencies:
-      undici-types: 7.13.0
+      undici-types: 7.14.0
 
   abort-error@1.0.1: {}
 
@@ -1331,7 +1291,7 @@ snapshots:
     dependencies:
       multiformats: 13.4.1
 
-  undici-types@7.13.0: {}
+  undici-types@7.14.0: {}
 
   weald@1.0.6:
     dependencies:
