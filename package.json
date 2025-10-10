@@ -34,7 +34,7 @@
     "react-router": "7.9.4",
     "react-screen-wake-lock": "^3.1.1",
     "react-toastify": "11.0.5",
-    "ua-parser-js": "2.0.5",
+    "ua-parser-js": "2.0.6",
     "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
