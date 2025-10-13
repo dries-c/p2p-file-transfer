@@ -44,7 +44,7 @@
     "@tailwindcss/vite": "4.1.14",
     "@types/node": "24.7.2",
     "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.1",
+    "@types/react-dom": "19.2.2",
     "it-stream-types": "2.0.2",
     "tailwindcss": "4.1.14",
     "typescript": "5.9.3",
