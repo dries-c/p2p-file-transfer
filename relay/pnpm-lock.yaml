@@ -12,8 +12,8 @@ importers:
         specifier: 17.0.0
         version: 17.0.0
       '@chainsafe/libp2p-yamux':
-        specifier: 8.0.0
-        version: 8.0.0
+        specifier: 8.0.1
+        version: 8.0.1
       '@libp2p/circuit-relay-v2':
         specifier: 4.0.5
         version: 4.0.5
@@ -122,8 +122,8 @@ packages:
   '@chainsafe/libp2p-noise@17.0.0':
     resolution: {integrity: sha512-vwrmY2Y+L1xYhIDiEpl61KHxwrLCZoXzTpwhyk34u+3+6zCAZPL3GxH3i2cs+u5IYNoyLptORdH17RKFXy7upA==}
 
-  '@chainsafe/libp2p-yamux@8.0.0':
-    resolution: {integrity: sha512-Vm0MYMikUmULCbtJTL6ddb+cqaC5gnNNO0eQF3gp2DKoJeDSh3M29qphdj3x8UXsjBGkivT6DQgZ6MXPuI7FnQ==}
+  '@chainsafe/libp2p-yamux@8.0.1':
+    resolution: {integrity: sha512-pJsqmUg1cZRJZn/luAtQaq0uLcVfExo51Rg7iRtAEceNYtsKUi/exfegnvTBzTnF1CGmTzVEV3MCLsRhqiNyoA==}
 
   '@chainsafe/netmask@2.0.0':
     resolution: {integrity: sha512-I3Z+6SWUoaljh3TBzCnCxjlUyN8tA+NAk5L6m9IxvCf1BENQTePzPMis97CoN/iMW1St3WN+AWCCRp+TTBRiDg==}
@@ -643,10 +643,10 @@ snapshots:
       uint8arrays: 5.1.0
       wherearewe: 2.0.1
 
-  '@chainsafe/libp2p-yamux@8.0.0':
+  '@chainsafe/libp2p-yamux@8.0.1':
     dependencies:
       '@libp2p/interface': 3.0.2
-      '@libp2p/utils': 7.0.1
+      '@libp2p/utils': 7.0.5
       race-signal: 2.0.0
       uint8arraylist: 2.4.8
 
