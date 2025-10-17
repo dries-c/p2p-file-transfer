@@ -42,7 +42,7 @@
     "@cloudflare/workers-types": "4.20251011.0",
     "@libp2p/interface": "3.0.2",
     "@tailwindcss/vite": "4.1.14",
-    "@types/node": "24.8.0",
+    "@types/node": "24.8.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "it-stream-types": "2.0.2",
