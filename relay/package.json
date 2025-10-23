@@ -14,7 +14,7 @@
     "@libp2p/circuit-relay-v2": "4.0.6",
     "@libp2p/crypto": "5.1.12",
     "@libp2p/identify": "4.0.6",
-    "@libp2p/websockets": "10.0.6",
+    "@libp2p/websockets": "10.0.7",
     "@multiformats/multiaddr": "13.0.1",
     "it-length-prefixed-stream": "2.0.3",
     "libp2p": "3.0.6"

@@ -24,8 +24,8 @@ importers:
         specifier: 4.0.6
         version: 4.0.6
       '@libp2p/websockets':
-        specifier: 10.0.6
-        version: 10.0.6
+        specifier: 10.0.7
+        version: 10.0.7
       '@multiformats/multiaddr':
         specifier: 13.0.1
         version: 13.0.1
@@ -188,8 +188,8 @@ packages:
   '@libp2p/utils@7.0.6':
     resolution: {integrity: sha512-xMdKok1IAyy/MWd44aEAF7O1NjPqB6hgLzmvKgTE+aEqj/95eP7aKyHRO/ObZhS3Kw2DifOhk9nVoTw/KVgIvw==}
 
-  '@libp2p/websockets@10.0.6':
-    resolution: {integrity: sha512-rHsV3IR9fTsKUV/dexzmA1CIsIzkqgc5npwgUepXdrejTHhCZfmDSo52fdEsN4kfoWlOK4RmDxXrgQxxkrQeSw==}
+  '@libp2p/websockets@10.0.7':
+    resolution: {integrity: sha512-29EjslY8iLCuu4fZw0yLUn/gqhHcTDJMCWE3fI1JMU0vd0Xgr73koAtkdB0HXRMFxXGL83wlje8ugYD4k6kamg==}
 
   '@multiformats/dns@1.0.6':
     resolution: {integrity: sha512-nt/5UqjMPtyvkG9BQYdJ4GfLK3nMqGpFZOzf4hAmIa0sJh2LlS9YKXZ4FgwBDsaHvzZqR/rUFIywIc7pkHNNuw==}
@@ -909,10 +909,10 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/websockets@10.0.6':
+  '@libp2p/websockets@10.0.7':
     dependencies:
       '@libp2p/interface': 3.0.2
-      '@libp2p/utils': 7.0.5
+      '@libp2p/utils': 7.0.6
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       '@multiformats/multiaddr-to-uri': 12.0.0
