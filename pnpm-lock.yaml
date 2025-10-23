@@ -21,8 +21,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react@19.2.0)
       '@libp2p/circuit-relay-v2':
-        specifier: 4.0.5
-        version: 4.0.5
+        specifier: 4.0.6
+        version: 4.0.6
       '@libp2p/identify':
         specifier: 4.0.5
         version: 4.0.5
@@ -878,8 +878,8 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
-  '@libp2p/circuit-relay-v2@4.0.5':
-    resolution: {integrity: sha512-A01ip1YygSFE5m26sXVZzjdovyxBeW5Za1rRxzGJbBfStNX0fDVJVAprRiFSMNorAVrFQThxXUygiiFE5guN2Q==}
+  '@libp2p/circuit-relay-v2@4.0.6':
+    resolution: {integrity: sha512-4VwdnzJOv/CN480xfKMgDhErltZURDbOc4u269h3nqvd08RgzflGGoToSMVrxmf+yra3+WqKXitRamHUqy4GXg==}
 
   '@libp2p/crypto@5.1.10':
     resolution: {integrity: sha512-kfQwQUV4iLV9tE7C6IjUd61XWEIrg4WBqGIDjeMoUhRPDGQ3z+eIIuIEaBRDEXr8nWd0YZuCprN1AunajHmbfg==}
@@ -893,6 +893,9 @@ packages:
   '@libp2p/interface-internal@3.0.5':
     resolution: {integrity: sha512-gaarewSLKpH5iMkXPmUctDk8SoBf/fXL/wNkpfHqHXtzP6Z4Hhm6eFc/DpL8NfCe+tLf1Cdmg3jOsxfdBS3IoA==}
 
+  '@libp2p/interface-internal@3.0.6':
+    resolution: {integrity: sha512-+JoIXMHeqh6dsomp64ccyFlA1NL8cSecNTy/goewg2wt66u3N68MCd63Av+aWXzjPy5Mahpt6hBYFpcYG4DANA==}
+
   '@libp2p/interface@3.0.2':
     resolution: {integrity: sha512-nb3H0eu9RPCBjwWUCafSL3TpFmt1Jhe4zgWlV98VrrWhtxg8xaunbEWzfVnU+R2TvV8IAljGw80OcqSst3gBlw==}
 
@@ -905,11 +908,17 @@ packages:
   '@libp2p/logger@6.0.5':
     resolution: {integrity: sha512-4HdUwusPh57KKSY0v0YMYw6T2wl93svOLFNJuosy2xLto9zty1KWkrjaEFyF6jF0a7zBd1k5trjJsDXo8OKDxw==}
 
+  '@libp2p/logger@6.1.0':
+    resolution: {integrity: sha512-EY19RmcgBX91A3SkwWd7KYdMlkJeeMqgvbWdH37hc0+zh1ioht6TSAcYARaK9gg6LGwaMgNRD2WUGwA87BZIdw==}
+
   '@libp2p/multistream-select@7.0.5':
     resolution: {integrity: sha512-OXAv32VtxGYk88VX4jmUgD6Xo58xGgm1oKTNC1ieJ7PbNITfyr/LqOnruuw+/JwQ2LsE806ddOMM8aMV24RMIg==}
 
   '@libp2p/peer-collections@7.0.5':
     resolution: {integrity: sha512-mUkVDAHyxGr8fAI+aa+kf6izP4BI3qqIvuMQQpppYRG3feptmiRqSulbt/UpXoIepLp/1hIlAeZ+QyAMBZ7EpA==}
+
+  '@libp2p/peer-collections@7.0.6':
+    resolution: {integrity: sha512-vly/Gsc5wn3qCDbpHyRBNr9jHE4MUOqMIKbYQdKvOch9FC7AassBoiuQ8s5yoFcFDvYwdx3osKbHhWjMtAET7g==}
 
   '@libp2p/peer-id@6.0.3':
     resolution: {integrity: sha512-kNecI7YYeh55Jrx+ra0AxEx5CfpKB4/i+4rBJ8jRyLaMgJvwhTC055mZrKv+rUWEEfp/9VqCnDKQ8cVoDbDydA==}
@@ -925,6 +934,9 @@ packages:
 
   '@libp2p/utils@7.0.5':
     resolution: {integrity: sha512-SmefnIdRXjLh9SdJ8nIL0LFvBqVuti3kujzk0/4Xj8mvAEzYl7h/Ge5VU6PHpzat9CZMplGQGGfr/vxX1WuckQ==}
+
+  '@libp2p/utils@7.0.6':
+    resolution: {integrity: sha512-xMdKok1IAyy/MWd44aEAF7O1NjPqB6hgLzmvKgTE+aEqj/95eP7aKyHRO/ObZhS3Kw2DifOhk9nVoTw/KVgIvw==}
 
   '@libp2p/webrtc@6.0.6':
     resolution: {integrity: sha512-SAQyfUWElTJlJycHNW0VszAP0E7DDkkmxnqJXmCG7MnODteI1/ub+5hg+bSDB/8Nt1uxBSXjw7+JTSZtpylFqQ==}
@@ -2864,6 +2876,9 @@ packages:
   weald@1.0.6:
     resolution: {integrity: sha512-sX1PzkcMJZUJ848JbFzB6aKHHglTxqACEnq2KgI75b7vWYvfXFBNbOuDKqFKwCT44CrP6c5r+L4+5GmPnb5/SQ==}
 
+  weald@1.1.0:
+    resolution: {integrity: sha512-wzM8qstGYSnF0mWnr48OjQqs+K6eSy9/jO3Ti4gmOJWRyM5Sed+iWuALQ+pX9nAKQPChv39M6qdVAEL+IH6ONA==}
+
   webcrypto-core@1.8.1:
     resolution: {integrity: sha512-P+x1MvlNCXlKbLSOY4cYrdreqPG5hbzkmawbcXLKN/mf6DZW0SdNNkZ+sjwsqVkI4A4Ko2sPZmkZtCKY58w83A==}
 
@@ -3606,15 +3621,15 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@libp2p/circuit-relay-v2@4.0.5':
+  '@libp2p/circuit-relay-v2@4.0.6':
     dependencies:
       '@libp2p/crypto': 5.1.12
       '@libp2p/interface': 3.0.2
-      '@libp2p/interface-internal': 3.0.5
-      '@libp2p/peer-collections': 7.0.5
+      '@libp2p/interface-internal': 3.0.6
+      '@libp2p/peer-collections': 7.0.6
       '@libp2p/peer-id': 6.0.3
       '@libp2p/peer-record': 9.0.3
-      '@libp2p/utils': 7.0.5
+      '@libp2p/utils': 7.0.6
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       any-signal: 4.1.1
@@ -3671,6 +3686,13 @@ snapshots:
       '@multiformats/multiaddr': 13.0.1
       progress-events: 1.0.1
 
+  '@libp2p/interface-internal@3.0.6':
+    dependencies:
+      '@libp2p/interface': 3.0.2
+      '@libp2p/peer-collections': 7.0.6
+      '@multiformats/multiaddr': 13.0.1
+      progress-events: 1.0.1
+
   '@libp2p/interface@3.0.2':
     dependencies:
       '@multiformats/dns': 1.0.9
@@ -3707,6 +3729,14 @@ snapshots:
       multiformats: 13.4.1
       weald: 1.0.6
 
+  '@libp2p/logger@6.1.0':
+    dependencies:
+      '@libp2p/interface': 3.0.2
+      '@multiformats/multiaddr': 13.0.1
+      interface-datastore: 9.0.2
+      multiformats: 13.4.1
+      weald: 1.1.0
+
   '@libp2p/multistream-select@7.0.5':
     dependencies:
       '@libp2p/interface': 3.0.2
@@ -3720,6 +3750,13 @@ snapshots:
       '@libp2p/interface': 3.0.2
       '@libp2p/peer-id': 6.0.3
       '@libp2p/utils': 7.0.5
+      multiformats: 13.4.1
+
+  '@libp2p/peer-collections@7.0.6':
+    dependencies:
+      '@libp2p/interface': 3.0.2
+      '@libp2p/peer-id': 6.0.3
+      '@libp2p/utils': 7.0.6
       multiformats: 13.4.1
 
   '@libp2p/peer-id@6.0.3':
@@ -3791,6 +3828,32 @@ snapshots:
       '@libp2p/crypto': 5.1.12
       '@libp2p/interface': 3.0.2
       '@libp2p/logger': 6.0.5
+      '@multiformats/multiaddr': 13.0.1
+      '@sindresorhus/fnv1a': 3.1.0
+      any-signal: 4.1.1
+      cborg: 4.2.15
+      delay: 6.0.0
+      is-loopback-addr: 2.0.2
+      it-length-prefixed: 10.0.1
+      it-pipe: 3.0.1
+      it-pushable: 3.2.3
+      it-stream-types: 2.0.2
+      main-event: 1.0.1
+      netmask: 2.0.2
+      p-defer: 4.0.1
+      p-event: 7.0.0
+      race-signal: 2.0.0
+      uint8-varint: 2.0.4
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
+
+  '@libp2p/utils@7.0.6':
+    dependencies:
+      '@chainsafe/is-ip': 2.1.0
+      '@chainsafe/netmask': 2.0.0
+      '@libp2p/crypto': 5.1.12
+      '@libp2p/interface': 3.0.2
+      '@libp2p/logger': 6.1.0
       '@multiformats/multiaddr': 13.0.1
       '@sindresorhus/fnv1a': 3.1.0
       any-signal: 4.1.1
@@ -6015,6 +6078,11 @@ snapshots:
       makeerror: 1.0.12
 
   weald@1.0.6:
+    dependencies:
+      ms: 3.0.0-canary.202508261828
+      supports-color: 10.2.2
+
+  weald@1.1.0:
     dependencies:
       ms: 3.0.0-canary.202508261828
       supports-color: 10.2.2
