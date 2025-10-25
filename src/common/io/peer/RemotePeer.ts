@@ -1,7 +1,7 @@
-import type {Connection, IncomingStreamData, PeerId} from '@libp2p/interface'
-import {lpStream} from 'it-length-prefixed-stream'
+import type {Connection, PeerId, Stream} from '@libp2p/interface'
 import {FileSendStream} from '../file/FileSendStream.ts'
 import {ErrorState, FILE_TRANSFER_PROTOCOL, Peer} from './Peer.ts'
+import {lpStream} from '@libp2p/utils'
 
 export type DeviceType = 'computer' | 'mobile'
 
@@ -33,8 +33,8 @@ export class RemotePeer extends Peer<FileSendStream> {
     this.changeListeners.push(listener)
   }
 
-  async handleDeviceInformation(data: IncomingStreamData): Promise<void> {
-    const lp = lpStream(data.stream)
+  async handleDeviceInformation(stream: Stream): Promise<void> {
+    const lp = lpStream(stream)
     const req = await lp.read()
 
     const origin = this.deviceInformation.origin

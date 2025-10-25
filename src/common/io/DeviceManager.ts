@@ -3,7 +3,7 @@ import type {PeerId} from '@libp2p/interface'
 import {RemotePeer} from './peer/RemotePeer.ts'
 import {DEVICE_INFORMATION_PROTOCOL, getRelayPeerAddress, LOCAL_DISCOVERY_PROTOCOL} from './peer/Peer.ts'
 import type {TransceiverPeer} from './peer/TransceiverPeer.ts'
-import {lpStream} from 'it-length-prefixed-stream'
+import {lpStream} from '@libp2p/utils'
 
 export class DeviceManager {
   private peers: Map<string, RemotePeer> = new Map()
@@ -11,13 +11,14 @@ export class DeviceManager {
   private peerConnectListeners: ((peer: RemotePeer) => void)[] = []
 
   constructor(transceiver: TransceiverPeer, node: Libp2p) {
-    node.handle(DEVICE_INFORMATION_PROTOCOL, async event =>
-      this.getPeer(event.connection.remotePeer)?.handleDeviceInformation(event),
+    node.handle(
+      DEVICE_INFORMATION_PROTOCOL,
+      async (stream, connection): Promise<void> => this.getPeer(connection.remotePeer)?.handleDeviceInformation(stream),
     )
 
-    node.handle(LOCAL_DISCOVERY_PROTOCOL, async event => {
-      if (transceiver.isRelayPeer(event.connection.remotePeer)) {
-        const lp = lpStream(event.stream)
+    node.handle(LOCAL_DISCOVERY_PROTOCOL, async (stream, connection): Promise<void> => {
+      if (transceiver.isRelayPeer(connection.remotePeer)) {
+        const lp = lpStream(stream)
         const req = await lp.read()
 
         const peerId = new TextDecoder().decode(req.subarray())

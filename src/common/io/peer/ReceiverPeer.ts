@@ -11,7 +11,7 @@ import type {Multiaddr} from '@multiformats/multiaddr'
 import {FileReceiveStream} from '../file/FileReceiveStream.ts'
 import {type Connection, ConnectionFailedError, InvalidMessageError, type PeerId, TimeoutError} from '@libp2p/interface'
 import {UAParser} from 'ua-parser-js'
-import {lpStream} from 'it-length-prefixed-stream'
+import {lpStream} from '@libp2p/utils'
 
 export type FileReceiverStreamListener = (stream: FileReceiveStream) => void
 
@@ -36,14 +36,14 @@ export class ReceiverPeer extends Peer<FileReceiveStream> {
   constructor(protected readonly node: Libp2p) {
     super()
 
-    node.handle(FILE_TRANSFER_PROTOCOL, async event => {
+    node.handle(FILE_TRANSFER_PROTOCOL, async s => {
       if (this.getState() === PeerState.CONNECTED) {
-        const stream = new FileReceiveStream(event.stream)
+        const stream = new FileReceiveStream(s)
 
         this.addStream(stream)
         this.onFileStreamReceived(stream)
       } else {
-        await event.stream.close()
+        await s.close()
       }
     })
   }
@@ -91,8 +91,8 @@ export class ReceiverPeer extends Peer<FileReceiveStream> {
   async sendDeviceInformation(connection: Connection): Promise<void> {
     const uaParser = UAParser(navigator.userAgent)
 
-    const stream = lpStream(await connection.newStream([DEVICE_INFORMATION_PROTOCOL]))
-    await stream.write(
+    const lp = lpStream(await connection.newStream([DEVICE_INFORMATION_PROTOCOL]))
+    await lp.write(
       new TextEncoder().encode(
         JSON.stringify({
           name: uaParser.device.toString(),

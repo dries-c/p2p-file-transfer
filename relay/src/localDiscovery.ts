@@ -1,8 +1,8 @@
 import type {CircuitRelayService} from '@libp2p/circuit-relay-v2'
 import type {Libp2p} from 'libp2p'
 import type {PeerId} from '@libp2p/interface'
-import type {Multiaddr} from '@multiformats/multiaddr'
-import {lpStream} from 'it-length-prefixed-stream'
+import {CODE_IP4, CODE_IP6, CODE_IP6ZONE, Multiaddr} from '@multiformats/multiaddr'
+import {lpStream} from '@libp2p/utils'
 
 export const LOCAL_DISCOVERY_PROTOCOL = '/p2p-file-transfer/local-discovery/1.0.0'
 
@@ -12,7 +12,21 @@ export class LocalDiscovery {
   constructor(private readonly node: Libp2p<{relay: CircuitRelayService}>) {}
 
   private getIPFromMultiaddr(multiaddr: Multiaddr): string {
-    return multiaddr.nodeAddress().address
+    const options = multiaddr.getComponents()
+
+    let zone = ''
+
+    for (const option of options) {
+      if (option.code === CODE_IP6ZONE) {
+        zone = `%${option.value ?? ''}`
+      }
+
+      if (option.code === CODE_IP4 || option.code === CODE_IP6) {
+        return option.value + zone
+      }
+    }
+
+    throw new Error('No IP address found in multiaddr')
   }
 
   private getKnownLocalPeers(peerId: PeerId) {

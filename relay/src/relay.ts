@@ -16,8 +16,8 @@ async function startRelay() {
     transports: [
       webSockets({
         https: {
-          cert: await fs.promises.readFile('./ssl/cert.pem'),
-          key: await fs.promises.readFile('./ssl/privkey.pem'),
+          cert: await fs.promises.readFile(process.env.SSL_CERT_PATH ?? './ssl/cert.pem'),
+          key: await fs.promises.readFile(process.env.SSL_KEY_PATH ?? './ssl/key.pem'),
         },
       }),
     ],

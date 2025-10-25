@@ -12,6 +12,5 @@ createRoot(document.getElementById('root')!).render(
         <Route path="download" element={<DownloadPage />} />
       </Routes>
     </BrowserRouter>
-    ,
   </StrictMode>,
 )

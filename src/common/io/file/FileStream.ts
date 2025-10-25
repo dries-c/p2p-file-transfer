@@ -1,7 +1,7 @@
 import type {FileInfo} from '../../file.ts'
-import {type LengthPrefixedStream, lpStream} from 'it-length-prefixed-stream'
 import {FileStreamStats} from './FileStreamStats.ts'
 import type {Stream} from '@libp2p/interface'
+import {type LengthPrefixedStream, lpStream} from '@libp2p/utils'
 
 export enum FileStreamState {
   PENDING,

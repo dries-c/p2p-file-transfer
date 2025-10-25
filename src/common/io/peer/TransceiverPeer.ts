@@ -1,4 +1,4 @@
-import {ErrorState, getBaseOptions, PeerState, RELAY_ADDRESS} from './Peer.ts'
+import {ErrorState, getBaseOptions, PeerState, RELAY_ADDRESS, RELAY_PEER_ID} from './Peer.ts'
 import {createLibp2p, type Libp2p} from 'libp2p'
 import type {Multiaddr} from '@multiformats/multiaddr'
 import {WebRTC} from '@multiformats/multiaddr-matcher'
@@ -18,7 +18,7 @@ export class TransceiverPeer extends ReceiverPeer {
       ...getBaseOptions(),
     })
 
-    const transceiverPeer = new TransceiverPeer(node, peerIdFromString(RELAY_ADDRESS.getPeerId()!))
+    const transceiverPeer = new TransceiverPeer(node, peerIdFromString(RELAY_PEER_ID))
 
     transceiverPeer.dial(RELAY_ADDRESS)
 

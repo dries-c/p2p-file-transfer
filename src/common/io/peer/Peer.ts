@@ -11,10 +11,8 @@ import {type Multiaddr, multiaddr} from '@multiformats/multiaddr'
 export const FILE_TRANSFER_PROTOCOL = '/p2p-file-transfer/file-transfer/1.0.0'
 export const LOCAL_DISCOVERY_PROTOCOL = '/p2p-file-transfer/local-discovery/1.0.0'
 export const DEVICE_INFORMATION_PROTOCOL = '/p2p-file-transfer/device-information/1.0.0'
-//export const RELAY_ADDRESS = multiaddr('/dnsaddr/relay.driesc.be') for some reason doesn't work
-export const RELAY_ADDRESS = multiaddr(
-  '/dns/relay.driesc.be/tcp/5000/wss/p2p/12D3KooWSibDjAgSue7PTiDbXSiTLMHzQWdUGWZK4vCtdZDggyNN',
-)
+export const RELAY_PEER_ID = '12D3KooWSibDjAgSue7PTiDbXSiTLMHzQWdUGWZK4vCtdZDggyNN'
+export const RELAY_ADDRESS = multiaddr('/dns/relay.driesc.be/tcp/5000/wss/p2p/' + RELAY_PEER_ID)
 
 export function getRelayPeerAddress(peerId: string): Multiaddr {
   return RELAY_ADDRESS.encapsulate(`/p2p-circuit/webrtc/p2p/${peerId}`)
