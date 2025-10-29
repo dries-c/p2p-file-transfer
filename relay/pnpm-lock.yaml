@@ -18,8 +18,8 @@ importers:
         specifier: 4.0.6
         version: 4.0.6
       '@libp2p/crypto':
-        specifier: 5.1.12
-        version: 5.1.12
+        specifier: 5.1.13
+        version: 5.1.13
       '@libp2p/identify':
         specifier: 4.0.6
         version: 4.0.6
@@ -131,8 +131,8 @@ packages:
   '@libp2p/circuit-relay-v2@4.0.6':
     resolution: {integrity: sha512-4VwdnzJOv/CN480xfKMgDhErltZURDbOc4u269h3nqvd08RgzflGGoToSMVrxmf+yra3+WqKXitRamHUqy4GXg==}
 
-  '@libp2p/crypto@5.1.12':
-    resolution: {integrity: sha512-1yJS0BZj+HF4M3Uv/92y3oIbMcCar218accFBcX+nKVhBlwDbx6fkUURhs5GilIhMgDtir+qQ8Un1hwF4CgGzw==}
+  '@libp2p/crypto@5.1.13':
+    resolution: {integrity: sha512-8NN9cQP3jDn+p9+QE9ByiEoZ2lemDFf/unTgiKmS3JF93ph240EUVdbCyyEgOMfykzb0okTM4gzvwfx9osJebQ==}
 
   '@libp2p/identify@4.0.6':
     resolution: {integrity: sha512-3JxHmtVCf/ObUClcHP+f8/E0CMqg6n2XruiGU5y+N1bPZCxaTtePViTEMvJMAdbgHIDW3f0c+b4WD1vMyhMCug==}
@@ -142,6 +142,9 @@ packages:
 
   '@libp2p/interface@3.0.2':
     resolution: {integrity: sha512-nb3H0eu9RPCBjwWUCafSL3TpFmt1Jhe4zgWlV98VrrWhtxg8xaunbEWzfVnU+R2TvV8IAljGw80OcqSst3gBlw==}
+
+  '@libp2p/interface@3.1.0':
+    resolution: {integrity: sha512-RE7/XyvC47fQBe1cHxhMvepYKa5bFCUyFrrpj8PuM0E7JtzxU7F+Du5j4VXbg2yLDcToe0+j8mB7jvwE2AThYw==}
 
   '@libp2p/logger@6.1.0':
     resolution: {integrity: sha512-EY19RmcgBX91A3SkwWd7KYdMlkJeeMqgvbWdH37hc0+zh1ioht6TSAcYARaK9gg6LGwaMgNRD2WUGwA87BZIdw==}
@@ -605,7 +608,7 @@ snapshots:
     dependencies:
       '@chainsafe/as-chacha20poly1305': 0.1.0
       '@chainsafe/as-sha256': 1.2.0
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/peer-id': 6.0.3
       '@libp2p/utils': 7.0.6
@@ -632,7 +635,7 @@ snapshots:
 
   '@libp2p/circuit-relay-v2@4.0.6':
     dependencies:
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/interface-internal': 3.0.6
       '@libp2p/peer-collections': 7.0.6
@@ -651,9 +654,9 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/crypto@5.1.12':
+  '@libp2p/crypto@5.1.13':
     dependencies:
-      '@libp2p/interface': 3.0.2
+      '@libp2p/interface': 3.1.0
       '@noble/curves': 2.0.1
       '@noble/hashes': 2.0.1
       multiformats: 13.4.1
@@ -663,7 +666,7 @@ snapshots:
 
   '@libp2p/identify@4.0.6':
     dependencies:
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/interface-internal': 3.0.6
       '@libp2p/peer-id': 6.0.3
@@ -686,6 +689,15 @@ snapshots:
       progress-events: 1.0.1
 
   '@libp2p/interface@3.0.2':
+    dependencies:
+      '@multiformats/dns': 1.0.10
+      '@multiformats/multiaddr': 13.0.1
+      main-event: 1.0.1
+      multiformats: 13.4.1
+      progress-events: 1.0.1
+      uint8arraylist: 2.4.8
+
+  '@libp2p/interface@3.1.0':
     dependencies:
       '@multiformats/dns': 1.0.10
       '@multiformats/multiaddr': 13.0.1
@@ -719,14 +731,14 @@ snapshots:
 
   '@libp2p/peer-id@6.0.3':
     dependencies:
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       multiformats: 13.4.1
       uint8arrays: 5.1.0
 
   '@libp2p/peer-record@9.0.3':
     dependencies:
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/peer-id': 6.0.3
       '@multiformats/multiaddr': 13.0.1
@@ -738,7 +750,7 @@ snapshots:
 
   '@libp2p/peer-store@12.0.6':
     dependencies:
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/peer-collections': 7.0.6
       '@libp2p/peer-id': 6.0.3
@@ -757,7 +769,7 @@ snapshots:
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/logger': 6.1.0
       '@multiformats/multiaddr': 13.0.1
@@ -1049,7 +1061,7 @@ snapshots:
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.12
+      '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
       '@libp2p/interface-internal': 3.0.6
       '@libp2p/logger': 6.1.0
