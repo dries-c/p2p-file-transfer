@@ -36,8 +36,8 @@ importers:
         specifier: 6.0.8
         version: 6.0.8(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.2)(react@19.2.0))
       '@libp2p/websockets':
-        specifier: 10.0.7
-        version: 10.0.7
+        specifier: 10.1.0
+        version: 10.1.0
       '@multiformats/multiaddr':
         specifier: 13.0.1
         version: 13.0.1
@@ -932,8 +932,8 @@ packages:
   '@libp2p/webrtc@6.0.8':
     resolution: {integrity: sha512-6PhVba2jFILW8NKZ7bZynobnSCdItKU5Vfq5Zjl0gi9wuWeZG4GNVoVeJHE5Ag4GtmCxcqGNu2jtu9bpjDlUag==}
 
-  '@libp2p/websockets@10.0.7':
-    resolution: {integrity: sha512-29EjslY8iLCuu4fZw0yLUn/gqhHcTDJMCWE3fI1JMU0vd0Xgr73koAtkdB0HXRMFxXGL83wlje8ugYD4k6kamg==}
+  '@libp2p/websockets@10.1.0':
+    resolution: {integrity: sha512-RI7OVDTuAvUfYqlBB3Bo3eLw0BpcwT5sEqTBPjKtPSWVsoi57gjVShlCEyWqpiXDU/VIYFzk94NrGATjie/gPg==}
 
   '@multiformats/dns@1.0.10':
     resolution: {integrity: sha512-6X200ceQLns0b/CU0S/So16tGjB5eIXHJ1xvJMPoWaKFHWSgfpW2EhkWJrqap4U3+c37zcowVR0ToPXeYEL7Vw==}
@@ -3846,7 +3846,7 @@ snapshots:
       - react-native
       - supports-color
 
-  '@libp2p/websockets@10.0.7':
+  '@libp2p/websockets@10.1.0':
     dependencies:
       '@libp2p/interface': 3.1.0
       '@libp2p/utils': 7.0.7
