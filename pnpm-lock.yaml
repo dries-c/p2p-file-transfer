@@ -21,8 +21,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react@19.2.0)
       '@libp2p/circuit-relay-v2':
-        specifier: 4.0.6
-        version: 4.0.6
+        specifier: 4.1.0
+        version: 4.1.0
       '@libp2p/identify':
         specifier: 4.0.7
         version: 4.0.7
@@ -875,8 +875,8 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
-  '@libp2p/circuit-relay-v2@4.0.6':
-    resolution: {integrity: sha512-4VwdnzJOv/CN480xfKMgDhErltZURDbOc4u269h3nqvd08RgzflGGoToSMVrxmf+yra3+WqKXitRamHUqy4GXg==}
+  '@libp2p/circuit-relay-v2@4.1.0':
+    resolution: {integrity: sha512-6vrHcYSbucX1aCoyq8VJUYqOHjcZAUQfZFgdP9wx+yaG+0oVTzIrPT5wv2xDV7IV45pVgOUmmF6RT5YPmA5M8w==}
 
   '@libp2p/crypto@5.1.12':
     resolution: {integrity: sha512-1yJS0BZj+HF4M3Uv/92y3oIbMcCar218accFBcX+nKVhBlwDbx6fkUURhs5GilIhMgDtir+qQ8Un1hwF4CgGzw==}
@@ -3606,14 +3606,14 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@libp2p/circuit-relay-v2@4.0.6':
+  '@libp2p/circuit-relay-v2@4.1.0':
     dependencies:
-      '@libp2p/crypto': 5.1.12
-      '@libp2p/interface': 3.0.2
-      '@libp2p/interface-internal': 3.0.6
-      '@libp2p/peer-collections': 7.0.6
+      '@libp2p/crypto': 5.1.13
+      '@libp2p/interface': 3.1.0
+      '@libp2p/interface-internal': 3.0.7
+      '@libp2p/peer-collections': 7.0.7
       '@libp2p/peer-id': 6.0.4
-      '@libp2p/peer-record': 9.0.3
+      '@libp2p/peer-record': 9.0.4
       '@libp2p/utils': 7.0.7
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1

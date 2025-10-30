@@ -15,8 +15,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       '@libp2p/circuit-relay-v2':
-        specifier: 4.0.6
-        version: 4.0.6
+        specifier: 4.1.0
+        version: 4.1.0
       '@libp2p/crypto':
         specifier: 5.1.13
         version: 5.1.13
@@ -128,8 +128,8 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
-  '@libp2p/circuit-relay-v2@4.0.6':
-    resolution: {integrity: sha512-4VwdnzJOv/CN480xfKMgDhErltZURDbOc4u269h3nqvd08RgzflGGoToSMVrxmf+yra3+WqKXitRamHUqy4GXg==}
+  '@libp2p/circuit-relay-v2@4.1.0':
+    resolution: {integrity: sha512-6vrHcYSbucX1aCoyq8VJUYqOHjcZAUQfZFgdP9wx+yaG+0oVTzIrPT5wv2xDV7IV45pVgOUmmF6RT5YPmA5M8w==}
 
   '@libp2p/crypto@5.1.13':
     resolution: {integrity: sha512-8NN9cQP3jDn+p9+QE9ByiEoZ2lemDFf/unTgiKmS3JF93ph240EUVdbCyyEgOMfykzb0okTM4gzvwfx9osJebQ==}
@@ -169,9 +169,6 @@ packages:
 
   '@libp2p/peer-id@6.0.4':
     resolution: {integrity: sha512-Z3xK0lwwKn4bPg3ozEpPr1HxsRi2CxZdghOL+MXoFah/8uhJJHxHFA8A/jxtKn4BB8xkk6F8R5vKNIS05yaCYw==}
-
-  '@libp2p/peer-record@9.0.3':
-    resolution: {integrity: sha512-W1K/fdyLDZpxEEcS08JafyNyDUAKHhdjxdt2M7ZwDtBbRrM9RFseZaGHufpMEgPZxne6RriLpJp1NLeFPF9bZA==}
 
   '@libp2p/peer-record@9.0.4':
     resolution: {integrity: sha512-c8NrP2q0FPIiEef2IKOQFi7k0CJK1vr0uk+jbn6KjF85YUWVyaVvuncZG7EwAjO68tuwGS0LLrvJWJbjHFqAwQ==}
@@ -648,14 +645,14 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@libp2p/circuit-relay-v2@4.0.6':
+  '@libp2p/circuit-relay-v2@4.1.0':
     dependencies:
       '@libp2p/crypto': 5.1.13
-      '@libp2p/interface': 3.0.2
-      '@libp2p/interface-internal': 3.0.6
-      '@libp2p/peer-collections': 7.0.6
-      '@libp2p/peer-id': 6.0.3
-      '@libp2p/peer-record': 9.0.3
+      '@libp2p/interface': 3.1.0
+      '@libp2p/interface-internal': 3.0.7
+      '@libp2p/peer-collections': 7.0.7
+      '@libp2p/peer-id': 6.0.4
+      '@libp2p/peer-record': 9.0.4
       '@libp2p/utils': 7.0.7
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
@@ -699,7 +696,7 @@ snapshots:
   '@libp2p/interface-internal@3.0.6':
     dependencies:
       '@libp2p/interface': 3.0.2
-      '@libp2p/peer-collections': 7.0.6
+      '@libp2p/peer-collections': 7.0.7
       '@multiformats/multiaddr': 13.0.1
       progress-events: 1.0.1
 
@@ -755,7 +752,7 @@ snapshots:
   '@libp2p/peer-collections@7.0.6':
     dependencies:
       '@libp2p/interface': 3.0.2
-      '@libp2p/peer-id': 6.0.3
+      '@libp2p/peer-id': 6.0.4
       '@libp2p/utils': 7.0.7
       multiformats: 13.4.1
 
@@ -780,18 +777,6 @@ snapshots:
       multiformats: 13.4.1
       uint8arrays: 5.1.0
 
-  '@libp2p/peer-record@9.0.3':
-    dependencies:
-      '@libp2p/crypto': 5.1.13
-      '@libp2p/interface': 3.0.2
-      '@libp2p/peer-id': 6.0.3
-      '@multiformats/multiaddr': 13.0.1
-      multiformats: 13.4.1
-      protons-runtime: 5.6.0
-      uint8-varint: 2.0.4
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-
   '@libp2p/peer-record@9.0.4':
     dependencies:
       '@libp2p/crypto': 5.1.13
@@ -808,9 +793,9 @@ snapshots:
     dependencies:
       '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.0.2
-      '@libp2p/peer-collections': 7.0.6
-      '@libp2p/peer-id': 6.0.3
-      '@libp2p/peer-record': 9.0.3
+      '@libp2p/peer-collections': 7.0.7
+      '@libp2p/peer-id': 6.0.4
+      '@libp2p/peer-record': 9.0.4
       '@multiformats/multiaddr': 13.0.1
       interface-datastore: 9.0.2
       it-all: 3.0.9
