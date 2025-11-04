@@ -15,8 +15,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       '@cloudflare/vite-plugin':
-        specifier: 1.13.18
-        version: 1.13.18(vite@7.1.12(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(workerd@1.20251011.0)(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))
+        specifier: 1.13.19
+        version: 1.13.19(vite@7.1.12(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(workerd@1.20251011.0)(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))
       '@heroicons/react':
         specifier: 2.2.0
         version: 2.2.0(react@19.2.0)
@@ -352,11 +352,20 @@ packages:
       workerd:
         optional: true
 
-  '@cloudflare/vite-plugin@1.13.18':
-    resolution: {integrity: sha512-1NO7oQWdO3hQMRAYIEd1yiGrd3hVvmLNeSHzTcpURMGh8LMbDGCPUsNWHdF6AoMGH3xC411o0FiwDh16nxWtqg==}
+  '@cloudflare/unenv-preset@2.7.9':
+    resolution: {integrity: sha512-Drm7qlTKnvncEv+DANiQNEonq0H0LyIsoFZYJ6tJ8OhAoy5udIE8yp6BsVDYcIjcYLIybp4M7c/P7ly/56SoHg==}
+    peerDependencies:
+      unenv: 2.0.0-rc.24
+      workerd: ^1.20250927.0
+    peerDependenciesMeta:
+      workerd:
+        optional: true
+
+  '@cloudflare/vite-plugin@1.13.19':
+    resolution: {integrity: sha512-3ndsoSHL9Ttjj7CaYfYg5dY6vy1tl/1+dXdK4Ilr78sQbKA+Ni/KXHgqi8vw9L5LeB8ZbdeJ7vQTKfMN9Qh+AA==}
     peerDependencies:
       vite: ^6.1.0 || ^7.0.0
-      wrangler: ^4.45.3
+      wrangler: ^4.45.4
 
   '@cloudflare/workerd-darwin-64@1.20251011.0':
     resolution: {integrity: sha512-0DirVP+Z82RtZLlK2B+VhLOkk+ShBqDYO/jhcRw4oVlp0TOvk3cOVZChrt3+y3NV8Y/PYgTEywzLKFSziK4wCg==}
@@ -2202,6 +2211,11 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
+  miniflare@4.20251011.2:
+    resolution: {integrity: sha512-5oAaz6lqZus4QFwzEJiNtgpjZR2TBVwBeIhOW33V4gu+l23EukpKja831tFIX2o6sOD/hqZmKZHplOrWl3YGtQ==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -2774,6 +2788,9 @@ packages:
   unenv@2.0.0-rc.21:
     resolution: {integrity: sha512-Wj7/AMtE9MRnAXa6Su3Lk0LNCfqDYgfwVjwRFVum9U7wsto1imuHqk4kTm7Jni+5A0Hn7dttL6O/zjvUvoo+8A==}
 
+  unenv@2.0.0-rc.24:
+    resolution: {integrity: sha512-i7qRCmY42zmCwnYlh9H2SvLEypEFGye5iRmEMKjcGi7zk9UquigRjFtTLz0TYqr0ZGLZhaMHl/foy1bZR+Cwlw==}
+
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
@@ -3220,15 +3237,21 @@ snapshots:
     optionalDependencies:
       workerd: 1.20251011.0
 
-  '@cloudflare/vite-plugin@1.13.18(vite@7.1.12(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(workerd@1.20251011.0)(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))':
+  '@cloudflare/unenv-preset@2.7.9(unenv@2.0.0-rc.24)(workerd@1.20251011.0)':
     dependencies:
-      '@cloudflare/unenv-preset': 2.7.8(unenv@2.0.0-rc.21)(workerd@1.20251011.0)
+      unenv: 2.0.0-rc.24
+    optionalDependencies:
+      workerd: 1.20251011.0
+
+  '@cloudflare/vite-plugin@1.13.19(vite@7.1.12(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(workerd@1.20251011.0)(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))':
+    dependencies:
+      '@cloudflare/unenv-preset': 2.7.9(unenv@2.0.0-rc.24)(workerd@1.20251011.0)
       '@remix-run/node-fetch-server': 0.8.1
       get-port: 7.1.0
-      miniflare: 4.20251011.1
+      miniflare: 4.20251011.2
       picocolors: 1.1.1
       tinyglobby: 0.2.15
-      unenv: 2.0.0-rc.21
+      unenv: 2.0.0-rc.24
       vite: 7.1.12(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1)
       wrangler: 4.45.3(@cloudflare/workers-types@4.20251014.0)
       ws: 8.18.0
@@ -5303,6 +5326,24 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  miniflare@4.20251011.2:
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      acorn: 8.14.0
+      acorn-walk: 8.3.2
+      exit-hook: 2.2.1
+      glob-to-regexp: 0.4.1
+      sharp: 0.33.5
+      stoppable: 1.1.0
+      undici: 7.14.0
+      workerd: 1.20251011.0
+      ws: 8.18.0
+      youch: 4.1.0-beta.10
+      zod: 3.22.3
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.12
@@ -5916,6 +5957,10 @@ snapshots:
       ohash: 2.0.11
       pathe: 2.0.3
       ufo: 1.6.1
+
+  unenv@2.0.0-rc.24:
+    dependencies:
+      pathe: 2.0.3
 
   unpipe@1.0.0: {}
 
