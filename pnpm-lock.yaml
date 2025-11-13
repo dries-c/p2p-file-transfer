@@ -30,8 +30,8 @@ importers:
         specifier: 6.0.4
         version: 6.0.4
       '@libp2p/utils':
-        specifier: 7.0.7
-        version: 7.0.7
+        specifier: 7.0.8
+        version: 7.0.8
       '@libp2p/webrtc':
         specifier: 6.0.8
         version: 6.0.8(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))
@@ -923,9 +923,6 @@ packages:
   '@libp2p/peer-store@12.0.7':
     resolution: {integrity: sha512-yyzoDlXXlGqpLBYLux4kQEkxf0KgCx/XIA19qiNhC0FfqupSXPIhu6wiYMzUwxn8JKbfvl2Q3FrHn9YqJu2ymA==}
 
-  '@libp2p/utils@7.0.7':
-    resolution: {integrity: sha512-7DgXwFWKHTP4Teskh8R0IS+M0aPz4wUBd/mivfJbHEWTwwdf5cs/D5pZbIhF2wBA9+ZuP/r4BccTXvWI2A8iCw==}
-
   '@libp2p/utils@7.0.8':
     resolution: {integrity: sha512-EZNiCiXQxHTlvREJMWJDnOTAPlkBTSIwqTOE82AYMgBGQOGBhkuWdsXlj8ojV7hRh8OAgpfocv0tz7815QhAJQ==}
 
@@ -1587,10 +1584,6 @@ packages:
   deep-extend@0.6.0:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
     engines: {node: '>=4.0.0'}
-
-  delay@6.0.0:
-    resolution: {integrity: sha512-2NJozoOHQ4NuZuVIr5CWd0iiLVIRSDepakaovIN+9eIDHEhdCAEvSy2cuf1DCrPPQLvHmbqTHODlhHg8UCy4zw==}
-    engines: {node: '>=16'}
 
   delay@7.0.0:
     resolution: {integrity: sha512-C3vaGs818qzZjCvVJ98GQUMVyWeg7dr5w2Nwwb2t5K8G98jOyyVO2ti2bKYk5yoYElqH3F2yA53ykuEnwD6MCg==}
@@ -3202,7 +3195,7 @@ snapshots:
       '@libp2p/crypto': 5.1.12
       '@libp2p/interface': 3.1.0
       '@libp2p/peer-id': 6.0.4
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       '@noble/ciphers': 2.0.1
       '@noble/curves': 2.0.1
       '@noble/hashes': 2.0.1
@@ -3214,7 +3207,7 @@ snapshots:
   '@chainsafe/libp2p-yamux@8.0.1':
     dependencies:
       '@libp2p/interface': 3.1.0
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       race-signal: 2.0.0
       uint8arraylist: 2.4.8
 
@@ -3714,7 +3707,7 @@ snapshots:
   '@libp2p/multistream-select@7.0.7':
     dependencies:
       '@libp2p/interface': 3.1.0
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       it-length-prefixed: 10.0.1
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -3723,7 +3716,7 @@ snapshots:
     dependencies:
       '@libp2p/interface': 3.1.0
       '@libp2p/peer-id': 6.0.4
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       multiformats: 13.4.1
 
   '@libp2p/peer-collections@7.0.8':
@@ -3769,32 +3762,6 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/utils@7.0.7':
-    dependencies:
-      '@chainsafe/is-ip': 2.1.0
-      '@chainsafe/netmask': 2.0.0
-      '@libp2p/crypto': 5.1.13
-      '@libp2p/interface': 3.1.0
-      '@libp2p/logger': 6.2.0
-      '@multiformats/multiaddr': 13.0.1
-      '@sindresorhus/fnv1a': 3.1.0
-      any-signal: 4.1.1
-      cborg: 4.2.18
-      delay: 6.0.0
-      is-loopback-addr: 2.0.2
-      it-length-prefixed: 10.0.1
-      it-pipe: 3.0.1
-      it-pushable: 3.2.3
-      it-stream-types: 2.0.2
-      main-event: 1.0.1
-      netmask: 2.0.2
-      p-defer: 4.0.1
-      p-event: 7.0.0
-      race-signal: 2.0.0
-      uint8-varint: 2.0.4
-      uint8arraylist: 2.4.8
-      uint8arrays: 5.1.0
-
   '@libp2p/utils@7.0.8':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
@@ -3830,7 +3797,7 @@ snapshots:
       '@libp2p/interface-internal': 3.0.7
       '@libp2p/keychain': 6.0.7
       '@libp2p/peer-id': 6.0.4
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       '@peculiar/webcrypto': 1.5.0
@@ -3863,7 +3830,7 @@ snapshots:
   '@libp2p/websockets@10.1.0':
     dependencies:
       '@libp2p/interface': 3.1.0
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       '@multiformats/multiaddr-to-uri': 12.0.0
@@ -4566,8 +4533,6 @@ snapshots:
 
   deep-extend@0.6.0: {}
 
-  delay@6.0.0: {}
-
   delay@7.0.0:
     dependencies:
       random-int: 3.1.0
@@ -5046,7 +5011,7 @@ snapshots:
       '@libp2p/peer-collections': 7.0.7
       '@libp2p/peer-id': 6.0.4
       '@libp2p/peer-store': 12.0.7
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       '@multiformats/dns': 1.0.10
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
