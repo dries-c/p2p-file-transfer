@@ -21,8 +21,8 @@ importers:
         specifier: 5.1.13
         version: 5.1.13
       '@libp2p/identify':
-        specifier: 4.0.7
-        version: 4.0.7
+        specifier: 4.0.8
+        version: 4.0.8
       '@libp2p/utils':
         specifier: 7.0.7
         version: 7.0.7
@@ -134,8 +134,8 @@ packages:
   '@libp2p/crypto@5.1.13':
     resolution: {integrity: sha512-8NN9cQP3jDn+p9+QE9ByiEoZ2lemDFf/unTgiKmS3JF93ph240EUVdbCyyEgOMfykzb0okTM4gzvwfx9osJebQ==}
 
-  '@libp2p/identify@4.0.7':
-    resolution: {integrity: sha512-2Rf438i7h0KFnfc5+AbE9Q0fH9H9Jlh28Kgn2tVywxRErUoaaFOMSQG39Jl/UO6umSn7L5Ug42S2owIXrXip4Q==}
+  '@libp2p/identify@4.0.8':
+    resolution: {integrity: sha512-EvhooT3v1DQ31DFsOzbDh9STMCsHtX2gcF49UbJrah5k3/gWo2PdUuabHIgNdImjvlk87e5bsM5N118F3Sy9HQ==}
 
   '@libp2p/interface-internal@3.0.7':
     resolution: {integrity: sha512-QR6sJ0BnhMRnw68KTVTcEp9qHIRJ9aAXQWCG235HNZAuTgAkWGKdB3yA/JxtQDanpWaDHhuS/RZeL+YOi65TCw==}
@@ -688,14 +688,14 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/identify@4.0.7':
+  '@libp2p/identify@4.0.8':
     dependencies:
       '@libp2p/crypto': 5.1.13
       '@libp2p/interface': 3.1.0
-      '@libp2p/interface-internal': 3.0.7
+      '@libp2p/interface-internal': 3.0.8
       '@libp2p/peer-id': 6.0.4
       '@libp2p/peer-record': 9.0.4
-      '@libp2p/utils': 7.0.7
+      '@libp2p/utils': 7.0.8
       '@multiformats/multiaddr': 13.0.1
       '@multiformats/multiaddr-matcher': 3.0.1
       it-drain: 3.0.10
