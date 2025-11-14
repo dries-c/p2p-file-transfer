@@ -17,7 +17,7 @@
     "@libp2p/websockets": "10.1.1",
     "@libp2p/utils": "7.0.8",
     "@multiformats/multiaddr": "13.0.1",
-    "libp2p": "3.1.0"
+    "libp2p": "3.1.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.5",
