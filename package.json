@@ -31,7 +31,7 @@
     "react-dom": "19.2.0",
     "react-dropzone": "^14.3.8",
     "react-localization": "2.0.6",
-    "react-router": "7.9.6",
+    "react-router": "7.10.0",
     "react-screen-wake-lock": "^3.1.1",
     "react-toastify": "11.0.5",
     "ua-parser-js": "2.0.6",
