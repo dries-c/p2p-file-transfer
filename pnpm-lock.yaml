@@ -19,7 +19,7 @@ importers:
         version: 1.15.3(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(workerd@1.20251125.0)(wrangler@4.51.0(@cloudflare/workers-types@4.20251202.0))
       '@heroicons/react':
         specifier: 2.2.0
-        version: 2.2.0(react@19.2.0)
+        version: 2.2.0(react@19.2.1)
       '@libp2p/circuit-relay-v2':
         specifier: 4.1.2
         version: 4.1.2
@@ -34,7 +34,7 @@ importers:
         version: 7.0.9
       '@libp2p/webrtc':
         specifier: 6.0.10
-        version: 6.0.10(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0))
+        version: 6.0.10(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1))
       '@libp2p/websockets':
         specifier: 10.1.2
         version: 10.1.2
@@ -49,34 +49,34 @@ importers:
         version: 3.1.2
       qrcode.react:
         specifier: 4.2.0
-        version: 4.2.0(react@19.2.0)
+        version: 4.2.0(react@19.2.1)
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.1
+        version: 19.2.1
       react-dom:
-        specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
       react-dropzone:
         specifier: ^14.3.8
-        version: 14.3.8(react@19.2.0)
+        version: 14.3.8(react@19.2.1)
       react-localization:
         specifier: 2.0.6
-        version: 2.0.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 2.0.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       react-router:
         specifier: 7.10.0
-        version: 7.10.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 7.10.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       react-screen-wake-lock:
         specifier: ^3.1.1
-        version: 3.1.1(react@19.2.0)
+        version: 3.1.1(react@19.2.1)
       react-toastify:
         specifier: 11.0.5
-        version: 11.0.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 11.0.5(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       ua-parser-js:
         specifier: 2.0.6
         version: 2.0.6
       usehooks-ts:
         specifier: 3.1.1
-        version: 3.1.1(react@19.2.0)
+        version: 3.1.1(react@19.2.1)
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.8
@@ -2434,10 +2434,10 @@ packages:
   react-devtools-core@6.1.5:
     resolution: {integrity: sha512-ePrwPfxAnB+7hgnEr8vpKxL9cmnp7F322t8oqcPshbIQQhDKgFDW4tjhF2wjVbdXF9O/nyuy3sQWd9JGpiLPvA==}
 
-  react-dom@19.2.0:
-    resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
+  react-dom@19.2.1:
+    resolution: {integrity: sha512-ibrK8llX2a4eOskq1mXKu/TGZj9qzomO+sNfO98M6d9zIPOEhlBkMkBUBLd1vgS0gQsLDBzA+8jJBVXDnfHmJg==}
     peerDependencies:
-      react: ^19.2.0
+      react: ^19.2.1
 
   react-dropzone@14.3.8:
     resolution: {integrity: sha512-sBgODnq+lcA4P296DY4wacOZz3JFpD99fp+hb//iBO2HHnyeZU3FwWyXJ6salNpqQdsZrgMrotuko/BdJMV8Ug==}
@@ -2504,8 +2504,8 @@ packages:
       react: ^18 || ^19
       react-dom: ^18 || ^19
 
-  react@19.2.0:
-    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
+  react@19.2.1:
+    resolution: {integrity: sha512-DGrYcCWK7tvYMnWh79yrPHt+vdx9tY+1gPZa7nJQtO/p8bLTDaHp4dzwEhQB7pZ4Xe3ok4XKuEPrVuc+wlpkmw==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@3.6.2:
@@ -3412,9 +3412,9 @@ snapshots:
   '@esbuild/win32-x64@0.25.4':
     optional: true
 
-  '@heroicons/react@2.2.0(react@19.2.0)':
+  '@heroicons/react@2.2.0(react@19.2.1)':
     dependencies:
-      react: 19.2.0
+      react: 19.2.1
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -3757,7 +3757,7 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@libp2p/webrtc@6.0.10(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0))':
+  '@libp2p/webrtc@6.0.10(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1))':
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@chainsafe/libp2p-noise': 17.0.0
@@ -3788,7 +3788,7 @@ snapshots:
       progress-events: 1.0.1
       protons-runtime: 5.6.0
       race-signal: 2.0.0
-      react-native-webrtc: 124.0.7(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0))
+      react-native-webrtc: 124.0.7(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1))
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -4011,12 +4011,12 @@ snapshots:
 
   '@react-native/normalize-colors@0.81.4': {}
 
-  '@react-native/virtualized-lists@0.81.4(@types/react@19.2.7)(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0))(react@19.2.0)':
+  '@react-native/virtualized-lists@0.81.4(@types/react@19.2.7)(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1))(react@19.2.1)':
     dependencies:
       invariant: 2.2.4
       nullthrows: 1.1.1
-      react: 19.2.0
-      react-native: 0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0)
+      react: 19.2.1
+      react-native: 0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1)
     optionalDependencies:
       '@types/react': 19.2.7
 
@@ -5478,9 +5478,9 @@ snapshots:
 
   pvutils@1.1.5: {}
 
-  qrcode.react@4.2.0(react@19.2.0):
+  qrcode.react@4.2.0(react@19.2.1):
     dependencies:
-      react: 19.2.0
+      react: 19.2.1
 
   queue@6.0.2:
     dependencies:
@@ -5513,39 +5513,39 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  react-dom@19.2.0(react@19.2.0):
+  react-dom@19.2.1(react@19.2.1):
     dependencies:
-      react: 19.2.0
+      react: 19.2.1
       scheduler: 0.27.0
 
-  react-dropzone@14.3.8(react@19.2.0):
+  react-dropzone@14.3.8(react@19.2.1):
     dependencies:
       attr-accept: 2.2.5
       file-selector: 2.1.2
       prop-types: 15.8.1
-      react: 19.2.0
+      react: 19.2.1
 
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
 
-  react-localization@2.0.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-localization@2.0.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       localized-strings: 2.0.3
     optionalDependencies:
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
 
-  react-native-webrtc@124.0.7(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0)):
+  react-native-webrtc@124.0.7(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1)):
     dependencies:
       base64-js: 1.5.1
       debug: 4.3.4
       event-target-shim: 6.0.2
-      react-native: 0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0)
+      react-native: 0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1)
     transitivePeerDependencies:
       - supports-color
 
-  react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0):
+  react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1):
     dependencies:
       '@jest/create-cache-key-function': 29.7.0
       '@react-native/assets-registry': 0.81.4
@@ -5554,7 +5554,7 @@ snapshots:
       '@react-native/gradle-plugin': 0.81.4
       '@react-native/js-polyfills': 0.81.4
       '@react-native/normalize-colors': 0.81.4
-      '@react-native/virtualized-lists': 0.81.4(@types/react@19.2.7)(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.0))(react@19.2.0)
+      '@react-native/virtualized-lists': 0.81.4(@types/react@19.2.7)(react-native@0.81.4(@babel/core@7.28.5)(@types/react@19.2.7)(react@19.2.1))(react@19.2.1)
       abort-controller: 3.0.0
       anser: 1.4.10
       ansi-regex: 5.0.1
@@ -5572,7 +5572,7 @@ snapshots:
       nullthrows: 1.1.1
       pretty-format: 29.7.0
       promise: 8.3.0
-      react: 19.2.0
+      react: 19.2.1
       react-devtools-core: 6.1.5
       react-refresh: 0.14.2
       regenerator-runtime: 0.13.11
@@ -5594,25 +5594,25 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react-router@7.10.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-router@7.10.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       cookie: 1.0.2
-      react: 19.2.0
+      react: 19.2.1
       set-cookie-parser: 2.7.1
     optionalDependencies:
-      react-dom: 19.2.0(react@19.2.0)
+      react-dom: 19.2.1(react@19.2.1)
 
-  react-screen-wake-lock@3.1.1(react@19.2.0):
+  react-screen-wake-lock@3.1.1(react@19.2.1):
     dependencies:
-      react: 19.2.0
+      react: 19.2.1
 
-  react-toastify@11.0.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-toastify@11.0.5(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       clsx: 2.1.1
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
 
-  react@19.2.0: {}
+  react@19.2.1: {}
 
   readable-stream@3.6.2:
     dependencies:
@@ -5916,10 +5916,10 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  usehooks-ts@3.1.1(react@19.2.0):
+  usehooks-ts@3.1.1(react@19.2.1):
     dependencies:
       lodash.debounce: 4.0.8
-      react: 19.2.0
+      react: 19.2.1
 
   utf8-byte-length@1.0.5: {}
 
