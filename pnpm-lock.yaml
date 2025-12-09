@@ -72,8 +72,8 @@ importers:
         specifier: 11.0.5
         version: 11.0.5(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       ua-parser-js:
-        specifier: 2.0.6
-        version: 2.0.6
+        specifier: 2.0.7
+        version: 2.0.7
       usehooks-ts:
         specifier: 3.1.1
         version: 3.1.1(react@19.2.1)
@@ -2752,8 +2752,8 @@ packages:
   ua-is-frozen@0.1.2:
     resolution: {integrity: sha512-RwKDW2p3iyWn4UbaxpP2+VxwqXh0jpvdxsYpZ5j/MLLiQOfbsV5shpgQiw93+KMYQPcteeMQ289MaAFzs3G9pw==}
 
-  ua-parser-js@2.0.6:
-    resolution: {integrity: sha512-EmaxXfltJaDW75SokrY4/lXMrVyXomE/0FpIIqP2Ctic93gK7rlme55Cwkz8l3YZ6gqf94fCU7AnIkidd/KXPg==}
+  ua-parser-js@2.0.7:
+    resolution: {integrity: sha512-CFdHVHr+6YfbktNZegH3qbYvYgC7nRNEUm2tk7nSFXSODUu4tDBpaFpP1jdXBUOKKwapVlWRfTtS8bCPzsQ47w==}
     hasBin: true
 
   uint8-varint@2.0.4:
@@ -5895,7 +5895,7 @@ snapshots:
 
   ua-is-frozen@0.1.2: {}
 
-  ua-parser-js@2.0.6:
+  ua-parser-js@2.0.7:
     dependencies:
       detect-europe-js: 0.1.2
       is-standalone-pwa: 0.1.1
