@@ -20,7 +20,7 @@
     "libp2p": "3.1.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.8",
+    "@biomejs/biome": "2.3.9",
     "@libp2p/interface": "3.1.0",
     "@types/node": "24.10.4",
     "tsc-alias": "1.8.16",
